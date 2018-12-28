@@ -3,8 +3,8 @@ const { name } = require('./package.json');
 module.exports = {
   pathPrefix: process.env.CI ? `/${name}` : `/`,
   siteMetadata: {
-    author: 'You!',
-    title: `Gatsby Default (Blog) Starter`,
+    author: 'SeonHyungJo',
+    title: `Renewal Blog`,
   },
   plugins: [
     'gatsby-plugin-catch-links',
@@ -24,8 +24,8 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/blog`,
-        name: 'blog',
+        path: `${__dirname}/post`,
+        name: 'post',
       },
     },
     {
@@ -42,6 +42,7 @@ module.exports = {
       }
     },
     'gatsby-plugin-react-helmet',
+    // 이미지를 불러오기 위한 Plugin
     'gatsby-plugin-sharp'
   ],
 }

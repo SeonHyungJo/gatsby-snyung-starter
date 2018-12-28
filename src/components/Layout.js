@@ -16,15 +16,17 @@ export default class Template extends React.Component {
     const isRoot = location.pathname === '/';
 
     return (
-      <React.Fragment>
+      <>
+        {/* head custom 진행*/}
         <Helmet
-          title="Gatsby Default (Blog) Starter"
+          title="Sseon's blog"
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'description', content: '간단하게 설명을 적어봅시다.' },
+            { name: 'keywords', content: 'sseon, blog, theme' },
           ]}
         >
-          <html lang="en" />
+        {/* 한국어 설정 진행 */}
+        <html lang="ko" />
         </Helmet>
         <div
           style={{
@@ -47,7 +49,7 @@ export default class Template extends React.Component {
                   textDecoration: 'none',
                 }}
               >
-                Gatsby Blog
+                Blog Header
               </Link>
             </h1>
           </div>
@@ -62,7 +64,7 @@ export default class Template extends React.Component {
         >
           {this.props.children}
         </div>
-      </React.Fragment>
+      </>
     );
   }
 }

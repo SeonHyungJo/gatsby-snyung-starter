@@ -1,5 +1,9 @@
 const path = require('path');
 
+/**
+ * Tag Page 생성
+ * Tag만 넘기도록 구성하지 왜 edges를 전부 넘겼지?
+ */
 const createTagPages = (createPage, edges) => {
   const tagTemplate = path.resolve(`src/templates/tags.js`);
   const posts = {};
@@ -40,10 +44,13 @@ const createTagPages = (createPage, edges) => {
     });
 };
 
+/**
+ * Post Page 생성 
+ */
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
-
   const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
+
   return graphql(`{
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
@@ -72,12 +79,14 @@ exports.createPages = ({ actions, graphql }) => {
 
     const posts = result.data.allMarkdownRemark.edges;
 
+    // Create Tag Pages
     createTagPages(createPage, posts);
 
     // Create pages for each markdown file.
     posts.forEach(({ node }, index) => {
       const prev = index === 0 ? null : posts[index - 1].node;
       const next = index === posts.length - 1 ? null : posts[index + 1].node;
+
       createPage({
         path: node.frontmatter.path,
         component: blogPostTemplate,
