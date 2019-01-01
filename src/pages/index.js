@@ -9,6 +9,7 @@ import '../css/index.css';
 
 export default function Index(props) {
   const { data } = props;
+  console.log(props)
   const { edges: posts } = data.allMarkdownRemark;
   return (
     <Layout {...props}>
@@ -17,11 +18,10 @@ export default function Index(props) {
           .filter(post => post.node.frontmatter.title.length > 0)
           .map(({ node: post }) => {
             return (
+              <GatsbyLink to={post.frontmatter.path}>
               <div className="blog-post-preview" key={post.id}>
                 <h1 className="title">
-                  <GatsbyLink to={post.frontmatter.path}>
-                    {post.frontmatter.title}
-                  </GatsbyLink>
+                  {post.frontmatter.title}
                 </h1>
                 <h2 className="date">
                   {post.frontmatter.date}
@@ -29,10 +29,10 @@ export default function Index(props) {
                 <p>
                   {post.excerpt}
                 </p>
-                <Link to={post.frontmatter.path}>Read more</Link>
               </div>
-            );
-          })}
+              </GatsbyLink>
+      );
+    })}
       </div>
     </Layout>
   );
