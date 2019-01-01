@@ -1,0 +1,21 @@
+@import "font.scss";
+
+.HeaderContainer{
+    display: flex;
+
+    border-bottom: 1px dashed rgba(0,0,0,0.3);
+
+    font: {
+        family: 'SCDream';
+        size: 40px;
+        weight: 800;
+    }
+
+    padding: 1rem;
+    
+    width: 100%;
+    height: 60px;
+    background-color: white;
+}
+
+

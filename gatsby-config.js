@@ -43,6 +43,8 @@ module.exports = {
     },
     'gatsby-plugin-react-helmet',
     // 이미지를 불러오기 위한 Plugin
-    'gatsby-plugin-sharp'
+    'gatsby-plugin-sharp',
+    // 2019-01-01 Sass 기능 추가
+    `gatsby-plugin-sass`
   ],
 }
