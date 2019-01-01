@@ -1,7 +1,7 @@
 import React from 'react';
 import { classNames } from '../util/commonUtil'
 
-import '../css/_button.scss';
+import '../css/button.scss';
 
 /**
  * @description 상단 헤더 부분 Nav Button 구현

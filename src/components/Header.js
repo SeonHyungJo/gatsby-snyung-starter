@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import { classNames } from '../util/commonUtil'
 
-import '../css/_header.scss';
+import '../css/header.scss';
 
 /**
  * @description 상단 헤더 부분 구현

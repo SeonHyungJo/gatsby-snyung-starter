@@ -1,4 +1,5 @@
 @import "font.scss";
+@import "valuables.scss";
 
 .HeaderContainer{
     display: flex;
@@ -15,7 +16,7 @@
     padding: 1rem;
     
     width: 100%;
-    height: 60px;
+    height: $header-height;
     background-color: white;
 
     .HeaderTitle{
