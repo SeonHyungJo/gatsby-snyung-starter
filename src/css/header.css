@@ -1,0 +1,12 @@
+@font-face{ 
+    font-family:'SCDream'; 
+    src:url('../../assets/front/SCDreamB.woff2'); 
+    src:url('../../assets/front/SCDreamB.woff2') format('woff2');
+    font-weight: bold;
+}
+
+.HeaderTitle {
+    font-family: 'SCDream';
+    font-size: 40px;
+    color: black;
+}
