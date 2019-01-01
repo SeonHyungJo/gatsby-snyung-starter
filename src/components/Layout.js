@@ -4,6 +4,7 @@ import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import Header from './Header';
 import Button from './Button';
+import SideBar from './SideBar';
 
 import '../css/typography.css';
 
@@ -14,7 +15,6 @@ export default class Template extends React.Component {
 
   render() {
     const { location } = this.props;
-
     const isRoot = location.pathname === '/';
 
     return (
@@ -56,6 +56,8 @@ export default class Template extends React.Component {
         >
           {this.props.children}
         </div>
+
+        <SideBar>SideBar</SideBar>
       </>
     );
   }
