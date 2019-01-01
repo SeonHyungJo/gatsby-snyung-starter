@@ -1,0 +1,24 @@
+@import "font.scss";
+@import "valuables.scss";
+
+.SideBarContainer{
+    position: fixed;
+    top: $header-height + 10px;
+    left: calc(100vw - 300px);
+
+    border: 1px solid white;
+    background-color: rgba(244,244,244,0.9);
+
+    font: {
+        family: 'NanumSquareRound';
+        size: 14px;
+        weight: 500;
+    } 
+
+    padding: 5px;
+
+    height: 500px;
+    width: 250px
+}
+
+
