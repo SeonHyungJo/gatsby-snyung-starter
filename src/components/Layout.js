@@ -31,7 +31,7 @@ export default class Template extends React.Component {
         </Helmet>
 
         {/* ----------------------------------------------------- */}
-        <Header location={location} title="Header">
+        <Header location={location}>
           
         </Header>
         <div

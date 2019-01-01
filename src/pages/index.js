@@ -9,8 +9,8 @@ import '../css/index.css';
 
 export default function Index(props) {
   const { data } = props;
-  console.log(props)
   const { edges: posts } = data.allMarkdownRemark;
+  
   return (
     <Layout {...props}>
       <div className="blog-posts">

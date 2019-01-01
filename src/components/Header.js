@@ -1,42 +1,32 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import { classNames } from '../util/commonUtil'
 
-import '../css/header.css';
+import '../css/_header.scss';
 
 /**
  * @description 상단 헤더 부분 구현
  */
-export default class Header extends React.Component {
-    static propTypes = {
-        children: PropTypes.func
-    };
+const Header = ({ title = "Main Header", children }) => {
+    return (
+        <div className={classNames('HeaderContainer')}>
+            {/* Header Title */}
+            <Link
+                to="/"
+                style={{
+                    textDecoration: 'none'
+                }}
+                className={classNames('HeaderTitle')}
+            >
+                {title}
+            </Link>
 
-    render() {
-        const { title = "Header" } = this.props;
-
-        return (
-            <>
-                <div className={classNames('HeaderTitle, test')}>
-                    {/* Header Title */}
-                    <h1>
-                        <Link
-                            to="/"
-                            style={{
-                                textDecoration: 'none'
-                            }}
-                        >
-                            {title}
-                        </Link>
-                    </h1>
-
-                    <div>
-                        {/* 상위 버튼 넣을 공간 또는 다른 것을 넣을 공간 */}
-                        {this.props.children}
-                    </div>
-                </div>
-            </>
-        );
-    }
+            {/* 상위 버튼 넣을 공간 또는 다른 것을 넣을 공간 */}
+            <div>
+                {children}
+            </div>
+        </div >
+    );
 }
+
+export default Header;
