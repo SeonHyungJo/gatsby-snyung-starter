@@ -1,0 +1,21 @@
+@import "font.scss";
+
+.ButtonContainer{
+    display: inline-block;
+    cursor: pointer;
+
+    font: {
+        family: 'SCDream';
+        size: 14px;
+        weight: 500;
+    } 
+
+    margin: 5px;
+
+    &:hover{
+        font-weight: 700;
+        border-bottom: 1px solid blue;
+    }
+}
+
+

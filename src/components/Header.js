@@ -22,7 +22,8 @@ const Header = ({ title = "Main Header", children }) => {
             </Link>
 
             {/* 상위 버튼 넣을 공간 또는 다른 것을 넣을 공간 */}
-            <div>
+            {/* 기본적으로 nav를 넣기 위한 공간 */}
+            <div className={classNames('HeaderNav')}>
                 {children}
             </div>
         </div >

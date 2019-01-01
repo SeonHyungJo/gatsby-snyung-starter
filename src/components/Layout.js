@@ -3,12 +3,13 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import Header from './Header';
+import Button from './Button';
 
 import '../css/typography.css';
 
 export default class Template extends React.Component {
   static propTypes = {
-    children: PropTypes.func,
+    children: PropTypes.func
   };
 
   render() {
@@ -23,23 +24,34 @@ export default class Template extends React.Component {
           title="Gatsby for SSEON"
           meta={[
             { name: 'description', content: 'sseon theme' },
-            { name: 'keywords', content: 'sseon, blog, theme' },
+            { name: 'keywords', content: 'sseon, blog, theme' }
           ]}
         >
-        {/* 한국어 설정 진행 */}
-        <html lang="ko" />
+          {/* 한국어 설정 진행 */}
+          <html lang="ko" />
         </Helmet>
 
         {/* ----------------------------------------------------- */}
         <Header location={location}>
-          
+          <Link to="/main">
+            <Button>MAIN</Button>
+          </Link>
+          <Link to="/">
+            <Button>POSTS</Button>
+          </Link>
+          <Link to="/resume">
+            <Button>RESUME</Button>
+          </Link>
+          <Link to="/project">
+            <Button>PROJECTS</Button>
+          </Link>
         </Header>
         <div
           style={{
             margin: `0 auto`,
             maxWidth: 960,
             padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
+            paddingTop: 0
           }}
         >
           {this.props.children}
