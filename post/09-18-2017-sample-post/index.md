@@ -3,6 +3,7 @@ path: "/sample-post"
 date: "2017-07-18T13:35:13.234Z"
 title: "Sample Post"
 tags: ["latin", "sample"]
+check: "test"
 ---
 
 I speak Latin because I am a fancy man.

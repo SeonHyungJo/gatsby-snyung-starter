@@ -8,7 +8,7 @@ import Link from '../components/Link'
 import Tags from '../components/Tags'
 import Layout from '../components/Layout'
 
-import '../css/blog-post.css'
+import '../css/blog-post.scss'
 
 export default function Template (props) {
   const { data, pageContext } = props

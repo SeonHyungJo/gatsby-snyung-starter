@@ -6,7 +6,7 @@ import Header from './Header';
 import Button from './Button';
 import SideBar from './SideBar';
 
-import '../css/typography.css';
+import '../css/baseLayout.scss';
 
 export default class Template extends React.Component {
   static propTypes = {
@@ -57,7 +57,7 @@ export default class Template extends React.Component {
           {this.props.children}
         </div>
 
-        <SideBar>SideBar</SideBar>
+        {/* <SideBar>SideBar</SideBar> */}
       </>
     );
   }

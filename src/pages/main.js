@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import Link from '../components/Link';
 import Layout from '../components/Layout';
 
-import '../css/index.css';
+import '../css/index.scss';
 
 export default function Index(props) {
   const { data } = props;
