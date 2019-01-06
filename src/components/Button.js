@@ -8,7 +8,7 @@ import '../css/button.scss';
  */
 const Button = ({ children = "Button", type = "nav" }) => {
     return (
-        <div className={type.toLowerCase() === "nav" ? classNames('ButtonContainer') : 'test'}>
+        <div className={type.toLowerCase() === "nav" ? classNames(`defaultClass, buttonContainer`) : classNames(`defaultClass, ${type}`)}>
             {children}
         </div >
     );

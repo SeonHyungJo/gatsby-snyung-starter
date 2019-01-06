@@ -1,38 +1,47 @@
 import React from 'react';
-import GatsbyLink from 'gatsby-link';
 import { graphql } from 'gatsby';
 
 import Link from '../components/Link';
-import Layout from '../components/Layout';
+import Layout from '../components/DLayout';
+import Button from '../components/Button';
 
-import '../css/index.css';
+import { FaGithub, FaFacebook, FaYoutube} from "react-icons/lib/fa";
+import { IoEmail } from "react-icons/lib/io";
+
+import '../css/main.scss';
 
 export default function Index(props) {
   const { data } = props;
   const { edges: posts } = data.allMarkdownRemark;
-  
+
   return (
     <Layout {...props}>
-      <div className="blog-posts">
-        {posts
-          .filter(post => post.node.frontmatter.title.length > 0)
-          .map(({ node: post }) => {
-            return (
-              <GatsbyLink to={post.frontmatter.path}>
-              <div className="blog-post-preview" key={post.id}>
-                <h1 className="title">
-                  {post.frontmatter.title}
-                </h1>
-                <h2 className="date">
-                  {post.frontmatter.date}
-                </h2>
-                <p>
-                  {post.excerpt}
-                </p>
-              </div>
-              </GatsbyLink>
-      );
-    })}
+      <div className="bContainer">
+        <div className="bCard">
+          <div className="img">
+            <Link to="/">
+              <img className="img-circle" src="https://avatars2.githubusercontent.com/u/24274424?s=460&v=4" alt="MainImge" />
+            </Link>
+          </div>
+          <div className="name">Dev_sseon</div>
+          <div className="title">자바스크립트 개발자가 되려고 하는 비전공자</div>
+          <div className="sns">
+            <Button type={'snsBtn'}><IoEmail size="1.5rem" /></Button>
+            <Button type={'snsBtn'}><FaGithub size="1.5rem" /></Button>
+            <Button type={'snsBtn'}><FaFacebook size="1.5rem"/></Button>
+            <Button type={'snsBtn'}><FaYoutube size="1.5rem"/></Button>
+          </div>
+          <div className="menu">
+            <Link to="/">
+              All Post
+            </Link>
+            <Link to="/resume">
+              Resume
+            </Link>
+            <Link to="/project">
+              Project
+            </Link></div>
+        </div>
       </div>
     </Layout>
   );
