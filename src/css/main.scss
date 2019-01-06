@@ -25,8 +25,8 @@
 
     background: #77AF9C;
 
-    min-width: 500px;
-    min-height: 500px;
+    max-width: 500px;
+    padding: 3rem 5rem;
 
     border: 1px solid rgba(244, 244, 244, 0);
     border-radius: 3px;
@@ -77,6 +77,10 @@
 
         &:hover{
           box-shadow: $shadowHover;
+        }
+
+        a {
+          padding: 0.5rem 0.75rem;
         }
       }
     }
