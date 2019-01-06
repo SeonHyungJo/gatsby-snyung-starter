@@ -56,15 +56,29 @@
     }
 
     & .title{
-      margin-bottom: 1.25rem;
-      padding: 0.75rem 0px;
-
       border-top: 1px solid rgba(244, 244, 244, 0.8);
       border-bottom: 1px solid rgba(244, 244, 244, 0.8);
+
+      margin-bottom: 1.25rem;
+      padding: 0.75rem 0px;
     }
 
     & .sns{
-      
+      margin-bottom: 1.25rem;
+    }
+
+    & .menu{
+      & .menuItem{
+        display: inline-block;
+        border: 1px solid rgba(244, 244, 244, 0.8);
+        border-radius: 10px;
+
+        margin: 5px;
+
+        &:hover{
+          box-shadow: $shadowHover;
+        }
+      }
     }
 
     & a{
