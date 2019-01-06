@@ -4,9 +4,9 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 
-import '../css/index.css';
+import '../css/resume.scss';
 
-export default function Index(props) {
+export default function Resume(props) {
   const { data } = props;
   const { edges: posts } = data.allMarkdownRemark;
   
@@ -38,7 +38,7 @@ export default function Index(props) {
 }
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query ResumeQuery {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {

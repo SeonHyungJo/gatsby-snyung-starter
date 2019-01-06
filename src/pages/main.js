@@ -1,5 +1,4 @@
 import React from 'react';
-import { graphql } from 'gatsby';
 
 import Link from '../components/Link';
 import Layout from '../components/DLayout';
@@ -55,10 +54,7 @@ export default function Index(props) {
               <Link to="/">All Post</Link>
             </div>
             <div className="menuItem">
-              <Link to="/resume">Resume</Link>
-            </div>
-            <div className="menuItem">
-              <Link to="/project">Project</Link>
+              <Link to="/aboutme">About Me</Link>
             </div>
           </div>
         </div>
