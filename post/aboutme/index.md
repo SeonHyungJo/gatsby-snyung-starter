@@ -3,7 +3,7 @@ path: "/aboutme"
 date: "2017-07-18"
 title: "Sample Postdddd"
 tags: ["latin", "sample"]
-check: "test"
+category: "aboutme"
 ---
 
 I speak Latin because I am a fancy man.

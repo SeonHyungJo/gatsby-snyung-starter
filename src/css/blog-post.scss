@@ -1,6 +1,12 @@
+@import "font.scss";
+@import "valuables.scss";
+
 .blog-post {
   float: left;
   background: white;
+
+  margin: 1rem auto;
+  margin-top: $header-height  + 2rem;
 
   & .title{
     text-align: center;

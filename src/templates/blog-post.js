@@ -7,6 +7,7 @@ import { graphql } from 'gatsby'
 import Link from '../components/Link'
 import Tags from '../components/Tags'
 import Layout from '../components/Layout'
+import Button from '../components/Button';
 
 import '../css/blog-post.scss'
 
@@ -28,6 +29,9 @@ export default function Template (props) {
           <h1 className='title'>{post.frontmatter.title}</h1>
           {/* Date */}
           <h2 className='date'>{post.frontmatter.date}</h2>
+          <div className="backBtn"> 
+            <Button to={'/'}>{`뒤로가기`}</Button>
+          </div>
           {/* Contents */}
           {/* html을 그냥 때려 박네 */}
           <div className='blog-post-content' dangerouslySetInnerHTML={{ __html: post.html }} />
@@ -36,20 +40,18 @@ export default function Template (props) {
 
           {/* 하위에 위치한 이동 버튼 */}
           {/* 이 아래는 커스텀을 하는 게 좋을듯 함 */}
-          <div className='navigation'>
-            {/* Prev Button */}
+          {/* <div className='navigation'>
             {prev &&
              <Link className='link prev' to={prev.frontmatter.path}>
              <BackIcon />
              {prev.frontmatter.title}
              </Link>}
-            {/* Next Button */}
             {next &&
              <Link className='link next' to={next.frontmatter.path}>
              {next.frontmatter.title}
              <ForwardIcon />
              </Link>}
-          </div>
+          </div> */}
         </article>
       </div>
     </Layout>

@@ -24,7 +24,8 @@ export default class Template extends React.Component {
           title="Gatsby for SSEON"
           meta={[
             { name: 'description', content: 'sseon theme' },
-            { name: 'keywords', content: 'sseon, blog, theme' }
+            { name: 'keywords', content: 'sseon, blog, theme' },
+            { name: 'viewport', content:'width=device-width, initial-scale=1'}
           ]}
         >
           {/* 한국어 설정 진행 */}

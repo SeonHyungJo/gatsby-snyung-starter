@@ -3,8 +3,13 @@
 
 .HeaderContainer{
     display: flex;
+    position: fixed;
+    top : 0px;
+    left : 0px;
+    z-index: 2147483647;
+
     justify-content : space-between;
-    box-shadow: 0px 5px 20px 2px #aaaaaa;
+    box-shadow: $shadow;
     //border-bottom: 1px dashed rgba(0,0,0,0.3);
 
     font: {
@@ -29,6 +34,29 @@
 
     .HeaderNav{
     }
+
+    @media only screen and (max-device-width : 640px){
+        flex-direction: column;
+        justify-content : space-between;
+
+        height: $header-height + 1rem;
+
+        font: {
+            family: 'SCDream';
+            size: 12px;
+            weight: 500;
+        }
+
+        .HeaderTitle{
+            font: {
+                family: 'SCDream';
+                size: 28px;
+                weight: 800;
+            }
+        }
+    }
 }
+
+
 
 
