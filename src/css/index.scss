@@ -1,144 +1,120 @@
 @import "font.scss";
 @import "valuables.scss";
 
-.blog-posts{
-  margin: 1rem auto;
-  margin-top: $header-height  + 2rem;
+.bContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
 
-  font-family: "NanumSquareRound";
+  color: white;
+  min-height: 95vh;
 
-  & .blog-post-preview {
+  font: {
+    family: 'NanumSquareRound';
+    size: 18px;
+    weight: 800px;
+    color: white;
+  }
+
+  & .bCard{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 
-    background: white;
-    box-shadow: 0px 5px 10px 1px #aaaaaa;
+    background: #77AF9C;
 
-    padding : 1.5rem 2rem;
-    margin : 0.7rem 0rem;
+    min-width: 600px;
+    max-width: 700px;
+    padding: 3rem 5rem;
 
-    & :last-child{
-      border-bottom-width: 0;
+    border: 1px solid rgba(244, 244, 244, 0);
+    border-radius: 3px;
+    box-shadow: $shadow;
+
+    & .img{
+      $imageSize : 150px;
+      & img{
+        margin: 0;
+      }
+      & .img-circle{
+        width: $imageSize;
+        height: $imageSize;
+        border-radius: 100%;
+      }
     }
 
-    & .blog-sub-container{
-      display: flex;  
-      flex-direction: column; 
-
-      min-width: 100px;
-
-      & .title{
-        margin-bottom: 1.5rem;
-  
-        font: {
-          family: "SCDream";
-          size: 30px;
-          weight: 700;
-        }
-      }
-
-      & .summary{
-        margin-bottom: 1rem;
-      }
-
-      & .img{
-        font: {
-          size: 12px;
-        }
-      }
-
-      & .date{
-        font: {
-          size: 12px;
-        }
-      }
-    
-      & .tagContainer{
-        & .tag{
-          border: 1px solid #555;
-          border-radius: 3px;
+    & .name{
+      color: black;
+      margin-bottom: 1.25rem;
       
-          font: {
-            size: 12px;
-          }
-      
-          margin: 0rem 0.5rem;
-          padding: 0.1rem 0.3rem;
+      font: {
+        family: 'NanumSquareRound';
+        size: 23px;
+        weight: 800;
+      }
+    }
+
+    & .title{
+      min-width: 80%;
+      text-align: center;
+      border-top: 1px solid rgba(244, 244, 244, 0.8);
+      border-bottom: 1px solid rgba(244, 244, 244, 0.8);
+
+      margin-bottom: 1.25rem;
+      padding: 0.75rem 0px;
+    }
+
+    & .sns{
+      margin-bottom: 1.25rem;
+    }
+
+    & .menu{
+      & .menuItem{
+        display: inline-block;
+        border: 1px solid rgba(244, 244, 244, 0.8);
+        border-radius: 10px;
+
+        margin: 5px;
+
+        &:hover{
+          box-shadow: $shadowHover;
         }
-        & :first-child{
-          margin-left: 0rem;
+
+        a {
+          padding: 0.5rem 0.75rem;
         }
       }
-      & .link{
-        margin: 0 auto;
-      }
+    }
+
+    & a{
+      color: white;
+      border: 0px;
     }
   }
 }
 
+@media only screen and (max-width : 640px){
+  .bContainer {
+    height: 100vh;
+  
+    & .bCard{
+      min-width: 100%;
+      height: 100%;
+      padding: 0.3rem;
 
-@media only screen and (max-device-width : 640px){
-  .blog-posts{
-    margin: 0px;
-    margin-top: $header-height  + 2rem;
-  
-    font-family: "NanumSquareRound";
-  
-    & .blog-post-preview {
-      padding : 0.5rem 1rem;
-      margin : 0.7rem 0rem;
+      border: none;
+      box-shadow: none;
+    }
+  }
+}
 
-      & .blog-sub-container{
-        & .title{
-          font: {
-            size: 20px;
-          }
-          margin-bottom: 0.5rem;
-        }
-  
-        & .summary{
-          font: {
-            size: 12px;
-          }
-          margin-bottom: 0.3rem;
-        }
-  
-        & .img{
-          font: {
-            size: 12px;
-          }
-        }
-  
-        & .date{
-          font: {
-            size: 12px;
-          }
-        }
-      
-        & .tagContainer{
-          & .tag{
-            border: 1px solid #555;
-            border-radius: 3px;
-        
-            font: {
-              size: 10px;
-            }
-        
-            margin: 0rem 0.5rem;
-            padding: 0.1rem 0.3rem;
-          }
-          & :first-child{
-            margin-left: 0rem;
-          }
-        }
-        & .link{
-          margin: 0 auto;
-        }
-      }
-
-      & .blog-sub-container:last-child{
-        display: none;
-      }
+/* 아이폰 5 & 5S 세로같은 작은화면을 위해 추가 */
+@media only screen and (min-width : 320px) and (max-width : 568px) and (orientation : portrait) {
+  .bContainer {
+    font: {
+      size: 16px;
     }
   }
 }

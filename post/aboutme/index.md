@@ -1,5 +1,6 @@
 ---
 path: "/aboutme"
+author: "sseon"
 date: "2017-07-18"
 title: "Sample Postdddd"
 tags: ["latin", "sample"]

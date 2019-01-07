@@ -25,6 +25,7 @@
     "react-icons": "~2.2.5"
   },
   "devDependencies": {
+    "gatsby-remark-emojis": "^0.2.3",
     "gatsby-remark-prismjs": "^3.2.0",
     "gh-pages": "1.1.0",
     "prettier": "1.10.2",

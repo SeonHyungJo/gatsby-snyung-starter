@@ -10,7 +10,6 @@
 
     justify-content : space-between;
     box-shadow: $shadow;
-    //border-bottom: 1px dashed rgba(0,0,0,0.3);
 
     font: {
         family: 'SCDream';
@@ -34,8 +33,10 @@
 
     .HeaderNav{
     }
+}
 
-    @media only screen and (max-device-width : 640px){
+@media only screen and (max-width : 640px){
+    .HeaderContainer{
         flex-direction: column;
         justify-content : space-between;
 

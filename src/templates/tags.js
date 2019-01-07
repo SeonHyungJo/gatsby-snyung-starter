@@ -39,19 +39,11 @@ function Tags({ posts, post, tag }) {
                     }
                   </div>
                 </div>
-                {/* <div className="blog-sub-container">
-                  <p className="img">
-                    이미지
-                  </p>
-                  <p className="date">
-                    {frontmatter.date}
-                  </p>
-                </div> */}
               </div>
             );
           })}
         <Link to="/tags">
-          <TagsIcon /> All tags
+          <TagsIcon /> All Category
         </Link>
       </div>
     );
@@ -59,16 +51,18 @@ function Tags({ posts, post, tag }) {
   return (
     <div>
       <h1>Tags</h1>
-      <ul className="tags">
-        {Object.keys(posts).map(tagName => <li key={tagName}>
-          <GatsbyLink to={`/tags/${tagName}`}>
-            {tagName}
-          </GatsbyLink>
-        </li>)}
-      </ul>
-      <Link to="/">
+      <div className="tags">
+        {Object.keys(posts).map(tagName => 
+          <div key={tagName}>
+            <GatsbyLink to={`/tags/${tagName}`}>
+              {tagName}
+            </GatsbyLink>
+          </div>)
+        }
+      </div>
+      {/* <Link to="/">
         <HomeIcon /> All posts
-      </Link>
+      </Link> */}
     </div>
   );
 }

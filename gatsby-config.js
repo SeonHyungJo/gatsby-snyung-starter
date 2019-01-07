@@ -12,12 +12,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
+        title: 'Blog',
         name: 'Blog Starter',
         short_name: 'Blog',
         start_url: '/',
         background_color: '#fff',
         theme_color: '#663399',
-        display: 'minimal-ui',
+        display: 'standalone',
         icon: 'assets/logo.jpg',
       }
     },
@@ -48,6 +49,26 @@ module.exports = {
               noInlineHighlight: false,
             },
           },
+          {
+            resolve: 'gatsby-remark-emojis',
+            options: {
+              // Deactivate the plugin globally (default: true)
+              active : true,
+              // Add a custom css class
+              class  : 'emoji-icon',
+              // Select the size (available size: 16, 24, 32, 64)
+              size   : 64,
+              // Add custom styles
+              styles : {
+                display      : 'inline',
+                margin       : '0',
+                'margin-top' : '1px',
+                position     : 'relative',
+                top          : '5px',
+                width        : '25px'
+              }
+            }
+          }
         ]
       }
     },

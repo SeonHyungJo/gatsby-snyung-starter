@@ -8,54 +8,39 @@ import Layout from '../components/Layout'
 
 import '../css/post.scss';
 
-export default function AboutMe(props) {
+export default function AboutMe( props ) {
   const { data } = props
-  const { markdownRemark: post } = data
+  const { html, id, frontmatter } = data.markdownRemark
+  const { title, date, tags } = frontmatter;
 
-  return <Layout {...props}>
-    {/* Layout을 기준으로 이 아래는 child이다. */}
-    <div className="blog-post-container">
-      {/* Helmet을 사용해서 title부분이 유기적으로 바뀌도록 구성되어있음 */}
-      {/* 설명부분은 고정이 되어야하는 건가? */}
-      {/* keyword도 고정이 되어야하는 건가? */}
-      <Helmet title={`Sseon Blog - ${post.frontmatter.title}`} />
-      <article className="blog-post">
-        {/* Title */}
-        <h1 className="title">{post.frontmatter.title}</h1>
-        {/* Date */}
-        <h2 className="date">{post.frontmatter.date}</h2>
-        <div className="backBtn"> 
-          <Button to={'/'}>{`뒤로가기`}</Button>
-        </div>
-
-        {/* Contents */}
-        {/* html을 그냥 때려 박네 */}
-        <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: post.html }} />
-        {/* Post Tags */}
-        <Tags list={post.frontmatter.tags || []} />
-
-        {/* 하위에 위치한 이동 버튼 */}
-        {/* 이 아래는 커스텀을 하는 게 좋을듯 함 */}
-        {/* <div className="navigation"> */}
-        {/* Prev Button */}
-        {/* {prev && <Link className="link prev" to={prev.frontmatter.path}>
-                <BackIcon />
-                {prev.frontmatter.title}
-              </Link>} */}
-        {/* Next Button */}
-        {/* {next && <Link className="link next" to={next.frontmatter.path}>
-                {next.frontmatter.title}
-                <ForwardIcon />
-              </Link>} */}
-        {/* </div> */}
-      </article>
-    </div>
-  </Layout>;
+  return (
+    <Layout {...props}>
+      <div key={id} className="blog-post-container">
+        {/* AboutMe Head */}
+        <Helmet title={`Blog - ${title}`} />
+        <article className="blog-post">
+          {/* Title */}
+          <h1 className="title">{title}</h1>
+          {/* Date */}
+          <h2 className="date">{date}</h2>
+          {/* Back Button */}
+          <div className="backBtn">
+            <Button to={'/posts'}>{`Back`}</Button>
+          </div>
+          {/* Contents */}
+          <div className="blog-post-content" dangerouslySetInnerHTML={{ __html: html }} />
+          {/* Post Tags */}
+          <Tags list={tags || []} />
+        </article>
+      </div>
+    </Layout>
+  )
 }
 
 export const pageQuery = graphql`
   query AboutmeQuery {
     markdownRemark(frontmatter: { path: { eq: "/aboutme" } }) {
+      id
       html
       frontmatter {
         date(formatString: "YYYY/MM/DD")

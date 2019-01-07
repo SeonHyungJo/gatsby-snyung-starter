@@ -5,27 +5,27 @@ import Helmet from 'react-helmet';
 import Header from './Header';
 import Button from './Button';
 
-import "../css/prism-tomorrow.css";
+import "../css/prism-tomorrow.scss";
 import '../css/baseLayout.scss';
 
-export default class Template extends React.Component {
+export default class Layout extends React.Component {
   constructor() {
     super();
 
     this.state = {
       navList: [
         {
-          path: "/main",
-          name: "main",
+          path: "/",
+          name: "home",
         },
         {
-          path: "/",
+          path: "/posts",
           name: "posts",
         },
-        // {
-        //   path: "/resume",
-        //   name: "resume",
-        // },
+        {
+          path: "/tags",
+          name: "category",
+        },
         {
           path: "/aboutMe",
           name: "about me",

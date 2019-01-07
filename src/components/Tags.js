@@ -6,9 +6,9 @@ import '../css/tag.scss';
 export default function Tags({ list = [] }) {
   return (
     <div className="tagContainer">
-      {list.map(tag => {
+      {list.map((tag, index) => {
         return (
-          <GatsbyLink to={`/tags/${tag}`}>
+          <GatsbyLink key={`${index}_${tag}`} to={`/tags/${tag}`}>
             <span className="tag" >{tag}</span>
           </GatsbyLink>
         )
