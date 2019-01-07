@@ -3,6 +3,7 @@ import Helmet from 'react-helmet'
 import BackIcon from 'react-icons/lib/fa/chevron-left'
 import ForwardIcon from 'react-icons/lib/fa/chevron-right'
 import { graphql } from 'gatsby'
+import ReactDisqusComments from 'react-disqus-comments';
 
 import Link from '../components/Link'
 import Tags from '../components/Tags'
@@ -53,6 +54,13 @@ export default function Template (props) {
              </Link>}
           </div> */}
         </article>
+        <ReactDisqusComments
+        shortname="test-nfwgyasf7u"
+        identifier="something-unique-12345"
+        title="Example Thread"
+        url="http://seonhyung.jo@github.io"
+        category_id="123456"
+        />
       </div>
     </Layout>
   )
