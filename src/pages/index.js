@@ -25,7 +25,7 @@ export default function Index(props) {
             </Link>
           </div>
           {/* My Name */}
-          <div className="name">Dev_sseon</div>
+          <div className="name">My Name</div>
           {/* Title */}
           <div className="title">
             Write Something
