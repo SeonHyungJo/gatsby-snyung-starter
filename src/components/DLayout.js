@@ -6,7 +6,7 @@ import Helmet from 'react-helmet';
 // import Button from './Button';
 // import SideBar from './SideBar';
 
-import '../css/typography.css';
+import '../css/baseLayout.scss';
 
 export default class Template extends React.Component {
   static propTypes = {
@@ -14,8 +14,8 @@ export default class Template extends React.Component {
   };
 
   render() {
-    const { location } = this.props;
-    const isRoot = location.pathname === '/';
+    //const { location } = this.props;
+    //const isRoot = location.pathname === '/';
 
     return (
       <>

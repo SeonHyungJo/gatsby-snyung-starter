@@ -16,7 +16,4 @@ const Button = ({ children = "Button", type = "nav", to = "" }) => {
     );
 }
 
-const movePage = (e) => {
-}
-
 export default Button;

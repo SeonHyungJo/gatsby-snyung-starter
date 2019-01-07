@@ -6,7 +6,7 @@ import Header from './Header';
 import Button from './Button';
 
 import "../css/prism-tomorrow.css";
-import '../css/typography.css';
+import '../css/baseLayout.scss';
 
 export default class Template extends React.Component {
   constructor() {
