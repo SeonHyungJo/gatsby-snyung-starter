@@ -4,12 +4,12 @@ import { graphql } from 'gatsby';
 
 import Layout from '../components/Layout';
 
-import '../css/index.scss';
+import '../css/resume.scss';
 
-export default function Index(props) {
+export default function Resume(props) {
   const { data } = props;
   const { edges: posts } = data.allMarkdownRemark;
-
+  
   return (
     <Layout {...props}>
       <div className="blog-posts">
@@ -17,44 +17,37 @@ export default function Index(props) {
           .filter(post => post.node.frontmatter.title.length > 0)
           .map(({ node: post }) => {
             return (
+              <GatsbyLink to={post.frontmatter.path}>
               <div className="blog-post-preview" key={post.id}>
-                <p className="title">
-                  <GatsbyLink to={post.frontmatter.path}>
-                    {post.frontmatter.title}
-                  </GatsbyLink>
-                </p>
-                {/* <p className="date">
+                <h1 className="title">
+                  {post.frontmatter.title}
+                </h1>
+                <h2 className="date">
                   {post.frontmatter.date}
-                </p> */}
-                <p className="summary">
+                </h2>
+                <p>
                   {post.excerpt}
                 </p>
-                <div>
-                  {post.frontmatter.tags.map(tag => {
-                    return <span className="tag" >{tag}</span>
-                  })
-                  }
-                </div>
               </div>
-            );
-          })}
+              </GatsbyLink>
+      );
+    })}
       </div>
     </Layout>
   );
 }
 
 export const pageQuery = graphql`
-  query IndexQuery {
+  query ResumeQuery {
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          excerpt(pruneLength: 160)
+          excerpt(pruneLength: 250)
           id
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
             path
-            tags
           }
         }
       }

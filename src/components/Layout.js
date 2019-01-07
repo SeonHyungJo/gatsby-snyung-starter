@@ -4,19 +4,43 @@ import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
 import Header from './Header';
 import Button from './Button';
-import SideBar from './SideBar';
 
-import '../css/baseLayout.scss';
+import "../css/prism-tomorrow.css";
+import '../css/typography.css';
 
 export default class Template extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      navList: [
+        {
+          path: "/main",
+          name: "main",
+        },
+        {
+          path: "/",
+          name: "posts",
+        },
+        // {
+        //   path: "/resume",
+        //   name: "resume",
+        // },
+        {
+          path: "/aboutme",
+          name: "about me",
+        }
+      ]
+    }
+  }
+
   static propTypes = {
     children: PropTypes.func
   };
 
   render() {
     const { location } = this.props;
-    const isRoot = location.pathname === '/';
-
+    const { navList } = this.state;
     return (
       <>
         {/* head custom 진행*/}
@@ -33,23 +57,19 @@ export default class Template extends React.Component {
 
         {/* ----------------------------------------------------- */}
         <Header location={location}>
-          <Link to="/main">
-            <Button>MAIN</Button>
-          </Link>
-          <Link to="/">
-            <Button>POSTS</Button>
-          </Link>
-          <Link to="/resume">
-            <Button>RESUME</Button>
-          </Link>
-          <Link to="/project">
-            <Button>PROJECTS</Button>
-          </Link>
+          {navList.map((navItem) => {
+            return (
+              <Link to={navItem.path}>
+                <Button>{navItem.name.toUpperCase()}</Button>
+              </Link>
+            )
+          })}
         </Header>
+        {/* ----------------------------------------------------- */}
         <div
           style={{
             margin: `0 auto`,
-            maxWidth: 960,
+            maxWidth: 960                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            ,
             padding: `0px 1.0875rem 1.45rem`,
             paddingTop: 0
           }}
@@ -62,3 +82,21 @@ export default class Template extends React.Component {
     );
   }
 }
+
+export const pageQuery = graphql`
+  query NavQuery {
+    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
+      edges {
+        node {
+          excerpt(pruneLength: 250)
+          id
+          frontmatter {
+            title
+            date(formatString: "MMMM DD, YYYY")
+            path
+          }
+        }
+      }
+    }
+  }
+`;
