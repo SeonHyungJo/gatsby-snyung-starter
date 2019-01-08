@@ -1,38 +1,41 @@
-import React from 'react'
-import Helmet from 'react-helmet'
-import BackIcon from 'react-icons/lib/fa/chevron-left'
-import ForwardIcon from 'react-icons/lib/fa/chevron-right'
-import { graphql } from 'gatsby'
+import React from 'react';
+import Helmet from 'react-helmet';
+import BackIcon from 'react-icons/lib/fa/chevron-left';
+import ForwardIcon from 'react-icons/lib/fa/chevron-right';
+import { graphql } from 'gatsby';
 import ReactDisqusComments from 'react-disqus-comments';
 
-import Link from '../components/Link'
-import Tags from '../components/Tags'
-import Layout from '../components/Layout'
+import Link from '../components/Link';
+import Tags from '../components/Tags';
+import Layout from '../components/Layout';
 import Button from '../components/Button';
 
-import '../css/post.scss'
+import '../css/post.scss';
 
-export default function Template (props) {
-  const { data, pageContext } = props
-  const { html, id, frontmatter } = data.markdownRemark
+export default function Template(props) {
+  const { data, pageContext } = props;
+  const { html, id, frontmatter } = data.markdownRemark;
   const { title, date, tags } = frontmatter;
-  const { next, prev } = pageContext
+  const { next, prev } = pageContext;
 
   return (
     <Layout {...props}>
-      <div className='blog-post-container'>
+      <div className="blog-post-container">
         <Helmet title={`Sseon Blog - ${title}`} />
-        <article className='blog-post'>
+        <article className="blog-post">
           {/* Title */}
-          <h1 className='title'>{title}</h1>
+          <h1 className="title">{title}</h1>
           {/* Date */}
-          <h2 className='date'>{date}</h2>
-          <div className="backBtn"> 
+          <h2 className="date">{date}</h2>
+          <div className="backBtn">
             <Button to={'/posts'}>{`Back`}</Button>
           </div>
           {/* Contents */}
           {/* html을 그냥 때려 박네 */}
-          <div className='blog-post-content' dangerouslySetInnerHTML={{ __html: html }} />
+          <div
+            className="blog-post-content"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
           {/* Post Tags */}
           <Tags list={tags || []} />
 
@@ -60,7 +63,7 @@ export default function Template (props) {
         />
       </div>
     </Layout>
-  )
+  );
 }
 
 export const pageQuery = graphql`
@@ -75,4 +78,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

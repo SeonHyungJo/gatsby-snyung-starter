@@ -27,9 +27,7 @@ export default function Index(props) {
           {/* My Name */}
           <div className="name">My Name</div>
           {/* Title */}
-          <div className="title">
-            Write Something
-          </div>
+          <div className="title">Write Something</div>
           {/* SNS Buttons */}
           <div className="sns">
             <Button type={'snsBtn'} to={'mailto:id@gmail.com'}>
@@ -38,18 +36,10 @@ export default function Index(props) {
             <Button type={'snsBtn'} to={'http://github.com/SeonHyungJo'}>
               <FaGithub size="1.5rem" />
             </Button>
-            <Button
-              type={'snsBtn'}
-              to={'http://facebook.com/'}
-            >
+            <Button type={'snsBtn'} to={'http://facebook.com/'}>
               <FaFacebook size="1.5rem" />
             </Button>
-            <Button
-              type={'snsBtn'}
-              to={
-                'https://youtube.com/'
-              }
-            >
+            <Button type={'snsBtn'} to={'https://youtube.com/'}>
               <FaYoutube size="1.5rem" />
             </Button>
           </div>

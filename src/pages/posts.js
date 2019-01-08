@@ -28,27 +28,20 @@ export default function Index(props) {
                 </div>
                 <div className="blog-container">
                   <div className="blog-sub-container">
-                    <p className="summary">
-                      {post.excerpt}
-                    </p>
+                    <p className="summary">{post.excerpt}</p>
                     <div className="tagContainer">
                       {post.frontmatter.tags.map(tag => {
                         return (
                           <GatsbyLink to={`/tags/${tag}`}>
-                            <span className="tag" >{tag}</span>
+                            <span className="tag">{tag}</span>
                           </GatsbyLink>
-                        )
-                      })
-                      }
+                        );
+                      })}
                     </div>
                   </div>
                   <div className="blog-sub-container">
-                    <p className="date">
-                      {post.frontmatter.date}
-                    </p>
-                    <p className="author">
-                      {`By ${post.frontmatter.author}`}
-                    </p>
+                    <p className="date">{post.frontmatter.date}</p>
+                    <p className="author">{`By ${post.frontmatter.author}`}</p>
                   </div>
                 </div>
               </div>
@@ -61,7 +54,10 @@ export default function Index(props) {
 
 export const pageQuery = graphql`
   query PostsQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, filter :{ frontmatter :{ category :{ eq: "post"}}}) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { category: { eq: "post" } } }
+    ) {
       edges {
         node {
           excerpt(pruneLength: 160)

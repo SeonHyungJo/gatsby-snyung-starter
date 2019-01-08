@@ -5,7 +5,7 @@ import Helmet from 'react-helmet';
 import Header from './Header';
 import Button from './Button';
 
-import "../css/prism-tomorrow.scss";
+import '../css/prism-tomorrow.scss';
 import '../css/baseLayout.scss';
 
 export default class Layout extends React.Component {
@@ -15,27 +15,27 @@ export default class Layout extends React.Component {
     this.state = {
       navList: [
         {
-          path: "/",
-          name: "home",
+          path: '/',
+          name: 'home',
         },
         {
-          path: "/posts",
-          name: "posts",
+          path: '/posts',
+          name: 'posts',
         },
         {
-          path: "/tags",
-          name: "category",
+          path: '/tags',
+          name: 'category',
         },
         {
-          path: "/aboutMe",
-          name: "about me",
-        }
-      ]
-    }
+          path: '/aboutMe',
+          name: 'about me',
+        },
+      ],
+    };
   }
 
   static propTypes = {
-    children: PropTypes.func
+    children: PropTypes.func,
   };
 
   render() {
@@ -49,7 +49,10 @@ export default class Layout extends React.Component {
           meta={[
             { name: 'description', content: 'sseon theme' },
             { name: 'keywords', content: 'sseon, blog, theme' },
-            { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+            {
+              name: 'viewport',
+              content: 'width=device-width, initial-scale=1',
+            },
           ]}
         >
           {/* 한국어 설정 진행 */}
@@ -58,18 +61,16 @@ export default class Layout extends React.Component {
 
         {/* ----------------------------------------------------- */}
         <Header location={location}>
-          {navList.map((navItem) => {
+          {navList.map(navItem => {
             return (
               <Link to={navItem.path}>
                 <Button>{navItem.name.toUpperCase()}</Button>
               </Link>
-            )
+            );
           })}
         </Header>
         {/* ----------------------------------------------------- */}
-        <div className="blog-posts-container">
-          {this.props.children}
-        </div>
+        <div className="blog-posts-container">{this.props.children}</div>
 
         {/* <SideBar>SideBar</SideBar> */}
       </>
@@ -79,7 +80,10 @@ export default class Layout extends React.Component {
 
 export const pageQuery = graphql`
   query NavQuery {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }, filter :{ frontmatter :{ category :{ eq: "post"}}}) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___date] }
+      filter: { frontmatter: { category: { eq: "post" } } }
+    ) {
       edges {
         node {
           excerpt(pruneLength: 250)

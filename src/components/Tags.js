@@ -9,11 +9,10 @@ export default function Tags({ list = [] }) {
       {list.map((tag, index) => {
         return (
           <GatsbyLink key={`${index}_${tag}`} to={`/tags/${tag}`}>
-            <span className="tag" >{tag}</span>
+            <span className="tag">{tag}</span>
           </GatsbyLink>
-        )
-      })
-      }
+        );
+      })}
     </div>
   );
 }

@@ -83,6 +83,20 @@ exports.createPages = ({ actions, graphql }) => {
     // Create Tag Pages
     createTagPages(createPage, posts);
 
+    // Create blog-list pages
+    const postsPerPage = 6
+    const numPages = Math.ceil(posts.length / postsPerPage)
+    Array.from({ length: numPages }).forEach((_, i) => {
+      createPage({
+        path: i === 0 ? `/blog` : `/blog/${i + 1}`,
+        component: path.resolve("./src/templates/blog-list-template.js"),
+        context: {
+          limit: postsPerPage,
+          skip: i * postsPerPage,
+        },
+      })
+    })
+
     // Create pages for each markdown file.
     posts.forEach(({ node }, index) => {
       const prev = index === 0 ? null : posts[index - 1].node;
