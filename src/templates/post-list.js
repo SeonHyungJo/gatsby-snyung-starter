@@ -1,19 +1,69 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Layout from "../components/layout"
+import React from 'react'
+import GatsbyLink from 'gatsby-link'
+import { graphql } from 'gatsby'
 
-export default class BlogList extends React.Component {
-  render() {
-    const posts = this.props.data.allMarkdownRemark.edges
-    return (
-      <Layout>
-        {posts.map(({ node }) => {
-          const title = node.frontmatter.title || node.fields.slug
-          return <div key={node.fields.slug}>{title}</div>
-        })}
-      </Layout>
-    )
-  }
+import Link from '../components/Link'
+import Layout from '../components/layout'
+
+import '../css/posts.scss'
+import '../css/post.scss'
+
+export default function Index (props) {
+  const { data, pageContext } = props
+  const { edges: posts } = data.allMarkdownRemark
+  const { next, prev, numPages } = pageContext
+
+  return (
+    <Layout {...props}>
+      <div className='blog-posts'>
+        {posts
+           .filter(post => post.node.frontmatter.title.length > 0)
+           .map(({ node: post }) => {
+             return (
+               <div className='blog-post-preview' key={post.id}>
+                 <div className='blog-container'>
+                   <p className='title'>
+                     <GatsbyLink to={post.frontmatter.path}>
+                       {post.frontmatter.title}
+                     </GatsbyLink>
+                   </p>
+                 </div>
+                 <div className='blog-container'>
+                   <div className='blog-sub-container'>
+                     <p className='summary'>
+                       {post.excerpt}
+                     </p>
+                     <div className='tagContainer'>
+                       {post.frontmatter.tags.map(tag => {
+                          return (
+                            <GatsbyLink to={`/tags/${tag}`}>
+                              <span className='tag'>{tag}</span>
+                            </GatsbyLink>
+                          )
+                        })}
+                     </div>
+                   </div>
+                   <div className='blog-sub-container'>
+                     <p className='date'>
+                       {post.frontmatter.date}
+                     </p>
+                     <p className='author'>
+                       {`By ${post.frontmatter.author}`}
+                     </p>
+                   </div>
+                 </div>
+               </div>
+             )
+           })}
+        <div className='posts-bottom'>
+          {prev === 0 ? <div/> : (<Link to={`/posts/${prev}`}> Prev
+                                  </Link>)}
+          {next-1 === numPages ? <div/> : (<Link to={`/posts/${next}`}> Next
+          </Link>)}
+        </div>
+      </div>
+    </Layout>
+  )
 }
 
 export const blogListQuery = graphql`
@@ -25,11 +75,14 @@ export const blogListQuery = graphql`
     ) {
       edges {
         node {
-          fields {
-            slug
-          }
+          excerpt(pruneLength: 120)
+          id
           frontmatter {
             title
+            date(formatString: "YYYY/MM/DD")
+            path
+            tags
+            author
           }
         }
       }

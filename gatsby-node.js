@@ -84,35 +84,41 @@ exports.createPages = ({ actions, graphql }) => {
     createTagPages(createPage, posts);
 
     // Create blog-list pages
-    const postsPerPage = 6
+    // 한페이지에 보일 게시물수
+    const postsPerPage = 5
+    // 페이지수
     const numPages = Math.ceil(posts.length / postsPerPage)
+
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
-        path: i === 0 ? `/blog` : `/blog/${i + 1}`,
-        component: path.resolve("./src/templates/blog-list-template.js"),
+        path: i === 0 ? `/posts` : `/posts/${i + 1}`,
+        component: path.resolve(`src/templates/post-list.js`),
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,
+          prev: i === 1 ? '' : i, //페이지 이동을 위해서 추가
+          next: i + 2,  //페이지 이동을 위해서 추가
+          numPages
         },
       })
     })
 
     // Create pages for each markdown file.
-    posts.forEach(({ node }, index) => {
-      const prev = index === 0 ? null : posts[index - 1].node;
-      const next = index === posts.length - 1 ? null : posts[index + 1].node;
+    // posts.forEach(({ node }, index) => {
+    //   const prev = index === 0 ? null : posts[index - 1].node;
+    //   const next = index === posts.length - 1 ? null : posts[index + 1].node;
 
-      console.log(node.frontmatter.path)
+    //   console.log(node.frontmatter.path)
 
-      createPage({
-        path: node.frontmatter.path,
-        component: blogPostTemplate,
-        context: {
-          prev,
-          next
-        }
-      });
-    });
+    //   createPage({
+    //     path: node.frontmatter.path,
+    //     component: blogPostTemplate,
+    //     context: {
+    //       prev,
+    //       next
+    //     }
+    //   });
+    // });
 
     return posts;
   })

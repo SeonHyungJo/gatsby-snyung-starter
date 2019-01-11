@@ -81,6 +81,11 @@
   }
 }
 
+.posts-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
 
 @media only screen and (max-width : 640px){
   .blog-posts{
@@ -107,7 +112,7 @@
     
           & .summary{
             font: {
-              size: 12px;
+              size: 15px;
             }
             margin-bottom: 0.3rem;
           }
@@ -124,7 +129,7 @@
               border-radius: 3px;
           
               font: {
-                size: 10px;
+                size: 13px;
               }
           
               margin: 0rem 0.5rem;
@@ -144,6 +149,10 @@
         }
       }
     }
+  }
+  
+  .posts-bottom {
+    font-size: 15px;
   }
 }
 
