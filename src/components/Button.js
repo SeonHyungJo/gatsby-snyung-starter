@@ -1,4 +1,5 @@
 import React from 'react';
+import GatsbyLink from 'gatsby-link'
 
 import { classNames } from '../util/commonUtil';
 
@@ -9,15 +10,20 @@ import '../css/button.scss';
  */
 const Button = ({ children = 'Button', type = 'nav', to = '' }) => {
   return (
-    <div
-      className={
-        type.toLowerCase() === 'nav'
-          ? classNames(`defaultClass, buttonContainer`)
-          : classNames(`defaultClass, ${type}`)
-      }
-    >
-      {children}
-    </div>
+    <>
+      <GatsbyLink to={to}>
+        <div
+          className={
+            type.toLowerCase() === 'nav'
+              ? classNames(`defaultClass, buttonContainer`)
+              : classNames(`defaultClass, ${type}`)
+          }
+        >
+          {children}
+        </div>
+      </GatsbyLink>
+
+    </>
   );
 };
 

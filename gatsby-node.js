@@ -104,21 +104,21 @@ exports.createPages = ({ actions, graphql }) => {
     })
 
     // Create pages for each markdown file.
-    // posts.forEach(({ node }, index) => {
-    //   const prev = index === 0 ? null : posts[index - 1].node;
-    //   const next = index === posts.length - 1 ? null : posts[index + 1].node;
+    posts.forEach(({ node }, index) => {
+      const prev = index === 0 ? null : posts[index - 1].node;
+      const next = index === posts.length - 1 ? null : posts[index + 1].node;
 
-    //   console.log(node.frontmatter.path)
+      console.log(node.frontmatter.path)
 
-    //   createPage({
-    //     path: node.frontmatter.path,
-    //     component: blogPostTemplate,
-    //     context: {
-    //       prev,
-    //       next
-    //     }
-    //   });
-    // });
+      createPage({
+        path: node.frontmatter.path,
+        component: blogPostTemplate,
+        context: {
+          prev,
+          next
+        }
+      });
+    });
 
     return posts;
   })

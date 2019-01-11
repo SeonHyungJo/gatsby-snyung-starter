@@ -86,15 +86,20 @@
   justify-content: space-between;
 }
 
+.category-list{
+  margin: 4rem;
+  font-size: 15px;
+}
 
 @media only screen and (max-width : 640px){
   .blog-posts{
     margin: 0px;
-    margin-top: $header-height  + 2rem;
+    margin-top: $header-height  + 1rem;
   
     & .blog-post-preview {
-      padding : 0.5rem 1rem;
-      margin : 0.7rem 0rem;
+      padding : 1.5rem 2rem;
+      margin : 0.2rem 0rem;
+      box-shadow: none;
 
       & .blog-container{
         display: flex;  

@@ -39,20 +39,20 @@
     .HeaderContainer{
         flex-direction: column;
         justify-content : space-between;
+        box-shadow: none;
+        border-bottom: 1px solid #aaaaaa;
+
+        padding: 0.7rem;
 
         height: $header-height + 1rem;
 
         font: {
-            family: 'SCDream';
-            size: 12px;
-            weight: 500;
+            size: 15px;
         }
 
         .HeaderTitle{
             font: {
-                family: 'SCDream';
-                size: 28px;
-                weight: 800;
+                size: 29px;
             }
         }
     }
