@@ -63,9 +63,7 @@ export default class Layout extends React.Component {
         <Header location={location}>
           {navList.map(navItem => {
             return (
-              <Link to={navItem.path}>
-                <Button>{navItem.name.toUpperCase()}</Button>
-              </Link>
+              <Button to={navItem.path}>{navItem.name.toUpperCase()}</Button>
             );
           })}
         </Header>
