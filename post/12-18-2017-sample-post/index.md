@@ -1,10 +1,10 @@
 ---
-path: "/sample-post123"
+path: "/post/sample-post44"
 author: "sseon"
 date: "2017-07-18T13:35:13.234Z"
 title: "Sample Post"
 tags: ["latin", "sample"]
-category: "post"
+category: "article"
 ---
 
 I speak Latin because I am a fancy man.

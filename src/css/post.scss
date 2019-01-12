@@ -59,6 +59,8 @@
   .blog-post {
     margin-top: $header-height  + 2rem;
     padding: 1rem;
+
+    box-shadow: none;
     
     & :last-child {
       border-bottom-width: 0;

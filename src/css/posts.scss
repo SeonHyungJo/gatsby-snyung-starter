@@ -3,7 +3,7 @@
 
 .blog-posts{
   margin: 1rem auto;
-  margin-top: $header-height  + 2rem;
+  margin-top: $header-height  + 1rem;
 
   max-width: 900px;
   font-family: "NanumSquareRound";
@@ -87,7 +87,8 @@
 }
 
 .category-list{
-  margin: 4rem;
+  text-align: center;
+  margin: 2rem 3rem 0rem;
   font-size: 15px;
 }
 

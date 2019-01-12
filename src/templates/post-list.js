@@ -56,9 +56,9 @@ export default function Index(props) {
             )
           })}
         <div className='posts-bottom'>
-          {prev === 0 ? <div /> : (<Link to={`/posts/${prev}`}> Prev
+          {prev === 0 ? <div /> : (<Link to={`/posts/${prev}`} className={'moveLink'}> ← Prev
                                   </Link>)}
-          {next - 1 === numPages ? <div /> : (<Link to={`/posts/${next}`}> Next
+          {next - 1 === numPages ? <div /> : (<Link to={`/posts/${next}`} className={'moveLink'}> Next →
           </Link>)}
         </div>
       </div>

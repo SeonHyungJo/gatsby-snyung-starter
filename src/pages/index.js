@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Link from '../components/Link';
-import Layout from '../components/OneLayout';
+import Layout from '../components/Layout';
 import Button from '../components/Button';
 
 import { FaGithub, FaFacebook, FaYoutube } from 'react-icons/lib/fa';

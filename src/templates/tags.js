@@ -54,7 +54,7 @@ function Tags({ posts, post, tag }) {
               </div>
             )
           })}
-          <Link to='/posts'>
+          <Link to='/posts' className={'moveLink'}>
             <HomeIcon /> All posts
          </Link>
         </div>
