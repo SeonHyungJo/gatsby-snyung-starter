@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
 import Header from './Header';
@@ -14,13 +13,21 @@ export default class Layout extends React.Component {
 
     this.state = {
       navList: [
-        {
-          path: '/',
-          name: 'home'
-        },
+        // {
+        //   path: '/',
+        //   name: 'home'
+        // },
         {
           path: '/posts',
           name: 'posts'
+        },
+        {
+          path: '/article',
+          name: 'article'
+        },
+        {
+          path: '/til',
+          name: 'til'
         },
         {
           path: '/tags',
@@ -34,13 +41,10 @@ export default class Layout extends React.Component {
     };
   }
 
-  // static propTypes = {
-  //   children: PropTypes.func
-  // };
-
   render() {
     const { location } = this.props;
     const { navList } = this.state;
+
     return (
       <>
         {/* head custom 진행*/}
@@ -60,14 +64,18 @@ export default class Layout extends React.Component {
         </Helmet>
 
         {/* ----------------------------------------------------- */}
-        <Header location={location}>
-          {navList.map(navItem => {
-            return (
-              <Button key={navItem.name} to={navItem.path}>{navItem.name.toUpperCase()}</Button>
-            );
-          })}
-        </Header>
+        {location.pathname !== "/" && (
+          <Header location={location}>
+            {navList.map(navItem => {
+              return (
+                <Button key={navItem.name} to={navItem.path}>{navItem.name.toUpperCase()}</Button>
+              );
+            }
+            )}
+          </Header>)}
+
         {/* ----------------------------------------------------- */}
+
         <div className="blog-posts-container">{this.props.children}</div>
       </>
     );
