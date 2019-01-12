@@ -3,7 +3,7 @@ import GatsbyLink from 'gatsby-link'
 
 import '../css/category.scss'
 
-export default function Category ({ tagName = '', count = 0 }) {
+export default function Category({ tagName = '', count = 0 }) {
   return (
     <GatsbyLink to={`/tags/${tagName}`}>
       <div key={tagName} className='category-container'>

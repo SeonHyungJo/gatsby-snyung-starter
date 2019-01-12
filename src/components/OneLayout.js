@@ -6,7 +6,7 @@ import '../css/baseLayout.scss';
 
 export default class OneLayout extends React.Component {
   static propTypes = {
-    children: PropTypes.func,
+    children: PropTypes.func
   };
 
   render() {
@@ -20,8 +20,8 @@ export default class OneLayout extends React.Component {
             { name: 'keywords', content: 'sseon, blog, theme' },
             {
               name: 'viewport',
-              content: 'width=device-width, initial-scale=1',
-            },
+              content: 'width=device-width, initial-scale=1'
+            }
           ]}
         >
           {/* 한국어 설정 진행 */}

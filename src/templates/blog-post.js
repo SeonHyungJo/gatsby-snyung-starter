@@ -1,11 +1,8 @@
 import React from 'react';
 import Helmet from 'react-helmet';
-import BackIcon from 'react-icons/lib/fa/chevron-left';
-import ForwardIcon from 'react-icons/lib/fa/chevron-right';
 import { graphql } from 'gatsby';
 import ReactDisqusComments from 'react-disqus-comments';
 
-import Link from '../components/Link';
 import Tags from '../components/Tags';
 import Layout from '../components/Layout';
 import Button from '../components/Button';
@@ -13,10 +10,9 @@ import Button from '../components/Button';
 import '../css/post.scss';
 
 export default function Template(props) {
-  const { data, pageContext } = props;
-  const { html, id, frontmatter } = data.markdownRemark;
+  const { data } = props;
+  const { html, frontmatter } = data.markdownRemark;
   const { title, date, tags } = frontmatter;
-  const { next, prev } = pageContext;
 
   return (
     <Layout {...props}>
@@ -38,21 +34,6 @@ export default function Template(props) {
           />
           {/* Post Tags */}
           <Tags list={tags || []} />
-
-          {/* 하위에 위치한 이동 버튼 */}
-          {/* 이 아래는 커스텀을 하는 게 좋을듯 함 */}
-          {/* <div className='navigation'>
-            {prev &&
-             <Link className='link prev' to={prev.frontmatter.path}>
-             <BackIcon />
-             {prev.frontmatter.title}
-             </Link>}
-            {next &&
-             <Link className='link next' to={next.frontmatter.path}>
-             {next.frontmatter.title}
-             <ForwardIcon />
-             </Link>}
-          </div> */}
         </article>
         <ReactDisqusComments
           shortname="sseonBlogTEST.disqus.com"

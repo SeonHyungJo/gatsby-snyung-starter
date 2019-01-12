@@ -1,5 +1,5 @@
 import React from 'react';
-import GatsbyLink from 'gatsby-link'
+import GatsbyLink from 'gatsby-link';
 
 import { classNames } from '../util/commonUtil';
 
@@ -22,7 +22,6 @@ const Button = ({ children = 'Button', type = 'nav', to = '' }) => {
           {children}
         </div>
       </GatsbyLink>
-
     </>
   );
 };

@@ -14,7 +14,7 @@ const Header = ({ title = 'Main Header', children }) => {
       <Link
         to="/"
         style={{
-          textDecoration: 'none',
+          textDecoration: 'none'
         }}
         className={classNames('HeaderTitle')}
       >

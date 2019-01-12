@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
 import Helmet from 'react-helmet';
+
 import Header from './Header';
 import Button from './Button';
 
@@ -16,27 +16,27 @@ export default class Layout extends React.Component {
       navList: [
         {
           path: '/',
-          name: 'home',
+          name: 'home'
         },
         {
           path: '/posts',
-          name: 'posts',
+          name: 'posts'
         },
         {
           path: '/tags',
-          name: 'category',
+          name: 'category'
         },
         {
           path: '/aboutMe',
-          name: 'about me',
-        },
-      ],
+          name: 'about me'
+        }
+      ]
     };
   }
 
-  static propTypes = {
-    children: PropTypes.func,
-  };
+  // static propTypes = {
+  //   children: PropTypes.func
+  // };
 
   render() {
     const { location } = this.props;
@@ -51,8 +51,8 @@ export default class Layout extends React.Component {
             { name: 'keywords', content: 'sseon, blog, theme' },
             {
               name: 'viewport',
-              content: 'width=device-width, initial-scale=1',
-            },
+              content: 'width=device-width, initial-scale=1'
+            }
           ]}
         >
           {/* 한국어 설정 진행 */}
@@ -63,14 +63,12 @@ export default class Layout extends React.Component {
         <Header location={location}>
           {navList.map(navItem => {
             return (
-              <Button to={navItem.path}>{navItem.name.toUpperCase()}</Button>
+              <Button key={navItem.name} to={navItem.path}>{navItem.name.toUpperCase()}</Button>
             );
           })}
         </Header>
         {/* ----------------------------------------------------- */}
         <div className="blog-posts-container">{this.props.children}</div>
-
-        {/* <SideBar>SideBar</SideBar> */}
       </>
     );
   }
@@ -84,7 +82,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 250)
+          excerpt(pruneLength: 120)
           id
           frontmatter {
             title
