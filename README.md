@@ -4,12 +4,40 @@
 
 ## 화면 미리 보기
 
-<img src="./assets/preview/index-page.png" alt="index-page" />
+### Desktop
 
-<img src="./assets/preview/posts-page.png" alt="posts-page" />
+<img src="./assets/preview/desktop/gatsby-sseon-starter-index.png" alt="index-page" />
 
-<img src="./assets/preview/category-page.png" alt="category-page" />
+<img src="./assets/preview/desktop/gatsby-sseon-starter-aboutMe.png" alt="aboutMe" />
 
-<img src="./assets/preview/aboutme-page.png" alt="aboutme-page" />
+<img src="./assets/preview/desktop/gatsby-sseon-starter-aboutMe.png" alt="aboutMe" />
 
-<img src="./assets/preview/image-post.png" alt="image-post" />
+<img src="./assets/preview/desktop/gatsby-sseon-starter-post-1.png" alt="post" />
+
+<img src="./assets/preview/desktop/gatsby-sseon-starter-post-2.png" alt="post" />
+
+<img src="./assets/preview/desktop/gatsby-sseon-starter-post-list-1.png" alt="post-list" />
+
+<img src="./assets/preview/desktop/gatsby-sseon-starter-post-list-2.png" alt="post-list" />
+
+<img src="./assets/preview/desktop/gatsby-sseon-starter-tags-1.png" alt="tags" />
+
+<img src="./assets/preview/desktop/gatsby-sseon-starter-tags-2.png" alt="tags" />
+
+### Mobile
+
+<img src="./assets/preview/mobile/gatsby-sseon-starter-m-index.png" alt="index-page" width="200px"/>
+
+<img src="./assets/preview/mobile/gatsby-sseon-starter-m-aboutMe.png" alt="aboutMe" width="200px"/>
+
+<img src="./assets/preview/mobile/gatsby-sseon-starter-m-aboutMe.png" alt="aboutMe" width="200px"/>
+
+<img src="./assets/preview/mobile/gatsby-sseon-starter-m-post-1.png" alt="post" width="200px"/>
+
+<img src="./assets/preview/mobile/gatsby-sseon-starter-m-post-list-1.png" alt="post-list" width="200px"/>
+
+<img src="./assets/preview/mobile/gatsby-sseon-starter-m-post-list-2.png" alt="post-list" width="200px"/>
+
+<img src="./assets/preview/mobile/gatsby-sseon-starter-m-tags-1.png" alt="tags" width="200px"/>
+
+<img src="./assets/preview/mobile/gatsby-sseon-starter-m-tags-2.png" alt="tags" width="200px"/>
