@@ -8,7 +8,7 @@ import Layout from '../components/layout'
 import '../css/posts.scss'
 import '../css/post.scss'
 
-export default function Index(props) {
+export default function PostList(props) {
   const { data, pageContext } = props
   const { edges: posts } = data.allMarkdownRemark
   const { next, prev, numPages } = pageContext
@@ -36,7 +36,7 @@ export default function Index(props) {
                     <div className='tagContainer'>
                       {post.frontmatter.tags.map(tag => {
                         return (
-                          <GatsbyLink to={`/tags/${tag}`}>
+                          <GatsbyLink key={`postList_${tag}`} to={`/tags/${tag}`}>
                             <span className='tag'>{tag}</span>
                           </GatsbyLink>
                         )

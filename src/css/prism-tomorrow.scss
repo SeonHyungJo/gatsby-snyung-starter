@@ -3,12 +3,14 @@
  * Based on https://github.com/chriskempson/tomorrow-theme
  * @author Rose Pritchard
  */
+@import "font.scss";
 
 code[class*="language-"],
 pre[class*="language-"] {
 	color: #ccc;
 	background: none;
-	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-family: 'D2Coding', Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+	font-size: 1rem;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
