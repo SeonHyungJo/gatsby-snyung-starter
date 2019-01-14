@@ -1,9 +1,9 @@
 {
-  "name": "gatsby-blog-starter-kit",
-  "description": "Gatsby blog starter example",
-  "version": "1.2.0",
-  "author": "Dustin Schau <dustinschau@gmail.com> (https://dustinschau.com)",
-  "repository": "https://github.com/dschau/gatsby-blog-starter-kit",
+  "name": "gatsby-sseon-starter",
+  "description": "Gatsby Sseon starter example",
+  "version": "0.8.0",
+  "author": "SeonHyung Jo <seonhyung.jo@gmail.com>",
+  "repository": "https://github.com/SeonHyungJo/gatsby-sseon-starter",
   "dependencies": {
     "gatsby": "^2.0.85",
     "gatsby-link": "^2.0.7",
@@ -32,14 +32,16 @@
     "prismjs": "^1.15.0"
   },
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "sseon",
+    "starter"
   ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-paths",
-    "postdeploy": "gh-pages -d public",
+    "postdeploy": "gh-pages -d public -b master",
     "dev": "gatsby develop",
     "preserve": "npm run build",
     "serve": "gatsby serve",
