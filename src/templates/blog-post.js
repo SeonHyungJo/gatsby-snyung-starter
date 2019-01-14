@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
-import ReactDisqusComments from 'react-disqus-comments';
+import { DiscussionEmbed } from "disqus-react";
 
 import Tags from '../components/Tags';
 import Layout from '../components/Layout';
@@ -13,6 +13,16 @@ export default function Template(props) {
   const { data } = props;
   const { html, excerpt, frontmatter } = data.markdownRemark;
   const { title, date, tags } = frontmatter;
+
+  
+  // Disqus config
+  const post = props.data.markdownRemark;
+  //const siteTitle = get(this.props, "data.site.siteMetadata.title");
+  const disqusShortname = "sseonblogtest";
+  const disqusConfig = {
+    identifier: post.id,
+    title: post.frontmatter.title,
+  };
 
   return (
     <Layout {...props}>
@@ -47,13 +57,9 @@ export default function Template(props) {
           <Tags list={tags || []} />
         </article>
         {/* 댓글기능 추가 */}
-        <ReactDisqusComments
-          shortname="sseonBlogTEST.disqus.com"
-          identifier="something-unique-12345"
-          title="Example Thread"
-          url="http://seonhyung.jo@github.io"
-          category_id="123456"
-        />
+        <article className="blog-post-comment">
+        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+        </article>
       </div>
     </Layout>
   );
@@ -63,6 +69,7 @@ export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
+      id
       excerpt(pruneLength: 120)
       frontmatter {
         date(formatString: "YYYY/MM/DD")

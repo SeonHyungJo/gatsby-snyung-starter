@@ -55,6 +55,15 @@
   }
 }
 
+.blog-post-comment{
+  background: white;
+  box-shadow: 0px 5px 10px 1px #aaaaaa;
+
+  padding: 3rem 3rem;
+  margin: 1rem auto;
+  max-width: 900px;
+}
+
 @media only screen and (max-width : 640px){
   .blog-post {
     margin-top: $header-height  + 2rem;
@@ -83,5 +92,11 @@
       text-align: center;
       margin-bottom: 2rem;
     }
+  }
+
+  .blog-post-comment{
+    padding: 1rem;
+
+    box-shadow: none;
   }
 }

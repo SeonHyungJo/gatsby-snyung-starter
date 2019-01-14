@@ -5,6 +5,7 @@
   "author": "SeonHyung Jo <seonhyung.jo@gmail.com>",
   "repository": "https://github.com/SeonHyungJo/gatsby-sseon-starter",
   "dependencies": {
+    "disqus-react": "^1.0.5",
     "gatsby": "^2.0.85",
     "gatsby-link": "^2.0.7",
     "gatsby-plugin-catch-links": "2.0.2-beta.2",
@@ -18,7 +19,6 @@
     "gatsby-transformer-remark": "^2.1.19",
     "node-sass": "^4.11.0",
     "react": "^16.7.0",
-    "react-disqus-comments": "^1.4.0",
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
     "react-icon": "^1.0.0",

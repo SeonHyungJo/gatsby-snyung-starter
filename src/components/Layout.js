@@ -25,10 +25,10 @@ export default class Layout extends React.Component {
           path: '/article',
           name: 'article'
         },
-        {
-          path: '/til',
-          name: 'til'
-        },
+        // {
+        //   path: '/til',
+        //   name: 'til'
+        // },
         {
           path: '/tags',
           name: 'category'
