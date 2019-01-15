@@ -26,18 +26,19 @@
 
 ### Mobile
 
-<img src="./assets/preview/mobile/gatsby-sseon-starter-m-index.png" alt="index-page" width="200px"/>
+<div>
+    <img src="./assets/preview/mobile/gatsby-sseon-starter-m-index.png" alt="index-page" width="200px" display=""/>
+    <img src="./assets/preview/mobile/gatsby-sseon-starter-m-aboutMe.png" alt="aboutMe" width="200px"/>
+    <img src="./assets/preview/mobile/gatsby-sseon-starter-m-aboutMe.png" alt="aboutMe" width="200px"/>
+</div>
 
-<img src="./assets/preview/mobile/gatsby-sseon-starter-m-aboutMe.png" alt="aboutMe" width="200px"/>
+<div>
+    <img src="./assets/preview/mobile/gatsby-sseon-starter-m-post-list-1.png" alt="post-list" width="200px"/>
+    <img src="./assets/preview/mobile/gatsby-sseon-starter-m-post-list-2.png" alt="post-list" width="200px"/>
+    <img src="./assets/preview/mobile/gatsby-sseon-starter-m-tags-1.png" alt="tags" width="200px"/>
+</div>
 
-<img src="./assets/preview/mobile/gatsby-sseon-starter-m-aboutMe.png" alt="aboutMe" width="200px"/>
-
-<img src="./assets/preview/mobile/gatsby-sseon-starter-m-post-1.png" alt="post" width="200px"/>
-
-<img src="./assets/preview/mobile/gatsby-sseon-starter-m-post-list-1.png" alt="post-list" width="200px"/>
-
-<img src="./assets/preview/mobile/gatsby-sseon-starter-m-post-list-2.png" alt="post-list" width="200px"/>
-
-<img src="./assets/preview/mobile/gatsby-sseon-starter-m-tags-1.png" alt="tags" width="200px"/>
-
-<img src="./assets/preview/mobile/gatsby-sseon-starter-m-tags-2.png" alt="tags" width="200px"/>
+<div>
+    <img src="./assets/preview/mobile/gatsby-sseon-starter-m-tags-2.png" alt="tags" width="200px"/>
+    <img src="./assets/preview/mobile/gatsby-sseon-starter-m-post-1.png" alt="post" width="200px"/>
+</div>
