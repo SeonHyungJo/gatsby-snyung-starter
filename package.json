@@ -41,7 +41,7 @@
   "scripts": {
     "build": "gatsby build",
     "deploy": "gatsby build --prefix-paths",
-    "postdeploy": "gh-pages -d public -b master",
+    "postdeploy": "gh-pages -d public",
     "dev": "gatsby develop",
     "preserve": "npm run build",
     "serve": "gatsby serve",
