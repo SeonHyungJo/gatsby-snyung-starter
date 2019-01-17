@@ -12,9 +12,10 @@
   margin-top: $header-height  + 2rem;
   max-width: 900px;
 
-  & :last-child {
-    border-bottom-width: 0;
-  }
+  // Markdown 테이블이 안나오는데에 따른 제거
+  // & :last-child {
+  //   border-bottom-width: 0;
+  // }
 
   & .title{
     font: {
