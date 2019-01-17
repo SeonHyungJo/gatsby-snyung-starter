@@ -23,25 +23,24 @@
     }
 
     & .blog-container{
-      display: flex;  
-      flex-direction: row; 
-
+      display: inline-block;  
+      //flex-direction: row; 
+      
       & .title{
         width: 100%;
         margin-bottom: 1.5rem;
 
         font: {
           family: "SCDream";
-          size: 30px;
+          size: 24px;
           weight: 700;
         }
       }
 
       & .blog-sub-container{
-        display: flex;  
-        flex-direction: column; 
+        display: inline-block;  
 
-        min-width: 100px;
+        max-width: 80%;
 
         & .summary{
           padding-right: 1rem;
@@ -81,6 +80,10 @@
   }
 }
 
+.right {
+  float: right;
+}
+
 .posts-bottom {
   display: flex;
   justify-content: space-between;
@@ -114,7 +117,7 @@
         }
 
         & .blog-sub-container{
-          
+          max-width: 100%;
     
           & .summary{
             font: {
@@ -161,4 +164,3 @@
     font-size: 15px;
   }
 }
-
