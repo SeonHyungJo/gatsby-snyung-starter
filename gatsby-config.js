@@ -5,6 +5,7 @@ module.exports = {
   siteMetadata: {
     author: 'SeonHyungJo',
     title: `Renewal Blog`,
+    siteUrl: `https://gatsby-sseon-starter.netlify.com`,
   },
   plugins: [
     'gatsby-plugin-catch-links',
@@ -20,6 +21,29 @@ module.exports = {
         theme_color: '#663399',
         display: 'standalone',
         icon: 'assets/logo.jpg',
+      }
+    },
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/some-other-sitemap.xml`,
+        exclude: [`/posts/*`, `/acticle/*`, `/aboutme`, `/tags/*`],
+        query: `
+          {
+            site {
+              siteMetadata {
+                siteUrl
+              }
+            }
+    
+            allSitePage {
+              edges {
+                node {
+                  path
+                }
+              }
+            }
+        }`
       }
     },
     {
