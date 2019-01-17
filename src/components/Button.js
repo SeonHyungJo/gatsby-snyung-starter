@@ -11,7 +11,7 @@ import '../css/button.scss';
 const Button = ({ children = 'Button', type = 'nav', to = '' }) => {
   return (
     <>
-      <GatsbyLink to={to}>
+      {type === "" ? (<GatsbyLink to={to}>
         <div
           className={
             type.toLowerCase() === 'nav'
@@ -21,7 +21,23 @@ const Button = ({ children = 'Button', type = 'nav', to = '' }) => {
         >
           {children}
         </div>
-      </GatsbyLink>
+      </GatsbyLink>) 
+      :
+      (
+        <a href={to}>
+          <div
+            className={
+              type.toLowerCase() === 'nav'
+                ? classNames(`defaultClass, buttonContainer`)
+                : classNames(`defaultClass, ${type}`)
+            }
+          >
+            {children}
+          </div>
+        </a>
+      )
+      }
+
     </>
   );
 };

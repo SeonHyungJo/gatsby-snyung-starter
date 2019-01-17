@@ -59,7 +59,7 @@ exports.createPages = ({ actions, graphql }) => {
     ) {
       edges {
         node {
-          excerpt(pruneLength: 120)
+          excerpt(pruneLength: 100)
           html
           id
           timeToRead

@@ -70,7 +70,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       id
-      excerpt(pruneLength: 120)
+      excerpt(pruneLength: 100)
       frontmatter {
         date(formatString: "YYYY/MM/DD")
         path
