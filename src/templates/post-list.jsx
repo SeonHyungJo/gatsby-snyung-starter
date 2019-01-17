@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 import GatsbyLink from 'gatsby-link'
 import { graphql } from 'gatsby'
-import PropTypes from "prop-types"
+import PropTypes from 'prop-types'
 
 import Link from '../components/Link'
 import Layout from '../components/Layout'
