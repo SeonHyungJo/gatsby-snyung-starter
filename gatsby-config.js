@@ -1,11 +1,11 @@
-const { name } = require('./package.json');
+const { name } = require('./package.json')
 
 module.exports = {
-  pathPrefix: process.env.CI ? `/${name}` : `/`,
+  pathPrefix: process.env.CI ? `/${name}` : '/',
   siteMetadata: {
     author: 'SeonHyungJo',
-    title: `Renewal Blog`,
-    siteUrl: `https://gatsby-sseon-starter.netlify.com`,
+    title: 'Renewal Blog',
+    siteUrl: 'https://gatsby-sseon-starter.netlify.com',
   },
   plugins: [
     'gatsby-plugin-catch-links',
@@ -24,10 +24,10 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-sitemap`,
+      resolve: 'gatsby-plugin-sitemap',
       options: {
-        output: `/some-other-sitemap.xml`,
-        exclude: [`/posts/*`, `/acticle/*`, `/aboutme`, `/tags/*`],
+        output: '/some-other-sitemap.xml',
+        exclude: ['/posts/*', '/acticle/*', '/aboutme', '/tags/*'],
         query: `
           {
             site {
@@ -64,9 +64,9 @@ module.exports = {
             }
           },
           {
-            resolve: `gatsby-remark-prismjs`,
+            resolve: 'gatsby-remark-prismjs',
             options: {
-              classPrefix: "language-",
+              classPrefix: 'language-',
               inlineCodeMarker: null,
               aliases: {},
               showLineNumbers: true,
@@ -100,6 +100,6 @@ module.exports = {
     // 이미지를 불러오기 위한 Plugin
     'gatsby-plugin-sharp',
     // 2019-01-01 Sass 기능 추가
-    `gatsby-plugin-sass`
+    'gatsby-plugin-sass'
   ],
 }

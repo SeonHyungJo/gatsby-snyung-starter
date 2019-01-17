@@ -1,15 +1,20 @@
-import React from 'react';
-import GatsbyLink from 'gatsby-link';
-import { graphql } from 'gatsby';
+import React from 'react'
+import GatsbyLink from 'gatsby-link'
+import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 
-import Layout from '../components/Layout';
+import Layout from '../components/Layout'
 
-import '../css/posts.scss';
-import '../css/post.scss';
+import '../css/posts.scss'
+import '../css/post.scss'
 
-export default function Index(props) {
-  const { data } = props;
-  const { edges: posts } = data.allMarkdownRemark;
+Posts.propTypes = {
+  data: PropTypes.object
+}
+
+export default function Posts(props) {
+  const { data } = props
+  const { edges: posts } = data.allMarkdownRemark
 
   return (
     <Layout {...props}>
@@ -32,10 +37,10 @@ export default function Index(props) {
                     <div className="tagContainer">
                       {post.frontmatter.tags.map(tag => {
                         return (
-                          <GatsbyLink to={`/tags/${tag}`}>
+                          <GatsbyLink key={`posts_${tag}`} to={`/tags/${tag}`}>
                             <span className="tag">{tag}</span>
                           </GatsbyLink>
-                        );
+                        )
                       })}
                     </div>
                   </div>
@@ -45,18 +50,18 @@ export default function Index(props) {
                   </div>
                 </div>
               </div>
-            );
+            )
           })}
       </div>
     </Layout>
-  );
+  )
 }
 
 export const pageQuery = graphql`
-  query TILQuery {
+  query PostsQuery {
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { category: { eq: "til" } } }
+      filter: { frontmatter: { category: { eq: "post" } } }
     ) {
       edges {
         node {
@@ -73,4 +78,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

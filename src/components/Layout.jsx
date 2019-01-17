@@ -1,15 +1,22 @@
-import React from 'react';
-import Helmet from 'react-helmet';
+import React from 'react'
+import Helmet from 'react-helmet'
+//import PropTypes from 'prop-types'
+import { graphql } from 'gatsby'
 
-import Header from './Header';
-import Button from './Button';
+import Header from './Header'
+import Button from './Button'
 
-import '../css/prism-tomorrow.scss';
-import '../css/baseLayout.scss';
+import '../css/prism-tomorrow.scss'
+import '../css/baseLayout.scss'
+
+// Layout.propTypes = {
+//   children: PropTypes.element.isRequired,
+//   location: PropTypes.string.isRequired
+// }
 
 export default class Layout extends React.Component {
   constructor() {
-    super();
+    super()
 
     this.state = {
       navList: [
@@ -38,12 +45,12 @@ export default class Layout extends React.Component {
           name: 'about me'
         }
       ]
-    };
+    }
   }
 
   render() {
-    const { location } = this.props;
-    const { navList } = this.state;
+    const { location } = this.props
+    const { navList } = this.state
 
     return (
       <>
@@ -64,12 +71,12 @@ export default class Layout extends React.Component {
         </Helmet>
 
         {/* ----------------------------------------------------- */}
-        {location.pathname !== "/" && (
+        {location.pathname !== '/' && (
           <Header location={location}>
             {navList.map(navItem => {
               return (
                 <Button key={navItem.name} to={navItem.path}>{navItem.name.toUpperCase()}</Button>
-              );
+              )
             }
             )}
           </Header>)}
@@ -78,9 +85,11 @@ export default class Layout extends React.Component {
 
         <div className="blog-posts-container">{this.props.children}</div>
       </>
-    );
+    )
   }
 }
+
+
 
 export const pageQuery = graphql`
   query NavQuery {
@@ -101,4 +110,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

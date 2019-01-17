@@ -1,28 +1,33 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import { graphql } from 'gatsby';
-import { DiscussionEmbed } from "disqus-react";
+import React from 'react'
+import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
+import { DiscussionEmbed } from 'disqus-react'
+//import PropTypes from 'prop-types'
 
-import Tags from '../components/Tags';
-import Layout from '../components/Layout';
-import Button from '../components/Button';
+import Tags from '../components/Tags'
+import Layout from '../components/Layout'
+import Button from '../components/Button'
 
-import '../css/post.scss';
+import '../css/post.scss'
+
+// Template.propTypes = {
+//   data: PropTypes.object
+// }
 
 export default function Template(props) {
-  const { data } = props;
-  const { html, excerpt, frontmatter } = data.markdownRemark;
-  const { title, date, tags } = frontmatter;
+  const { data } = props
+  const { html, excerpt, frontmatter } = data.markdownRemark
+  const { title, date, tags } = frontmatter
 
   
   // Disqus config
-  const post = props.data.markdownRemark;
+  const post = props.data.markdownRemark
   //const siteTitle = get(this.props, "data.site.siteMetadata.title");
-  const disqusShortname = "sseonblogtest";
+  const disqusShortname = 'sseonblogtest'
   const disqusConfig = {
     identifier: post.id,
     title: post.frontmatter.title,
-  };
+  }
 
   return (
     <Layout {...props}>
@@ -44,7 +49,7 @@ export default function Template(props) {
 
           {/* Back Button */}
           <div className="backBtn">
-            <Button to={'/posts'}>{`Back`}</Button>
+            <Button to={'/posts'}>{'Back'}</Button>
           </div>
 
           {/* Contents */}
@@ -58,11 +63,11 @@ export default function Template(props) {
         </article>
         {/* 댓글기능 추가 */}
         <article className="blog-post-comment">
-        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
         </article>
       </div>
     </Layout>
-  );
+  )
 }
 
 export const pageQuery = graphql`
@@ -79,4 +84,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

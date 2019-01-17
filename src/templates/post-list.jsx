@@ -1,12 +1,18 @@
-import React from 'react'
+import React from "react";
 import GatsbyLink from 'gatsby-link'
 import { graphql } from 'gatsby'
+import PropTypes from "prop-types"
 
 import Link from '../components/Link'
 import Layout from '../components/Layout'
 
 import '../css/posts.scss'
 import '../css/post.scss'
+
+PostList.propTypes = {
+  data: PropTypes.object,
+  pageContext: PropTypes.object
+}
 
 export default function PostList(props) {
   const { data, pageContext } = props
@@ -57,7 +63,7 @@ export default function PostList(props) {
           })}
         <div className='posts-bottom'>
           {prev === 0 ? <div /> : (<Link to={`/posts/${prev}`} className={'moveLink'}> ← Prev
-                                  </Link>)}
+          </Link>)}
           {next - 1 === numPages ? <div /> : (<Link to={`/posts/${next}`} className={'moveLink'}> Next →
           </Link>)}
         </div>

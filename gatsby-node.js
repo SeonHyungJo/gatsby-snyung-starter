@@ -5,7 +5,7 @@ const path = require('path');
  * Tag만 넘기도록 구성하지 왜 edges를 전부 넘겼지?
  */
 const createTagPages = (createPage, edges) => {
-  const tagTemplate = path.resolve(`src/templates/tags.js`);
+  const tagTemplate = path.resolve(`src/templates/tags.jsx`);
   const posts = {};
 
   edges
@@ -49,7 +49,7 @@ const createTagPages = (createPage, edges) => {
  */
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions;
-  const blogPostTemplate = path.resolve(`src/templates/blog-post.js`);
+  const blogPostTemplate = path.resolve(`src/templates/blog-post.jsx`);
 
   return graphql(`{
     allMarkdownRemark(
@@ -92,7 +92,7 @@ exports.createPages = ({ actions, graphql }) => {
     Array.from({ length: numPages }).forEach((_, i) => {
       createPage({
         path: i === 0 ? `/posts` : `/posts/${i + 1}`,
-        component: path.resolve(`src/templates/post-list.js`),
+        component: path.resolve(`src/templates/post-list.jsx`),
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,

@@ -1,13 +1,18 @@
-import React from 'react';
+import React from 'react'
+import PropTypes from 'prop-types'
 
-import Link from '../components/Link';
-import Layout from '../components/Layout';
-import Button from '../components/Button';
+import Link from '../components/Link'
+import Layout from '../components/Layout'
+import Button from '../components/Button'
 
-import { FaGithub, FaFacebook, FaYoutube } from 'react-icons/lib/fa';
-import { IoEmail } from 'react-icons/lib/io';
+import { FaGithub, FaFacebook, FaYoutube } from 'react-icons/lib/fa'
+import { IoEmail } from 'react-icons/lib/io'
 
-import '../css/index.scss';
+import '../css/index.scss'
+
+Index.propTypes = {
+  data: PropTypes.object
+}
 
 export default function Index(props) {
   return (
@@ -59,5 +64,5 @@ export default function Index(props) {
         </div>
       </div>
     </Layout>
-  );
+  )
 }

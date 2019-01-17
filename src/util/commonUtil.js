@@ -1,8 +1,8 @@
 export function classNames(classList) {
   if (classList === null || classList === undefined) {
-    return '';
+    return ''
   }
 
-  const textList = classList.split(', ');
-  return textList.join(' ');
+  const textList = classList.split(', ')
+  return textList.join(' ')
 }

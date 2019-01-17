@@ -1,17 +1,22 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import { graphql } from 'gatsby';
+import React from 'react'
+import Helmet from 'react-helmet'
+import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
 
-import Button from '../components/Button';
-import Tags from '../components/Tags';
-import Layout from '../components/Layout';
+import Button from '../components/Button'
+import Tags from '../components/Tags'
+import Layout from '../components/Layout'
 
-import '../css/post.scss';
+import '../css/post.scss'
+
+AboutMe.propTypes = {
+  data: PropTypes.object
+}
 
 export default function AboutMe(props) {
-  const { data } = props;
-  const { html, id, frontmatter } = data.markdownRemark;
-  const { title, date, tags } = frontmatter;
+  const { data } = props
+  const { html, id, frontmatter } = data.markdownRemark
+  const { title, date, tags } = frontmatter
 
   return (
     <Layout {...props}>
@@ -25,7 +30,7 @@ export default function AboutMe(props) {
           <h2 className="date">{date}</h2>
           {/* Back Button */}
           <div className="backBtn">
-            <Button to={'/posts'}>{`Back`}</Button>
+            <Button to={'/posts'}>{'Back'}</Button>
           </div>
           {/* Contents */}
           <div
@@ -37,7 +42,7 @@ export default function AboutMe(props) {
         </article>
       </div>
     </Layout>
-  );
+  )
 }
 
 export const pageQuery = graphql`
@@ -53,4 +58,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`
