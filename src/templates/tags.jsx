@@ -18,9 +18,9 @@ Tags.propTypes = {
 
 function Tags({ posts, post, tag }) {
   return (
-    <div>
-      <h1>Tags</h1>
-      <div className='tags'>
+    <>
+      {/* <h1>Tags</h1> */}
+      <div className='category-body'>
         <div className='category-list'>
           {Object.keys(posts).map(tagName => (
             <Category key={`${tagName}_${posts[tagName].length}`} tagName={tagName} count={posts[tagName].length} />
@@ -66,7 +66,7 @@ function Tags({ posts, post, tag }) {
           </Link>
         </div>
       )}
-    </div>
+    </>
   )
 }
 

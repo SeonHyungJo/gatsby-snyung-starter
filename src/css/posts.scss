@@ -89,11 +89,16 @@
   justify-content: space-between;
 }
 
-.category-list{
-  text-align: center;
-  margin: 2rem 3rem 0rem;
-  font-size: 15px;
+.category-body{
+  margin-top: $header-height  + 1rem;
+  
+  & .category-list{
+    text-align: center;
+    margin: 2rem 3rem 0rem;
+    font-size: 15px;
+  }
 }
+
 
 @media only screen and (max-width : 640px){
   .blog-posts{

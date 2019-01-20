@@ -2,7 +2,7 @@ import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import { DiscussionEmbed } from 'disqus-react'
-//import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 import Tags from '../components/Tags'
 import Layout from '../components/Layout'
@@ -10,9 +10,9 @@ import Button from '../components/Button'
 
 import '../css/post.scss'
 
-// Template.propTypes = {
-//   data: PropTypes.object
-// }
+Template.propTypes = {
+  data: PropTypes.object
+}
 
 export default function Template(props) {
   const { data } = props

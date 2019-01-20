@@ -1,13 +1,13 @@
 import React from 'react'
 import GatsbyLink from 'gatsby-link'
-//import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 
 import '../css/category.scss'
 
-// Category.propTypes = {
-//   tagName: PropTypes.string.isRequired,
-//   count: PropTypes.number.isRequired
-// }
+Category.propTypes = {
+  tagName: PropTypes.string.isRequired,
+  count: PropTypes.number.isRequired
+}
 
 export default function Category({ tagName = '', count = 0 }){
   return (
