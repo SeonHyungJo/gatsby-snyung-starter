@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 
 import Link from '../components/Link'
 import Layout from '../components/Layout'
+import { classNames } from '../util/commonUtil'
 
 import '../css/posts.scss'
 import '../css/post.scss'
@@ -49,7 +50,7 @@ export default function PostList(props) {
                       })}
                     </div>
                   </div>
-                  <div className='blog-sub-container'>
+                  <div className={classNames('blog-sub-container, right')}>
                     <p className='date'>
                       {post.frontmatter.date}
                     </p>

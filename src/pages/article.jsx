@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import Layout from '../components/Layout'
+import { classNames } from '../util/commonUtil'
 
 import '../css/posts.scss'
 import '../css/post.scss'
@@ -44,7 +45,7 @@ export default function Article(props) {
                       })}
                     </div>
                   </div>
-                  <div className="blog-sub-container">
+                  <div className={classNames('blog-sub-container, right')}>
                     <p className="date">{post.frontmatter.date}</p>
                     <p className="author">{`By ${post.frontmatter.author}`}</p>
                   </div>
