@@ -10,7 +10,7 @@ Link.propTypes = {
   to: PropTypes.string.isRequired
 }
 
-export default function Link({ children, className, to }) {
+export default function Link ({ children, className, to }) {
   return (
     <GatsbyLink
       key={`key_${children}`}
@@ -21,4 +21,3 @@ export default function Link({ children, className, to }) {
     </GatsbyLink>
   )
 }
-

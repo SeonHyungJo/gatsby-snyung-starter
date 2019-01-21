@@ -14,38 +14,34 @@ Button.propTypes = {
 /**
  * @description 상단 헤더 부분 Nav Button 구현
  */
-export default function Button({ children = 'Button', type = 'nav', to = '' }){
+export default function Button ({ children = 'Button', type = 'nav', to = '' }) {
   return (
     <>
-      {type === '' ? (<GatsbyLink to={to}>
-        <div
-          className={
-            type.toLowerCase() === 'nav'
-              ? classNames('defaultClass, buttonContainer')
-              : classNames(`defaultClass, ${type}`)
-          }
-        >
-          {children}
-        </div>
-      </GatsbyLink>)
-        :
-        (
-          <a href={to}>
-            <div
-              className={
-                type.toLowerCase() === 'nav'
-                  ? classNames('defaultClass, buttonContainer')
-                  : classNames(`defaultClass, ${type}`)
-              }
-            >
-              {children}
-            </div>
-          </a>
-        )
-      }
-
+      {type === '' ? (
+        <GatsbyLink to={to}>
+          <div
+            className={
+              type.toLowerCase() === 'nav'
+                ? classNames('defaultClass, buttonContainer')
+                : classNames(`defaultClass, ${type}`)
+            }
+          >
+            {children}
+          </div>
+        </GatsbyLink>
+      ) : (
+        <a href={to}>
+          <div
+            className={
+              type.toLowerCase() === 'nav'
+                ? classNames('defaultClass, buttonContainer')
+                : classNames(`defaultClass, ${type}`)
+            }
+          >
+            {children}
+          </div>
+        </a>
+      )}
     </>
   )
 }
-
-

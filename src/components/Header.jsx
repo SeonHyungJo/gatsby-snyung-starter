@@ -14,7 +14,7 @@ Header.propTypes = {
 /**
  * @description 상단 헤더 부분 구현
  */
-export default function Header({ title = 'Main Header', children }){
+export default function Header ({ title = 'Main Header', children }) {
   return (
     <div className={classNames('HeaderContainer')}>
       {/* Header Title */}

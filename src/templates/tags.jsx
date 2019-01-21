@@ -16,52 +16,59 @@ Tags.propTypes = {
   tag: PropTypes.string
 }
 
-function Tags({ posts, post, tag }) {
+function Tags ({ posts, post, tag }) {
   return (
     <>
       {/* <h1>Tags</h1> */}
-      <div className='category-body'>
-        <div className='category-list'>
+      <div className="category-body">
+        <div className="category-list">
           {Object.keys(posts).map(tagName => (
-            <Category key={`${tagName}_${posts[tagName].length}`} tagName={tagName} count={posts[tagName].length} />
+            <Category
+              key={`${tagName}_${posts[tagName].length}`}
+              tagName={tagName}
+              count={posts[tagName].length}
+            />
           ))}
         </div>
       </div>
       {tag && (
-        <div className='blog-posts'>
+        <div className="blog-posts">
           <Category tagName={tag} count={post.length} />
           {post.map(({ id, frontmatter, excerpt }) => {
             return (
-              <div className='blog-post-preview' key={id}>
-                <div className='blog-container'>
-                  <p className='title'>
-                    <GatsbyLink key={`${id}_${frontmatter.title}`} to={frontmatter.path}>
+              <div className="blog-post-preview" key={id}>
+                <div className="blog-container">
+                  <p className="title">
+                    <GatsbyLink
+                      key={`${id}_${frontmatter.title}`}
+                      to={frontmatter.path}
+                    >
                       {frontmatter.title}
                     </GatsbyLink>
                   </p>
                 </div>
-                <div className='blog-container'>
-                  <div className='blog-sub-container'>
-                    <p className='summary'>
-                      {excerpt}
-                    </p>
-                    <div className='tagContainer'>
+                <div className="blog-container">
+                  <div className="blog-sub-container">
+                    <p className="summary">{excerpt}</p>
+                    <div className="tagContainer">
                       {frontmatter.tags.map(tag => {
                         return (
                           <GatsbyLink key={`${id}_${tag}`} to={`/tags/${tag}`}>
-                            <span className='tag'>{tag}</span>
+                            <span className="tag">{tag}</span>
                           </GatsbyLink>
                         )
                       })}
                     </div>
                   </div>
-                  <div className='blog-sub-container' style={{ width: '0px' }}>
-                  </div>
+                  <div
+                    className="blog-sub-container"
+                    style={{ width: '0px' }}
+                  />
                 </div>
               </div>
             )
           })}
-          <Link to='/posts' className={'moveLink'}>
+          <Link to="/posts" className={'moveLink'}>
             <HomeIcon /> All posts
           </Link>
         </div>
@@ -71,10 +78,10 @@ function Tags({ posts, post, tag }) {
 }
 
 TagsTemplate.propTypes = {
-  pageContext: PropTypes.object,
+  pageContext: PropTypes.object
 }
 
-export default function TagsTemplate(props) {
+export default function TagsTemplate (props) {
   const { pageContext } = props
   return (
     <Layout {...props}>

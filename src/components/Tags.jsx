@@ -8,9 +8,9 @@ Tags.propTypes = {
   list: PropTypes.list
 }
 
-export default function Tags({ list = [] }) {
+export default function Tags ({ list = [] }) {
   return (
-    <div className="tagContainer"> 
+    <div className="tagContainer">
       {list.map((tag, index) => {
         return (
           <GatsbyLink key={`${index}_${tag}`} to={`/tags/${tag}`}>

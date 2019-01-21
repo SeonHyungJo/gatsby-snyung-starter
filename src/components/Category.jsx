@@ -9,14 +9,14 @@ Category.propTypes = {
   count: PropTypes.number.isRequired
 }
 
-export default function Category({ tagName = '', count = 0 }){
+export default function Category ({ tagName = '', count = 0 }) {
   return (
     <GatsbyLink to={`/tags/${tagName}`}>
-      <div key={tagName} className='category-container'>
-        <div className='category-title'>
+      <div key={tagName} className="category-container">
+        <div className="category-title">
           <span>{tagName}</span>
         </div>
-        <div className='category-count'>
+        <div className="category-count">
           <span>{count}</span>
         </div>
       </div>

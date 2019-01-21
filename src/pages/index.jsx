@@ -14,7 +14,7 @@ Index.propTypes = {
   data: PropTypes.object
 }
 
-export default function Index(props) {
+export default function Index (props) {
   return (
     <Layout {...props}>
       <div className="bContainer">
@@ -35,16 +35,32 @@ export default function Index(props) {
           <div className="title">Write Something</div>
           {/* SNS Buttons */}
           <div className="sns">
-            <Button key={'Mail_button'} type={'snsBtn'} to={'mailto:id@gmail.com'}>
+            <Button
+              key={'Mail_button'}
+              type={'snsBtn'}
+              to={'mailto:id@gmail.com'}
+            >
               <IoEmail size="1.5rem" />
             </Button>
-            <Button key={'Github_button'} type={'snsBtn'} to={'http://github.com/SeonHyungJo'}>
+            <Button
+              key={'Github_button'}
+              type={'snsBtn'}
+              to={'http://github.com/SeonHyungJo'}
+            >
               <FaGithub size="1.5rem" />
             </Button>
-            <Button key={'FaceBook_button'} type={'snsBtn'} to={'http://facebook.com/'}>
+            <Button
+              key={'FaceBook_button'}
+              type={'snsBtn'}
+              to={'http://facebook.com/'}
+            >
               <FaFacebook size="1.5rem" />
             </Button>
-            <Button key={'Youtube_button'} type={'snsBtn'} to={'https://youtube.com/'}>
+            <Button
+              key={'Youtube_button'}
+              type={'snsBtn'}
+              to={'https://youtube.com/'}
+            >
               <FaYoutube size="1.5rem" />
             </Button>
           </div>

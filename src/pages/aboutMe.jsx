@@ -13,7 +13,7 @@ AboutMe.propTypes = {
   data: PropTypes.object
 }
 
-export default function AboutMe(props) {
+export default function AboutMe (props) {
   const { data } = props
   const { html, id, frontmatter } = data.markdownRemark
   const { title, date, tags } = frontmatter

@@ -14,19 +14,18 @@ Template.propTypes = {
   data: PropTypes.object
 }
 
-export default function Template(props) {
+export default function Template (props) {
   const { data } = props
   const { html, excerpt, frontmatter } = data.markdownRemark
   const { title, date, tags } = frontmatter
 
-  
   // Disqus config
   const post = props.data.markdownRemark
-  //const siteTitle = get(this.props, "data.site.siteMetadata.title");
+  // const siteTitle = get(this.props, "data.site.siteMetadata.title");
   const disqusShortname = 'sseonblogtest'
   const disqusConfig = {
     identifier: post.id,
-    title: post.frontmatter.title,
+    title: post.frontmatter.title
   }
 
   return (
@@ -36,11 +35,10 @@ export default function Template(props) {
           title={`Sseon Blog - ${title}`}
           meta={[
             { name: 'description', content: `${excerpt}` },
-            { name: 'keywords', content: `${tags}` },
+            { name: 'keywords', content: `${tags}` }
           ]}
         />
         <article className="blog-post">
-
           {/* Title */}
           <h1 className="title">{title}</h1>
 

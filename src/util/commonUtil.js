@@ -1,4 +1,4 @@
-export function classNames(classList) {
+export function classNames (classList) {
   if (classList === null || classList === undefined) {
     return ''
   }

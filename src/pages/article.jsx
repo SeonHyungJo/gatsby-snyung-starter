@@ -13,7 +13,7 @@ Article.propTypes = {
   data: PropTypes.object
 }
 
-export default function Article(props) {
+export default function Article (props) {
   const { data } = props
   const { edges: posts } = data.allMarkdownRemark
 

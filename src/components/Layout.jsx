@@ -1,6 +1,6 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-//import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Header from './Header'
@@ -15,7 +15,7 @@ import '../css/baseLayout.scss'
 // }
 
 export default class Layout extends React.Component {
-  constructor() {
+  constructor () {
     super()
 
     this.state = {
@@ -48,13 +48,13 @@ export default class Layout extends React.Component {
     }
   }
 
-  render() {
+  render () {
     const { location } = this.props
     const { navList } = this.state
 
     return (
       <>
-        {/* head custom 진행*/}
+        {/* head custom 진행 */}
         <Helmet
           title="Gatsby for SSEON"
           meta={[
@@ -75,11 +75,13 @@ export default class Layout extends React.Component {
           <Header location={location}>
             {navList.map(navItem => {
               return (
-                <Button key={navItem.name} to={navItem.path}>{navItem.name.toUpperCase()}</Button>
+                <Button key={navItem.name} to={navItem.path}>
+                  {navItem.name.toUpperCase()}
+                </Button>
               )
-            }
-            )}
-          </Header>)}
+            })}
+          </Header>
+        )}
 
         {/* ----------------------------------------------------- */}
 
@@ -88,8 +90,6 @@ export default class Layout extends React.Component {
     )
   }
 }
-
-
 
 export const pageQuery = graphql`
   query NavQuery {
