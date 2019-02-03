@@ -4,17 +4,21 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import Layout from '../components/Layout'
+import { LinkButton } from '../components/ButtonComponent'
+import { classNames } from '../util/commonUtil'
 
 import '../css/posts.scss'
 import '../css/post.scss'
 
-Posts.propTypes = {
-  data: PropTypes.object
+PostList.propTypes = {
+  data: PropTypes.object,
+  pageContext: PropTypes.object
 }
 
-export default function Posts (props) {
-  const { data } = props
+export default function PostList (props) {
+  const { data, pageContext } = props
   const { edges: posts } = data.allMarkdownRemark
+  const { next, prev, numPages } = pageContext
 
   return (
     <Layout {...props}>
@@ -37,14 +41,17 @@ export default function Posts (props) {
                     <div className="tagContainer">
                       {post.frontmatter.tags.map(tag => {
                         return (
-                          <GatsbyLink key={`posts_${tag}`} to={`/tags/${tag}`}>
+                          <GatsbyLink
+                            key={`postList_${tag}`}
+                            to={`/tags/${tag}`}
+                          >
                             <span className="tag">{tag}</span>
                           </GatsbyLink>
                         )
                       })}
                     </div>
                   </div>
-                  <div className="blog-sub-container">
+                  <div className={classNames('blog-sub-container, right')}>
                     <p className="date">{post.frontmatter.date}</p>
                     <p className="author">{`By ${post.frontmatter.author}`}</p>
                   </div>
@@ -52,16 +59,35 @@ export default function Posts (props) {
               </div>
             )
           })}
+        <div className="posts-bottom">
+          {prev === 0 ? (
+            <div />
+          ) : (
+            <LinkButton to={`/posts/${prev}`} customClass={'moveLink'}>
+              {' '}
+              ← Prev
+            </LinkButton>
+          )}
+          {next - 1 === numPages ? (
+            <div />
+          ) : (
+            <LinkButton to={`/posts/${next}`} customClass={'moveLink'}>
+              {' '}
+              Next →
+            </LinkButton>
+          )}
+        </div>
       </div>
     </Layout>
   )
 }
 
-export const pageQuery = graphql`
-  query PostsQuery {
+export const blogListQuery = graphql`
+  query blogListQuery($skip: Int!, $limit: Int!) {
     allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      filter: { frontmatter: { category: { eq: "post" } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
     ) {
       edges {
         node {

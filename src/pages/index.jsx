@@ -1,33 +1,26 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-
-import Link from '../components/Link'
-import Layout from '../components/Layout'
-import Button from '../components/Button'
-
 import { FaGithub, FaFacebook, FaYoutube } from 'react-icons/lib/fa'
 import { IoEmail } from 'react-icons/lib/io'
 
+import Layout from '../components/Layout'
+import { SNSButton, LinkButton } from '../components/ButtonComponent'
+
 import '../css/index.scss'
 
-Index.propTypes = {
-  data: PropTypes.object
-}
-
-export default function Index (props) {
+const Index = props => {
   return (
     <Layout {...props}>
       <div className="bContainer">
         <div className="bCard">
           {/* Main Image */}
           <div className="img">
-            <Link to="/">
+            <LinkButton to="/">
               <img
                 className="img-circle"
                 src="https://avatars2.githubusercontent.com/u/24274424?s=460&v=4"
                 alt="MainImge"
               />
-            </Link>
+            </LinkButton>
           </div>
           {/* My Name */}
           <div className="name">My Name</div>
@@ -35,46 +28,33 @@ export default function Index (props) {
           <div className="title">Write Something</div>
           {/* SNS Buttons */}
           <div className="sns">
-            <Button
-              key={'Mail_button'}
-              type={'snsBtn'}
-              to={'mailto:id@gmail.com'}
-            >
+            <SNSButton key={'Mail_button'} to={'mailto:id@gmail.com'}>
               <IoEmail size="1.5rem" />
-            </Button>
-            <Button
+            </SNSButton>
+            <SNSButton
               key={'Github_button'}
-              type={'snsBtn'}
               to={'http://github.com/SeonHyungJo'}
             >
               <FaGithub size="1.5rem" />
-            </Button>
-            <Button
-              key={'FaceBook_button'}
-              type={'snsBtn'}
-              to={'http://facebook.com/'}
-            >
+            </SNSButton>
+            <SNSButton key={'FaceBook_button'} to={'http://facebook.com/'}>
               <FaFacebook size="1.5rem" />
-            </Button>
-            <Button
-              key={'Youtube_button'}
-              type={'snsBtn'}
-              to={'https://youtube.com/'}
-            >
+            </SNSButton>
+            <SNSButton key={'Youtube_button'} to={'https://youtube.com/'}>
               <FaYoutube size="1.5rem" />
-            </Button>
+            </SNSButton>
           </div>
 
           {/* Bottom Button */}
           <div className="menu">
             <div className="menuItem">
-              <Link to="/posts">All Post</Link>
+              <LinkButton to="/posts">All Post</LinkButton>
             </div>
             <div className="menuItem">
-              <Link to="/tags">Category</Link>
+              <LinkButton to="/category">Category</LinkButton>
             </div>
             <div className="menuItem">
-              <Link to="/aboutMe">About Me</Link>
+              <LinkButton to="/aboutMe">About Me</LinkButton>
             </div>
           </div>
         </div>
@@ -82,3 +62,5 @@ export default function Index (props) {
     </Layout>
   )
 }
+
+export default Index
