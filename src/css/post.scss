@@ -6,10 +6,10 @@
   box-shadow: 0px 5px 10px 1px #aaaaaa;
 
   font-family: "NanumSquareRound";
-  
+
   padding: 3rem 3rem;
   margin: 1rem auto;
-  margin-top: $header-height  + 2rem;
+  margin-top: $header-height + 2rem;
   max-width: 900px;
 
   // Markdown 테이블이 안나오는데에 따른 제거
@@ -17,7 +17,7 @@
   //   border-bottom-width: 0;
   // }
 
-  & .title{
+  & .title {
     font: {
       family: "SCDream";
       size: 50px;
@@ -28,7 +28,7 @@
     margin: 0 auto;
   }
 
-  & .date{
+  & .date {
     color: black;
 
     font: {
@@ -41,7 +41,7 @@
     margin-bottom: 0.3rem;
   }
 
-  & .backBtn{
+  & .backBtn {
     font: {
       size: 16px;
       weight: 500;
@@ -51,12 +51,12 @@
     margin-bottom: 3rem;
   }
 
-  & .link{
+  & .link {
     margin: 0 auto;
   }
 }
 
-.blog-post-comment{
+.blog-post-comment {
   background: white;
   box-shadow: 0px 5px 10px 1px #aaaaaa;
 
@@ -65,37 +65,37 @@
   max-width: 900px;
 }
 
-@media only screen and (max-width : 640px){
+@media only screen and (max-width: 640px) {
   .blog-post {
-    margin-top: $header-height  + 2rem;
+    margin-top: $header-height + 2rem;
     padding: 1rem;
 
     box-shadow: none;
-    
+
     & :last-child {
       border-bottom-width: 0;
     }
-  
-    & .title{
+
+    & .title {
       font: {
         size: 25px;
       }
     }
-  
-    & .date{
+
+    & .date {
       font: {
         size: 16px;
       }
       margin-bottom: 0;
     }
-  
-    & .backBtn{
+
+    & .backBtn {
       text-align: center;
       margin-bottom: 2rem;
     }
   }
 
-  .blog-post-comment{
+  .blog-post-comment {
     padding: 1rem;
 
     box-shadow: none;

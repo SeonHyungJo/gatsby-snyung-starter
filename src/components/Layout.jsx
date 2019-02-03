@@ -1,29 +1,19 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-// import PropTypes from 'prop-types'
+import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Header from './Header'
-import Button from './Button'
 
 import '../css/prism-tomorrow.scss'
 import '../css/baseLayout.scss'
 
-// Layout.propTypes = {
-//   children: PropTypes.element.isRequired,
-//   location: PropTypes.string.isRequired
-// }
-
 export default class Layout extends React.Component {
-  constructor () {
-    super()
+  constructor (props) {
+    super(props)
 
     this.state = {
       navList: [
-        // {
-        //   path: '/',
-        //   name: 'home'
-        // },
         {
           path: '/posts',
           name: 'posts'
@@ -32,12 +22,8 @@ export default class Layout extends React.Component {
           path: '/article',
           name: 'article'
         },
-        // {
-        //   path: '/til',
-        //   name: 'til'
-        // },
         {
-          path: '/tags',
+          path: '/category',
           name: 'category'
         },
         {
@@ -49,7 +35,7 @@ export default class Layout extends React.Component {
   }
 
   render () {
-    const { location } = this.props
+    const { location, children } = this.props
     const { navList } = this.state
 
     return (
@@ -70,25 +56,19 @@ export default class Layout extends React.Component {
           <html lang="ko" />
         </Helmet>
 
-        {/* ----------------------------------------------------- */}
         {location.pathname !== '/' && (
-          <Header location={location}>
-            {navList.map(navItem => {
-              return (
-                <Button key={navItem.name} to={navItem.path}>
-                  {navItem.name.toUpperCase()}
-                </Button>
-              )
-            })}
-          </Header>
+          <Header location={location} navList={navList} />
         )}
 
-        {/* ----------------------------------------------------- */}
-
-        <div className="blog-posts-container">{this.props.children}</div>
+        <div className="blog-posts-container">{children}</div>
       </>
     )
   }
+}
+
+Layout.propTypes = {
+  children: PropTypes.any.isRequired,
+  location: PropTypes.object.isRequired
 }
 
 export const pageQuery = graphql`

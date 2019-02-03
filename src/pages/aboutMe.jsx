@@ -3,26 +3,22 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import Button from '../components/Button'
-import Tags from '../components/Tags'
+import { DefaultButton, TagButton } from '../components/ButtonComponent'
 import Layout from '../components/Layout'
 
 import '../css/post.scss'
 
-AboutMe.propTypes = {
-  data: PropTypes.object
-}
-
-export default function AboutMe (props) {
+const AboutMe = props => {
   const { data } = props
   const { html, id, frontmatter } = data.markdownRemark
   const { title, date, tags } = frontmatter
 
   return (
     <Layout {...props}>
-      <div key={id} className="blog-post-container">
+      <div key={id}>
         {/* AboutMe Head */}
         <Helmet title={`Blog - ${title}`} />
+
         <article className="blog-post">
           {/* Title */}
           <h1 className="title">{title}</h1>
@@ -30,7 +26,7 @@ export default function AboutMe (props) {
           <h2 className="date">{date}</h2>
           {/* Back Button */}
           <div className="backBtn">
-            <Button to={'/posts'}>{'Back'}</Button>
+            <DefaultButton to={'/posts'}>{'Back'}</DefaultButton>
           </div>
           {/* Contents */}
           <div
@@ -38,11 +34,15 @@ export default function AboutMe (props) {
             dangerouslySetInnerHTML={{ __html: html }}
           />
           {/* Post Tags */}
-          <Tags list={tags || []} />
+          <TagButton list={tags || []} />
         </article>
       </div>
     </Layout>
   )
+}
+
+AboutMe.propTypes = {
+  data: PropTypes.object
 }
 
 export const pageQuery = graphql`
@@ -59,3 +59,5 @@ export const pageQuery = graphql`
     }
   }
 `
+
+export default AboutMe

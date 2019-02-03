@@ -2,8 +2,8 @@
 path: "/aboutme"
 author: "sseon"
 date: "2017-07-18"
-title: "Sample Postdddd"
-tags: ["latin", "sample"]
+title: "About Me"
+tags: ["about", "me"]
 category: "aboutme"
 ---
 
@@ -21,7 +21,8 @@ Fusce consequat nisi id nibh lobortis dictum. In cursus auctor diam, ac venenati
 
 
 ```js
-var test = "test"
+const test = "test"
+
 function() {
     console.log(test);
 }
