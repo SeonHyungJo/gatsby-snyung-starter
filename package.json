@@ -13,6 +13,7 @@
     "gatsby-plugin-manifest": "~2.0.2-beta.3",
     "gatsby-plugin-offline": "^2.0.21",
     "gatsby-plugin-react-helmet": "3.0.0-beta.3",
+    "gatsby-plugin-robots-txt": "^1.4.0",
     "gatsby-plugin-sass": "^2.0.7",
     "gatsby-plugin-sharp": "2.0.0-beta.5",
     "gatsby-remark-images": "2.0.1-beta.6",

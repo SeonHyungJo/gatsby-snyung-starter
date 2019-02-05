@@ -108,6 +108,12 @@ module.exports = {
         ]
       }
     },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        configFile: 'robots-txt.config.js'
+      }
+    },
     'gatsby-plugin-react-helmet',
     // 이미지를 불러오기 위한 Plugin
     'gatsby-plugin-sharp',
