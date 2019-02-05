@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import GatsbyLink from 'gatsby-link'
 
-import '../css/posts.scss'
-import '../css/post.scss'
+import 'css/posts.scss'
+import 'css/post.scss'
 
 const PostList = ({ posts = [] }) => (
   <div className="blog-posts">

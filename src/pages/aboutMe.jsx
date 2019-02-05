@@ -3,10 +3,10 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import { DefaultButton, TagButton } from '../components/ButtonComponent'
-import Layout from '../components/Layout'
+import { DefaultButton, TagButton } from 'component/ButtonComponent'
+import Layout from 'component/Layout'
 
-import '../css/post.scss'
+import 'css/post.scss'
 
 const AboutMe = props => {
   const { data } = props

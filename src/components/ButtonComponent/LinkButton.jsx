@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import DefaultButton from './DefaultButton'
 
-import '../../css/link.scss'
+import 'css/link.scss'
 
 const LinkButton = ({
   children = 'Link',

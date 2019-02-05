@@ -3,10 +3,10 @@ import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import Header from './Header'
+import Header from 'component/Header'
 
-import '../css/prism-tomorrow.scss'
-import '../css/baseLayout.scss'
+import 'css/prism-tomorrow.scss'
+import 'css/baseLayout.scss'
 
 export default class Layout extends React.Component {
   constructor (props) {

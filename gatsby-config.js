@@ -1,11 +1,12 @@
 const { name } = require('./package.json')
+const path = require('path')
 
 module.exports = {
   pathPrefix: process.env.CI ? `/${name}` : '/',
   siteMetadata: {
     author: 'SeonHyungJo',
     title: 'Renewal Blog',
-    siteUrl: 'https://gatsby-sseon-starter.netlify.com',
+    siteUrl: 'https://gatsby-sseon-starter.netlify.com'
   },
   plugins: [
     'gatsby-plugin-catch-links',
@@ -20,7 +21,7 @@ module.exports = {
         background_color: '#fff',
         theme_color: '#663399',
         display: 'standalone',
-        icon: 'assets/logo.jpg',
+        icon: 'assets/logo.jpg'
       }
     },
     {
@@ -50,8 +51,19 @@ module.exports = {
       resolve: 'gatsby-source-filesystem',
       options: {
         path: `${__dirname}/post`,
-        name: 'post',
-      },
+        name: 'post'
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-root-import',
+      options: {
+        src: path.join(__dirname, 'src'),
+        pages: path.join(__dirname, 'src/pages'),
+        component: path.join(__dirname, 'src/components'),
+        css: path.join(__dirname, 'src/css'),
+        util: path.join(__dirname, 'src/util'),
+        post: path.join(__dirname, 'post')
+      }
     },
     {
       resolve: 'gatsby-transformer-remark',
@@ -70,26 +82,26 @@ module.exports = {
               inlineCodeMarker: null,
               aliases: {},
               showLineNumbers: true,
-              noInlineHighlight: false,
-            },
+              noInlineHighlight: false
+            }
           },
           {
             resolve: 'gatsby-remark-emojis',
             options: {
               // Deactivate the plugin globally (default: true)
-              active : true,
+              active: true,
               // Add a custom css class
-              class  : 'emoji-icon',
+              class: 'emoji-icon',
               // Select the size (available size: 16, 24, 32, 64)
-              size   : 64,
+              size: 64,
               // Add custom styles
-              styles : {
-                display      : 'inline',
-                margin       : '0',
-                'margin-top' : '1px',
-                position     : 'relative',
-                top          : '5px',
-                width        : '25px'
+              styles: {
+                display: 'inline',
+                margin: '0',
+                'margin-top': '1px',
+                position: 'relative',
+                top: '5px',
+                width: '25px'
               }
             }
           }
@@ -101,5 +113,5 @@ module.exports = {
     'gatsby-plugin-sharp',
     // 2019-01-01 Sass 기능 추가
     'gatsby-plugin-sass'
-  ],
+  ]
 }

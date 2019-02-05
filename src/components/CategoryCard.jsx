@@ -2,7 +2,7 @@ import React from 'react'
 import GatsbyLink from 'gatsby-link'
 import PropTypes from 'prop-types'
 
-import '../css/category.scss'
+import 'css/category.scss'
 
 const CategoryCard = ({ tagName = '', count = 0 }) => (
   <GatsbyLink to={`/category/${tagName}`}>

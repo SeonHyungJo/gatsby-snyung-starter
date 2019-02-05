@@ -4,10 +4,10 @@ import { graphql } from 'gatsby'
 import { DiscussionEmbed } from 'disqus-react'
 import PropTypes from 'prop-types'
 
-import Layout from './Layout'
-import { DefaultButton, TagButton } from './ButtonComponent'
+import Layout from 'component/Layout'
+import { DefaultButton, TagButton } from 'component/ButtonComponent'
 
-import '../css/post.scss'
+import 'css/post.scss'
 
 export default function Template (props) {
   const { data } = props

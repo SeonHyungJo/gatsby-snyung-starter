@@ -2,9 +2,9 @@ import React from 'react'
 import GatsbyLink from 'gatsby-link'
 import PropTypes from 'prop-types'
 
-import { classNames } from '../../util/commonUtil'
+import { classNames } from 'util/commonUtil'
 
-import '../../css/button.scss'
+import 'css/button.scss'
 
 /**
  * @description 상단 헤더 부분 Nav Button 구현

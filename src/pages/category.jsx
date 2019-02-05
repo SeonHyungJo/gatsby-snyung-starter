@@ -3,12 +3,12 @@ import GatsbyLink from 'gatsby-link'
 import HomeIcon from 'react-icons/lib/fa/home'
 import PropTypes from 'prop-types'
 
-import Layout from '../components/Layout'
-import CategoryCard from '../components/CategoryCard'
-import { LinkButton } from '../components/ButtonComponent'
+import Layout from 'component/Layout'
+import CategoryCard from 'component/CategoryCard'
+import { LinkButton } from 'component/ButtonComponent'
 
-import '../css/posts.scss'
-import '../css/post.scss'
+import 'css/posts.scss'
+import 'css/post.scss'
 
 function Tags ({ posts, post, tag }) {
   return (

@@ -2,8 +2,8 @@ import React from 'react'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import Layout from '../components/Layout'
-import PostList from '../components/PostList'
+import Layout from 'component/Layout'
+import PostList from 'component/PostList'
 
 const Article = props => {
   const { data } = props

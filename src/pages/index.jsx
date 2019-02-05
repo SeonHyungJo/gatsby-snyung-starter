@@ -2,10 +2,10 @@ import React from 'react'
 import { FaGithub, FaFacebook, FaYoutube } from 'react-icons/lib/fa'
 import { IoEmail } from 'react-icons/lib/io'
 
-import Layout from '../components/Layout'
-import { SNSButton, LinkButton } from '../components/ButtonComponent'
+import Layout from 'component/Layout'
+import { SNSButton, LinkButton } from 'component/ButtonComponent'
 
-import '../css/index.scss'
+import 'css/index.scss'
 
 const Index = props => {
   return (

@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { DefaultButton } from './ButtonComponent'
-import { classNames } from '../util/commonUtil'
+import { DefaultButton } from 'component/ButtonComponent'
+import { classNames } from 'util/commonUtil'
 
-import '../css/header.scss'
+import 'css/header.scss'
 
 /**
  * @description 상단 헤더 부분 구현

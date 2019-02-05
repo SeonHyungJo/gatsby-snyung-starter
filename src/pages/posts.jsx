@@ -3,12 +3,12 @@ import GatsbyLink from 'gatsby-link'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import Layout from '../components/Layout'
-import { LinkButton } from '../components/ButtonComponent'
-import { classNames } from '../util/commonUtil'
+import Layout from 'component/Layout'
+import { LinkButton } from 'component/ButtonComponent'
+import { classNames } from 'util/commonUtil'
 
-import '../css/posts.scss'
-import '../css/post.scss'
+import 'css/posts.scss'
+import 'css/post.scss'
 
 PostList.propTypes = {
   data: PropTypes.object,
