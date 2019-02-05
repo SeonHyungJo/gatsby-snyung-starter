@@ -9,10 +9,6 @@ import { DefaultButton, TagButton } from './ButtonComponent'
 
 import '../css/post.scss'
 
-Template.propTypes = {
-  data: PropTypes.object
-}
-
 export default function Template (props) {
   const { data } = props
   const { html, excerpt, frontmatter } = data.markdownRemark
@@ -65,6 +61,10 @@ export default function Template (props) {
       </div>
     </Layout>
   )
+}
+
+Template.propTypes = {
+  data: PropTypes.object
 }
 
 export const pageQuery = graphql`

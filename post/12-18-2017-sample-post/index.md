@@ -1,9 +1,9 @@
 ---
-path: "/post/sample-post44"
+path: "/article/sample-post"
 author: "sseon"
 date: "2017-07-18T13:35:13.234Z"
 title: "Sample Post"
-tags: ["latin", "sample"]
+tags: ["latin", "article"]
 category: "article"
 ---
 

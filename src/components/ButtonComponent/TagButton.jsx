@@ -11,7 +11,7 @@ const Tags = ({ list = [] }) => (
       return (
         <DefaultButton
           key={`${index}_${tag}`}
-          to={`/tags/${tag}`}
+          to={`/category/${tag}`}
           customClass={'tag'}
         >
           {tag}
@@ -23,10 +23,6 @@ const Tags = ({ list = [] }) => (
 
 Tags.propTypes = {
   list: PropTypes.array
-}
-
-Tags.defaultProps = {
-  list: []
 }
 
 export default Tags

@@ -88,6 +88,7 @@ export const blogListQuery = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip
+      filter: { frontmatter: { category: { eq: "post" } } }
     ) {
       edges {
         node {

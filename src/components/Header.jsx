@@ -9,7 +9,7 @@ import '../css/header.scss'
 /**
  * @description 상단 헤더 부분 구현
  */
-const Header = ({ title, navList }) => (
+const Header = ({ title = 'Main Header', navList = [] }) => (
   <div className={classNames('HeaderContainer')}>
     {/* Header Title */}
     <DefaultButton to="/" customClass={classNames('HeaderTitle')}>
@@ -33,11 +33,6 @@ const Header = ({ title, navList }) => (
 Header.propTypes = {
   title: PropTypes.string,
   navList: PropTypes.array.isRequired
-}
-
-Header.defaultProps = {
-  title: 'Main Header',
-  navList: []
 }
 
 export default Header

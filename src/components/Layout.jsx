@@ -16,10 +16,10 @@ export default class Layout extends React.Component {
       navList: [
         {
           path: '/posts',
-          name: 'posts'
+          name: 'post'
         },
         {
-          path: '/article',
+          path: '/articles',
           name: 'article'
         },
         {

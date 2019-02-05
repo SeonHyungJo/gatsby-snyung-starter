@@ -9,7 +9,11 @@ import '../../css/button.scss'
 /**
  * @description 상단 헤더 부분 Nav Button 구현
  */
-const DefaultButton = ({ children = 'Button', to = '', customClass }) => (
+const DefaultButton = ({
+  children = 'Button',
+  to = 'https://gatsby-sseon-starter.netlify.com/',
+  customClass = ''
+}) => (
   <GatsbyLink
     to={to}
     className={customClass || classNames('defaultClass, buttonContainer')}
@@ -22,12 +26,6 @@ DefaultButton.propTypes = {
   children: PropTypes.any.isRequired,
   to: PropTypes.string,
   customClass: PropTypes.string
-}
-
-DefaultButton.defaultProps = {
-  children: 'Button',
-  to: 'https://gatsby-sseon-starter.netlify.com/',
-  customClass: ''
 }
 
 export default DefaultButton

@@ -8,7 +8,10 @@ import '../../css/button.scss'
 /**
  * @description Button for External Link
  */
-const SNSButton = ({ children, to = '' }) => (
+const SNSButton = ({
+  children = 'Button',
+  to = 'https://gatsby-sseon-starter.netlify.com/'
+}) => (
   <a href={to}>
     <div className={classNames(`defaultClass, snsBtn`)}>{children}</div>
   </a>
@@ -17,11 +20,6 @@ const SNSButton = ({ children, to = '' }) => (
 SNSButton.propTypes = {
   children: PropTypes.element.isRequired,
   to: PropTypes.string.isRequired
-}
-
-SNSButton.defaultProps = {
-  children: 'Button',
-  to: 'https://gatsby-sseon-starter.netlify.com/'
 }
 
 export default SNSButton

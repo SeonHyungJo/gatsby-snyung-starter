@@ -4,7 +4,7 @@ import HomeIcon from 'react-icons/lib/fa/home'
 import PropTypes from 'prop-types'
 
 import Layout from '../components/Layout'
-import Category from '../components/Category'
+import CategoryCard from '../components/CategoryCard'
 import { LinkButton } from '../components/ButtonComponent'
 
 import '../css/posts.scss'
@@ -17,7 +17,7 @@ function Tags ({ posts, post, tag }) {
       <div className="category-body">
         <div className="category-list">
           {Object.keys(posts).map(tagName => (
-            <Category
+            <CategoryCard
               key={`${tagName}_${posts[tagName].length}`}
               tagName={tagName}
               count={posts[tagName].length}
@@ -27,7 +27,7 @@ function Tags ({ posts, post, tag }) {
       </div>
       {tag && (
         <div className="blog-posts">
-          <Category tagName={tag} count={post.length} />
+          <CategoryCard tagName={tag} count={post.length} />
           {post.map(({ id, frontmatter, excerpt }) => {
             return (
               <div className="blog-post-preview" key={id}>
@@ -47,7 +47,10 @@ function Tags ({ posts, post, tag }) {
                     <div className="tagContainer">
                       {frontmatter.tags.map(tag => {
                         return (
-                          <GatsbyLink key={`${id}_${tag}`} to={`/tags/${tag}`}>
+                          <GatsbyLink
+                            key={`${id}_${tag}`}
+                            to={`/category/${tag}`}
+                          >
                             <span className="tag">{tag}</span>
                           </GatsbyLink>
                         )
