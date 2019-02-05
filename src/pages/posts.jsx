@@ -43,7 +43,7 @@ export default function PostList (props) {
                         return (
                           <GatsbyLink
                             key={`postList_${tag}`}
-                            to={`/tags/${tag}`}
+                            to={`/category/${tag}`}
                           >
                             <span className="tag">{tag}</span>
                           </GatsbyLink>

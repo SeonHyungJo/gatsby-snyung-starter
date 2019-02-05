@@ -25,7 +25,7 @@ const PostList = ({ posts = [] }) => (
                 <div className="tagContainer">
                   {post.frontmatter.tags.map(tag => {
                     return (
-                      <GatsbyLink key={`posts_${tag}`} to={`/tags/${tag}`}>
+                      <GatsbyLink key={`posts_${tag}`} to={`/category/${tag}`}>
                         <span className="tag">{tag}</span>
                       </GatsbyLink>
                     )

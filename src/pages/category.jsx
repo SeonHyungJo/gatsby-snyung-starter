@@ -10,7 +10,7 @@ import { LinkButton } from 'component/ButtonComponent'
 import 'css/posts.scss'
 import 'css/post.scss'
 
-function Tags ({ posts, post, tag }) {
+function Tags ({ posts = {}, post = [], tag = '' }) {
   return (
     <>
       {/* <h1>Tags</h1> */}
@@ -76,14 +76,8 @@ function Tags ({ posts, post, tag }) {
 
 Tags.propTypes = {
   posts: PropTypes.object,
-  post: PropTypes.list,
+  post: PropTypes.array,
   tag: PropTypes.string
-}
-
-Tags.defaultProps = {
-  posts: {},
-  post: [],
-  tag: ''
 }
 
 const TagsTemplate = props => {
