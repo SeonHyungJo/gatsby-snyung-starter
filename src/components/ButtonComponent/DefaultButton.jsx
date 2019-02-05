@@ -2,7 +2,7 @@ import React from 'react'
 import GatsbyLink from 'gatsby-link'
 import PropTypes from 'prop-types'
 
-import { classNames } from 'util/commonUtil'
+import { classNames } from '../../util/commonUtil'
 
 import 'css/button.scss'
 
