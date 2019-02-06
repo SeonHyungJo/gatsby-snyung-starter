@@ -42,8 +42,10 @@ exports.createPages = ({ actions, graphql }) => {
       return Promise.reject(result.errors)
     }
 
+    const posts = result.data.allMarkdownRemark.edges
+
     // Create Tag Page
-    createTagPages(createPage, result.data.allMarkdownRemark.edges)
+    createTagPages(createPage, posts)
 
     // Create Post Page
     createPostPages(createPage, graphql)
