@@ -3,7 +3,7 @@ import { FaGithub, FaFacebook, FaYoutube } from 'react-icons/lib/fa'
 import { IoEmail } from 'react-icons/lib/io'
 
 import Layout from 'component/Layout'
-import { SNSButton, LinkButton } from 'component/ButtonComponent'
+import { SNSButton, LinkButton } from 'component/Button'
 
 import 'css/index.scss'
 

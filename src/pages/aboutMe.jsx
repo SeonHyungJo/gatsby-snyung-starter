@@ -3,7 +3,7 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import { DefaultButton, TagButton } from 'component/ButtonComponent'
+import { DefaultButton, TagButton } from 'component/Button'
 import Layout from 'component/Layout'
 
 import 'css/post.scss'

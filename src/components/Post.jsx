@@ -5,7 +5,7 @@ import { DiscussionEmbed } from 'disqus-react'
 import PropTypes from 'prop-types'
 
 import Layout from 'component/Layout'
-import { DefaultButton, TagButton } from 'component/ButtonComponent'
+import { DefaultButton, TagButton } from 'component/Button'
 
 import 'css/post.scss'
 

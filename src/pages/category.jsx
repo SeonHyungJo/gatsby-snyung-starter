@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 import Layout from 'component/Layout'
 import CategoryCard from 'component/CategoryCard'
-import { LinkButton } from 'component/ButtonComponent'
+import { LinkButton } from 'component/Button'
 
 import 'css/posts.scss'
 import 'css/post.scss'

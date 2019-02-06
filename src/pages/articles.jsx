@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import Layout from 'component/Layout'
-import { LinkButton } from 'component/ButtonComponent'
+import { LinkButton } from 'component/Button'
 import { classNames } from 'util/commonUtil'
 
 const Article = props => {

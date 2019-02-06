@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-import { DefaultButton } from 'component/ButtonComponent'
+import { DefaultButton } from 'component/Button'
 import { classNames } from 'util/commonUtil'
 
 import 'css/header.scss'
