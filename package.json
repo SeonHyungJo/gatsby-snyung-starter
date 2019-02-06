@@ -68,7 +68,8 @@
     "lint:fix": "prettier-eslint src/**/*.js src/**/*.jsx --write",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:update": "jest --updateSnapshot"
+    "test:update": "jest --updateSnapshot",
+    "test:coverage": "jest --coverage"
   },
   "husky": {
     "hooks": {
