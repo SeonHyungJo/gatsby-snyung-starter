@@ -29,7 +29,7 @@
   "devDependencies": {
     "babel-eslint": "^9.0.0",
     "babel-jest": "^24.1.0",
-    "babel-preset-gatsby": "^0.1.6",
+    "babel-preset-gatsby": "^0.1.7",
     "eslint": "^5.12.1",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
