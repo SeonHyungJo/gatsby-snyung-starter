@@ -18,7 +18,7 @@
     "gatsby-plugin-sharp": "2.0.0-beta.5",
     "gatsby-remark-images": "2.0.1-beta.6",
     "gatsby-source-filesystem": "2.0.1-beta.3",
-    "gatsby-transformer-remark": "^2.1.19",
+    "gatsby-transformer-remark": "^2.2.5",
     "node-sass": "^4.11.0",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
