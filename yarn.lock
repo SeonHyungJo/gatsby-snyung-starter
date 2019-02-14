@@ -5086,13 +5086,13 @@ gatsby-plugin-catch-links@2.0.2-beta.2:
   dependencies:
     "@babel/runtime" "7.0.0-beta.51"
 
-gatsby-plugin-manifest@~2.0.2-beta.3:
-  version "2.0.13"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.0.13.tgz#8ae0a394d65c85516e324bec1c69eaef03fdc5c3"
+gatsby-plugin-manifest@~2.0.17:
+  version "2.0.17"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-manifest/-/gatsby-plugin-manifest-2.0.17.tgz#1e2c3329b1a58bdf77186866dd9e94da54ac6e68"
   dependencies:
     "@babel/runtime" "^7.0.0"
     bluebird "^3.5.0"
-    sharp "^0.21.0"
+    sharp "^0.21.3"
 
 gatsby-plugin-offline@^2.0.21:
   version "2.0.21"
@@ -11245,7 +11245,7 @@ sharp@^0.20.2:
     tar "^4.4.6"
     tunnel-agent "^0.6.0"
 
-sharp@^0.21.0:
+sharp@^0.21.0, sharp@^0.21.3:
   version "0.21.3"
   resolved "https://registry.yarnpkg.com/sharp/-/sharp-0.21.3.tgz#381937de66c123687f2ac7186f85921c6bb19cdd"
   dependencies:
