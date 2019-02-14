@@ -20,7 +20,7 @@
     "gatsby-source-filesystem": "2.0.1-beta.3",
     "gatsby-transformer-remark": "^2.2.5",
     "node-sass": "^4.11.0",
-    "prop-types": "^15.6.2",
+    "prop-types": "^15.7.2",
     "react": "^16.8.1",
     "react-dom": "^16.7.0",
     "react-helmet": "^5.2.0",
