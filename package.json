@@ -16,7 +16,7 @@
     "gatsby-plugin-robots-txt": "^1.4.0",
     "gatsby-plugin-sass": "^2.0.10",
     "gatsby-plugin-sharp": "2.0.0-beta.5",
-    "gatsby-remark-images": "3.0.3",
+    "gatsby-remark-images": "3.0.11",
     "gatsby-source-filesystem": "2.0.1-beta.3",
     "gatsby-transformer-remark": "^2.2.5",
     "node-sass": "^4.11.0",
