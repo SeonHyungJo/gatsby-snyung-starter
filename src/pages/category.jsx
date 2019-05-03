@@ -1,6 +1,6 @@
 import React from 'react'
 import GatsbyLink from 'gatsby-link'
-import HomeIcon from 'react-icons/lib/fa/home'
+import { FaHome } from 'react-icons/fa'
 import PropTypes from 'prop-types'
 
 import Layout from 'component/Layout'
@@ -10,7 +10,7 @@ import { LinkButton } from 'component/Button'
 import 'css/posts.scss'
 import 'css/post.scss'
 
-function Tags ({ posts = {}, post = [], tag = '' }) {
+function Tags({ posts = {}, post = [], tag = '' }) {
   return (
     <>
       {/* <h1>Tags</h1> */}
@@ -66,7 +66,7 @@ function Tags ({ posts = {}, post = [], tag = '' }) {
             )
           })}
           <LinkButton to="/posts" customClass={'moveLink'}>
-            <HomeIcon /> All posts
+            <FaHome /> All posts
           </LinkButton>
         </div>
       )}
@@ -77,7 +77,7 @@ function Tags ({ posts = {}, post = [], tag = '' }) {
 Tags.propTypes = {
   posts: PropTypes.object,
   post: PropTypes.array,
-  tag: PropTypes.string
+  tag: PropTypes.string,
 }
 
 const TagsTemplate = props => {
@@ -91,7 +91,7 @@ const TagsTemplate = props => {
 }
 
 TagsTemplate.propTypes = {
-  pageContext: PropTypes.any
+  pageContext: PropTypes.any,
 }
 
 export default TagsTemplate

@@ -1,6 +1,6 @@
 import React from 'react'
-import { FaGithub, FaFacebook, FaYoutube } from 'react-icons/lib/fa'
-import { IoEmail } from 'react-icons/lib/io'
+import { FaGithub, FaFacebook, FaYoutube } from 'react-icons/fa'
+import { IoIosMail } from 'react-icons/io'
 
 import Layout from 'component/Layout'
 import { SNSButton, LinkButton } from 'component/Button'
@@ -29,7 +29,7 @@ const Index = props => {
           {/* SNS Buttons */}
           <div className="sns">
             <SNSButton key={'Mail_button'} to={'mailto:id@gmail.com'}>
-              <IoEmail size="1.5rem" />
+              <IoIosMail size="1.5rem" />
             </SNSButton>
             <SNSButton
               key={'Github_button'}
