@@ -5,36 +5,36 @@ import { graphql } from 'gatsby'
 
 import Header from 'component/Header'
 
-import 'css/prism-tomorrow.scss'
-import 'css/baseLayout.scss'
+import 'style/prism-tomorrow.scss'
+import 'style/baseLayout.scss'
 
 export default class Layout extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
       navList: [
         {
           path: '/posts',
-          name: 'post'
+          name: 'post',
         },
         {
           path: '/articles',
-          name: 'article'
+          name: 'article',
         },
         {
           path: '/category',
-          name: 'category'
+          name: 'category',
         },
         {
           path: '/aboutMe',
-          name: 'about me'
-        }
-      ]
+          name: 'about me',
+        },
+      ],
     }
   }
 
-  render () {
+  render() {
     const { location, children } = this.props
     const { navList } = this.state
 
@@ -48,8 +48,8 @@ export default class Layout extends React.Component {
             { name: 'keywords', content: 'sseon, blog, theme' },
             {
               name: 'viewport',
-              content: 'width=device-width, initial-scale=1'
-            }
+              content: 'width=device-width, initial-scale=1',
+            },
           ]}
         >
           {/* 한국어 설정 진행 */}
@@ -68,7 +68,7 @@ export default class Layout extends React.Component {
 
 Layout.propTypes = {
   children: PropTypes.any.isRequired,
-  location: PropTypes.object.isRequired
+  location: PropTypes.object.isRequired,
 }
 
 export const pageQuery = graphql`

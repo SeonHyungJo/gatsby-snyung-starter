@@ -2,7 +2,7 @@ import React from 'react'
 import GatsbyLink from 'gatsby-link'
 import PropTypes from 'prop-types'
 
-import 'css/category.scss'
+import 'style/category.scss'
 
 const CategoryCard = ({ tagName = '', count = 0 }) => (
   <GatsbyLink to={`/category/${tagName}`}>
@@ -19,7 +19,7 @@ const CategoryCard = ({ tagName = '', count = 0 }) => (
 
 CategoryCard.propTypes = {
   tagName: PropTypes.string.isRequired,
-  count: PropTypes.number.isRequired
+  count: PropTypes.number.isRequired,
 }
 
 export default CategoryCard

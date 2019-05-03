@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 
 import DefaultButton from './DefaultButton'
 
-import 'css/tag.scss'
+import 'style/tag.scss'
 
 const Tags = ({ list = [] }) => (
   <div className="tagContainer">
@@ -22,7 +22,7 @@ const Tags = ({ list = [] }) => (
 )
 
 Tags.propTypes = {
-  list: PropTypes.array
+  list: PropTypes.array,
 }
 
 export default Tags

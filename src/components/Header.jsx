@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { DefaultButton } from 'component/Button'
 import { classNames } from 'util/commonUtil'
 
-import 'css/header.scss'
+import 'style/header.scss'
 
 /**
  * @description 상단 헤더 부분 구현

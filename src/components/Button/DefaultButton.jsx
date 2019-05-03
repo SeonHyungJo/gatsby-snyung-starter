@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import { classNames } from 'util/commonUtil'
 
-import 'css/button.scss'
+import 'style/button.scss'
 
 /**
  * @description 상단 헤더 부분 Nav Button 구현
@@ -12,7 +12,7 @@ import 'css/button.scss'
 const DefaultButton = ({
   children = 'Button',
   to = 'https://gatsby-sseon-starter.netlify.com/',
-  customClass = ''
+  customClass = '',
 }) => (
   <GatsbyLink
     to={to}
@@ -25,7 +25,7 @@ const DefaultButton = ({
 DefaultButton.propTypes = {
   children: PropTypes.any.isRequired,
   to: PropTypes.string,
-  customClass: PropTypes.string
+  customClass: PropTypes.string,
 }
 
 export default DefaultButton

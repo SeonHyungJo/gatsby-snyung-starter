@@ -59,7 +59,7 @@ module.exports = {
         src: path.join(__dirname, 'src'),
         pages: path.join(__dirname, 'src/pages'),
         component: path.join(__dirname, 'src/components'),
-        css: path.join(__dirname, 'src/css'),
+        style: path.join(__dirname, 'src/style'),
         util: path.join(__dirname, 'src/util'),
         post: path.join(__dirname, 'post')
       }

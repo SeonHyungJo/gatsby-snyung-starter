@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import GatsbyLink from 'gatsby-link'
 
-import 'css/posts.scss'
-import 'css/post.scss'
+import 'style/posts.scss'
+import 'style/post.scss'
 
 const PostList = ({ posts = [] }) => (
   <div className="blog-posts">
@@ -44,7 +44,7 @@ const PostList = ({ posts = [] }) => (
 )
 
 PostList.propTypes = {
-  posts: PropTypes.array.isRequired
+  posts: PropTypes.array.isRequired,
 }
 
 export default PostList

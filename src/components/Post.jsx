@@ -7,9 +7,9 @@ import PropTypes from 'prop-types'
 import Layout from 'component/Layout'
 import { DefaultButton, TagButton } from 'component/Button'
 
-import 'css/post.scss'
+import 'style/post.scss'
 
-export default function Template (props) {
+export default function Template(props) {
   const { data } = props
   const { html, excerpt, frontmatter } = data.markdownRemark
   const { title, date, tags } = frontmatter
@@ -20,7 +20,7 @@ export default function Template (props) {
   const disqusShortname = 'sseonblogtest'
   const disqusConfig = {
     identifier: post.id,
-    title: post.frontmatter.title
+    title: post.frontmatter.title,
   }
 
   return (
@@ -30,7 +30,7 @@ export default function Template (props) {
           title={`Sseon Blog - ${title}`}
           meta={[
             { name: 'description', content: `${excerpt}` },
-            { name: 'keywords', content: `${tags}` }
+            { name: 'keywords', content: `${tags}` },
           ]}
         />
         <article className="blog-post">
@@ -64,7 +64,7 @@ export default function Template (props) {
 }
 
 Template.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object,
 }
 
 export const pageQuery = graphql`

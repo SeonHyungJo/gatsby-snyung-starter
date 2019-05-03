@@ -3,12 +3,12 @@ import PropTypes from 'prop-types'
 
 import DefaultButton from './DefaultButton'
 
-import 'css/link.scss'
+import 'style/link.scss'
 
 const LinkButton = ({
   children = 'Link',
   to = 'https://gatsby-sseon-starter.netlify.com/',
-  customClass = ''
+  customClass = '',
 }) => (
   <DefaultButton to={to} customClass={`link ${customClass}`}>
     {children}
@@ -18,7 +18,7 @@ const LinkButton = ({
 LinkButton.propTypes = {
   children: PropTypes.any.isRequired,
   to: PropTypes.string.isRequired,
-  customClass: PropTypes.string
+  customClass: PropTypes.string,
 }
 
 export default LinkButton

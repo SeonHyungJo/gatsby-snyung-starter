@@ -6,7 +6,7 @@ import PropTypes from 'prop-types'
 import { DefaultButton, TagButton } from 'component/Button'
 import Layout from 'component/Layout'
 
-import 'css/post.scss'
+import 'style/post.scss'
 
 const AboutMe = props => {
   const { data } = props
@@ -42,7 +42,7 @@ const AboutMe = props => {
 }
 
 AboutMe.propTypes = {
-  data: PropTypes.object
+  data: PropTypes.object,
 }
 
 export const pageQuery = graphql`

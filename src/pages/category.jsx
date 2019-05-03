@@ -7,8 +7,8 @@ import Layout from 'component/Layout'
 import CategoryCard from 'component/CategoryCard'
 import { LinkButton } from 'component/Button'
 
-import 'css/posts.scss'
-import 'css/post.scss'
+import 'style/posts.scss'
+import 'style/post.scss'
 
 function Tags({ posts = {}, post = [], tag = '' }) {
   return (

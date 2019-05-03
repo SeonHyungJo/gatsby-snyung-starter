@@ -7,15 +7,15 @@ import Layout from 'component/Layout'
 import { LinkButton } from 'component/Button'
 import { classNames } from 'util/commonUtil'
 
-import 'css/posts.scss'
-import 'css/post.scss'
+import 'style/posts.scss'
+import 'style/post.scss'
 
 PostList.propTypes = {
   data: PropTypes.object,
-  pageContext: PropTypes.object
+  pageContext: PropTypes.object,
 }
 
-export default function PostList (props) {
+export default function PostList(props) {
   const { data, pageContext } = props
   const { edges: posts } = data.allMarkdownRemark
   const { next, prev, numPages } = pageContext

@@ -5,7 +5,7 @@ import { IoIosMail } from 'react-icons/io'
 import Layout from 'component/Layout'
 import { SNSButton, LinkButton } from 'component/Button'
 
-import 'css/index.scss'
+import 'style/index.scss'
 
 const Index = props => {
   return (
