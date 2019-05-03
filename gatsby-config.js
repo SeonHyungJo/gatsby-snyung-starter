@@ -9,7 +9,6 @@ module.exports = {
     siteUrl: 'https://gatsby-sseon-starter.netlify.com'
   },
   plugins: [
-    'gatsby-plugin-catch-links',
     'gatsby-plugin-offline',
     {
       resolve: 'gatsby-plugin-manifest',
@@ -115,9 +114,8 @@ module.exports = {
       }
     },
     'gatsby-plugin-react-helmet',
-    // 이미지를 불러오기 위한 Plugin
     'gatsby-plugin-sharp',
-    // 2019-01-01 Sass 기능 추가
-    'gatsby-plugin-sass'
+    'gatsby-plugin-sass',
+    'gatsby-plugin-catch-links',
   ]
 }
