@@ -2,7 +2,7 @@ import React from 'react'
 import { FaGithub, FaFacebook, FaYoutube } from 'react-icons/fa'
 import { IoIosMail } from 'react-icons/io'
 
-import Layout from 'component/Layout'
+import { Layout } from 'layout'
 import { SNSButton, LinkButton } from 'component/Button'
 
 import 'style/index.scss'
@@ -52,9 +52,6 @@ const Index = props => {
             </div>
             <div className="menuItem">
               <LinkButton to="/category">Category</LinkButton>
-            </div>
-            <div className="menuItem">
-              <LinkButton to="/aboutMe">About Me</LinkButton>
             </div>
           </div>
         </div>

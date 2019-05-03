@@ -3,9 +3,9 @@ import GatsbyLink from 'gatsby-link'
 import { FaHome } from 'react-icons/fa'
 import PropTypes from 'prop-types'
 
-import Layout from 'component/Layout'
-import CategoryCard from 'component/CategoryCard'
-import { LinkButton } from 'component/Button'
+import { Layout } from 'layout'
+import { CategoryCard } from 'component/category-card'
+import { LinkButton } from 'component/button'
 
 import 'style/posts.scss'
 import 'style/post.scss'

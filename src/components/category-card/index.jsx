@@ -2,9 +2,10 @@ import React from 'react'
 import GatsbyLink from 'gatsby-link'
 import PropTypes from 'prop-types'
 
-import 'style/category.scss'
+import './index.scss'
 
-const CategoryCard = ({ tagName = '', count = 0 }) => (
+export const CategoryCard = ({ tagName = '', count = 0 }) => (
+  // 나중에 HOC로 빼기
   <GatsbyLink to={`/category/${tagName}`}>
     <div key={tagName} className="category-container">
       <div className="category-title">
@@ -21,5 +22,3 @@ CategoryCard.propTypes = {
   tagName: PropTypes.string.isRequired,
   count: PropTypes.number.isRequired,
 }
-
-export default CategoryCard

@@ -8,7 +8,7 @@ import Header from 'component/Header'
 import 'style/prism-tomorrow.scss'
 import 'style/baseLayout.scss'
 
-export default class Layout extends React.Component {
+export class Layout extends React.Component {
   constructor(props) {
     super(props)
 
@@ -25,10 +25,6 @@ export default class Layout extends React.Component {
         {
           path: '/category',
           name: 'category',
-        },
-        {
-          path: '/aboutMe',
-          name: 'about me',
         },
       ],
     }

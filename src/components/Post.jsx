@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import { DiscussionEmbed } from 'disqus-react'
 import PropTypes from 'prop-types'
 
-import Layout from 'component/Layout'
+import { Layout } from 'layout'
 import { DefaultButton, TagButton } from 'component/Button'
 
 import 'style/post.scss'

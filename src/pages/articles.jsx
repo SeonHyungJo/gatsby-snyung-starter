@@ -3,7 +3,7 @@ import GatsbyLink from 'gatsby-link'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import Layout from 'component/Layout'
+import { Layout } from 'layout'
 import { LinkButton } from 'component/Button'
 import { classNames } from 'util/commonUtil'
 
@@ -76,7 +76,7 @@ const Article = props => {
 
 Article.propTypes = {
   data: PropTypes.object,
-  pageContext: PropTypes.object
+  pageContext: PropTypes.object,
 }
 
 export const ArticleQuery = graphql`
