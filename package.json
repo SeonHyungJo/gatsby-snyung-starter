@@ -3,82 +3,64 @@
   "description": "Gatsby Sseon starter example",
   "version": "0.8.0",
   "author": "SeonHyung Jo <seonhyung.jo@gmail.com>",
-  "repository": "https://github.com/SeonHyungJo/gatsby-sseon-starter",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SeonHyungJo/gatsby-sseon-starter.git"
+  },
   "license": "MIT",
   "dependencies": {
+    "core-js": "^2.6.5",
     "disqus-react": "^1.0.5",
     "gatsby": "^2.1.17",
     "gatsby-link": "^2.0.15",
-    "gatsby-plugin-catch-links": "2.0.11",
-    "gatsby-plugin-manifest": "~2.0.20",
+    "gatsby-plugin-catch-links": "^2.0.13",
+    "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.0.21",
-    "gatsby-plugin-react-helmet": "3.0.6",
+    "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-robots-txt": "^1.4.0",
+    "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-sass": "^2.0.10",
-    "gatsby-plugin-sharp": "2.0.0-beta.5",
-    "gatsby-remark-images": "3.0.3",
-    "gatsby-source-filesystem": "2.0.1-beta.3",
+    "gatsby-plugin-sharp": "^2.0.36",
+    "gatsby-plugin-sitemap": "^2.0.6",
+    "gatsby-remark-emojis": "^0.3.1",
+    "gatsby-remark-images": "^3.0.11",
+    "gatsby-remark-prismjs": "^3.2.4",
+    "gatsby-source-filesystem": "^2.0.33",
     "gatsby-transformer-remark": "^2.2.5",
     "node-sass": "^4.11.0",
-    "prop-types": "^15.7.2",
+    "prismjs": "^1.15.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
-    "react-icons": "~3.4.0"
+    "react-icons": "^3.6.1"
   },
   "devDependencies": {
-    "babel-eslint": "^10.0.1",
-    "babel-jest": "^24.1.0",
-    "babel-preset-gatsby": "^0.1.7",
     "eslint": "^5.12.1",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-jsx-a11y": "^6.2.1",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-react": "^7.12.4",
-    "eslint-plugin-standard": "^4.0.0",
-    "gatsby-plugin-root-import": "^2.0.5",
-    "gatsby-plugin-sitemap": "^2.0.6",
-    "gatsby-remark-emojis": "^0.3.1",
-    "gatsby-remark-prismjs": "^3.2.4",
-    "husky": "^1.3.1",
-    "identity-obj-proxy": "^3.0.0",
-    "jest": "^24.1.0",
+    "husky": "^2.2.0",
     "lint-staged": "^8.1.5",
-    "prettier-eslint": "^8.8.2",
-    "prettier-eslint-cli": "^4.7.1",
-    "prismjs": "^1.15.0",
-    "react-test-renderer": "^16.7.0"
+    "prettier": "^1.17.0"
   },
   "keywords": [
     "gatsby",
-    "sseon",
-    "starter"
+    "sseon"
   ],
   "scripts": {
     "build": "gatsby build",
-    "deploy": "gatsby build --prefix-paths",
-    "postdeploy": "gh-pages -d public",
     "dev": "gatsby develop",
     "preserve": "npm run build",
     "serve": "gatsby serve",
     "start": "npm run develop",
-    "lint": "eslint --ext .jsx --ext .js src/",
-    "lint:fix": "prettier-eslint src/**/*.js src/**/*.jsx --write",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:update": "jest --updateSnapshot",
-    "test:coverage": "jest --coverage"
+    "lint": "eslint --ext .js,.jsx --ignore-pattern public ."
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged & yarn test"
+      "pre-commit": "lint-staged"
     }
   },
   "lint-staged": {
     "*.{js,jsx}": [
-      "yarn lint:fix",
+      "yarn lint",
       "git add"
     ]
   }
