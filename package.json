@@ -32,7 +32,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
-    "react-icons": "^3.6.1"
+    "react-icons": "^3.7.0"
   },
   "devDependencies": {
     "eslint": "^5.12.1",
