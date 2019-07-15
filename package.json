@@ -11,7 +11,7 @@
   "dependencies": {
     "core-js": "^3.0.1",
     "disqus-react": "^1.0.5",
-    "gatsby": "^2.4.3",
+    "gatsby": "^2.13.23",
     "gatsby-link": "^2.1.1",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-manifest": "^2.1.1",
