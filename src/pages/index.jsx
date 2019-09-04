@@ -1,63 +1,60 @@
-import React from 'react'
-import { FaGithub, FaFacebook, FaYoutube } from 'react-icons/fa'
-import { IoIosMail } from 'react-icons/io'
+import React, { Suspense } from "react"
+import { FaGithub, FaFacebook, FaYoutube } from "react-icons/fa"
+import { IoIosMail } from "react-icons/io"
 
-import { Layout } from 'layout'
-import { SNSButton, LinkButton } from 'component/Button'
+import { LinkButton } from "component/Button"
+import { navMenu } from "data/navMenu"
 
-import 'style/index.scss'
+import "style/index.scss"
 
-const Index = props => {
-  return (
-    <Layout {...props}>
-      <div className="bContainer">
-        <div className="bCard">
-          {/* Main Image */}
-          <div className="img">
-            <LinkButton to="/">
-              <img
-                className="img-circle"
-                src="https://avatars2.githubusercontent.com/u/24274424?s=460&v=4"
-                alt="MainImge"
-              />
-            </LinkButton>
-          </div>
-          {/* My Name */}
-          <div className="name">My Name</div>
-          {/* Title */}
-          <div className="title">Write Something</div>
-          {/* SNS Buttons */}
-          <div className="sns">
-            <SNSButton key={'Mail_button'} to={'mailto:id@gmail.com'}>
-              <IoIosMail size="1.5rem" />
-            </SNSButton>
-            <SNSButton
-              key={'Github_button'}
-              to={'http://github.com/SeonHyungJo'}
-            >
-              <FaGithub size="1.5rem" />
-            </SNSButton>
-            <SNSButton key={'FaceBook_button'} to={'http://facebook.com/'}>
-              <FaFacebook size="1.5rem" />
-            </SNSButton>
-            <SNSButton key={'Youtube_button'} to={'https://youtube.com/'}>
-              <FaYoutube size="1.5rem" />
-            </SNSButton>
-          </div>
+/* Main Image */
+const MainImg = ({ src = "https://avatars2.githubusercontent.com/u/24274424?s=460&v=4", alt = "MainImge" }) =>
+  <LinkButton to="/" customClass="img">
+    <img
+      className="img-circle"
+      src={src}
+      alt={alt}
+    />
+  </LinkButton>
 
-          {/* Bottom Button */}
-          <div className="menu">
-            <div className="menuItem">
-              <LinkButton to="/posts">All Post</LinkButton>
-            </div>
-            <div className="menuItem">
-              <LinkButton to="/category">Category</LinkButton>
-            </div>
-          </div>
+/* Nick Name */
+const NickName = ({ nickName = "sNyung" }) =>
+  <div className="name">{name}</div>
+
+/* SNS */
+const SNS = ({ snsList = [] }) =>
+  <div className="sns">
+    <div> <IoIosMail size="1rem" /> : My Name</div>
+    <div> <FaGithub size="1rem" /> : My Name</div>
+    <div> <FaFacebook size="1rem" /> : My Name</div>
+    <div> <FaYoutube size="1rem" /> : My Name</div>
+  </div>
+
+/* Title */
+const Title = ({ title = "Hello My Blog Template" }) =>
+  <div className="title">{title}</div>
+
+/* Bottom Button */
+const Menu = ({ menuList = [] }) =>
+  <div className="menu">
+    {
+      menuList.map(({ to, menuName }) =>
+        <div key={to} className="menuItem">
+          <LinkButton to={to}>{menuName}</LinkButton>
         </div>
-      </div>
-    </Layout>
-  )
-}
+      )
+    }
+  </div>
 
-export default Index
+const IndexPage = () =>
+  < div className="bContainer" >
+    <div className="bCard">
+      <MainImg />
+      <NickName />
+      <SNS />
+      <Title />
+      <Menu menuList={navMenu} />
+    </div>
+  </div >
+
+export default IndexPage

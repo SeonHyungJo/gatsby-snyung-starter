@@ -24,42 +24,40 @@ export default function Template(props) {
   }
 
   return (
-    <Layout {...props}>
-      <div className="blog-post-container">
-        <Helmet
-          title={`Sseon Blog - ${title}`}
-          meta={[
-            { name: 'description', content: `${excerpt}` },
-            { name: 'keywords', content: `${tags}` },
-          ]}
+    <div className="blog-post-container">
+      <Helmet
+        title={`Sseon Blog - ${title}`}
+        meta={[
+          { name: 'description', content: `${excerpt}` },
+          { name: 'keywords', content: `${tags}` },
+        ]}
+      />
+      <article className="blog-post">
+        {/* Title */}
+        <h1 className="title">{title}</h1>
+
+        {/* Date */}
+        <h2 className="date">{date}</h2>
+
+        {/* Back Button */}
+        <div className="backBtn">
+          <DefaultButton to={'/posts'}>{'Back'}</DefaultButton>
+        </div>
+
+        {/* Contents */}
+        <div
+          className="blog-post-content"
+          dangerouslySetInnerHTML={{ __html: html }}
         />
-        <article className="blog-post">
-          {/* Title */}
-          <h1 className="title">{title}</h1>
 
-          {/* Date */}
-          <h2 className="date">{date}</h2>
-
-          {/* Back Button */}
-          <div className="backBtn">
-            <DefaultButton to={'/posts'}>{'Back'}</DefaultButton>
-          </div>
-
-          {/* Contents */}
-          <div
-            className="blog-post-content"
-            dangerouslySetInnerHTML={{ __html: html }}
-          />
-
-          {/* Post Tags */}
-          <TagButton list={tags || []} />
-        </article>
-        {/* 댓글기능 추가 */}
-        <article className="blog-post-comment">
-          <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
-        </article>
-      </div>
-    </Layout>
+        {/* Post Tags */}
+        <TagButton list={tags || []} />
+      </article>
+      {/* 댓글기능 추가 */}
+      <article className="blog-post-comment">
+        <DiscussionEmbed shortname={disqusShortname} config={disqusConfig} />
+      </article>
+    </div>
   )
 }
 
