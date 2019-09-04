@@ -10,7 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "core-js": "^3.0.1",
-    "disqus-react": "^1.0.5",
+    "disqus-react": "^1.0.6",
     "gatsby": "^2.4.3",
     "gatsby-link": "^2.1.1",
     "gatsby-plugin-catch-links": "^2.0.13",
