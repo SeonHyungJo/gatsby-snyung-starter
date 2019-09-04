@@ -11,7 +11,7 @@ import 'style/post.scss'
 
 export default function Template(props) {
   const { data } = props
-  const { html, excerpt, frontmatter } = data.markdownRemark
+  const { rawMarkdownBody: html, excerpt, frontmatter } = data.markdownRemark
   const { title, date, tags } = frontmatter
 
   // Disqus config
@@ -70,9 +70,9 @@ Template.propTypes = {
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
-      html
+      rawMarkdownBody
       id
-      excerpt(pruneLength: 100)
+      excerpt
       frontmatter {
         date(formatString: "YYYY/MM/DD")
         path

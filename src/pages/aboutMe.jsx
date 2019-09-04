@@ -47,7 +47,7 @@ export const pageQuery = graphql`
   query AboutmeQuery {
     markdownRemark(frontmatter: { path: { eq: "/aboutme" } }) {
       id
-      html
+      rawMarkdownBody
       frontmatter {
         date(formatString: "YYYY/MM/DD")
         path

@@ -92,7 +92,7 @@ export const blogListQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 100)
+          excerpt
           id
           frontmatter {
             title

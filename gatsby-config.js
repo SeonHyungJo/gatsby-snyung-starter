@@ -20,7 +20,7 @@ module.exports = {
         background_color: '#fff',
         theme_color: '#663399',
         display: 'standalone',
-        icon: 'assets/logo.jpg'
+        icon: 'assets/logo.png'
       }
     },
     {
@@ -35,7 +35,7 @@ module.exports = {
                 siteUrl
               }
             }
-    
+
             allSitePage {
               edges {
                 node {

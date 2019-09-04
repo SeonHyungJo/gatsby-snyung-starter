@@ -24,7 +24,7 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             excerpt(pruneLength: 100)
-            html
+            rawMarkdownBody
             id
             timeToRead
             frontmatter {
@@ -72,8 +72,7 @@ const createPostPages = (createPage, graphql) => {
       ) {
         edges {
           node {
-            excerpt(pruneLength: 100)
-            html
+            rawMarkdownBody
             id
             timeToRead
             frontmatter {

@@ -75,7 +75,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt(pruneLength: 100)
+          excerpt
           id
           frontmatter {
             title
