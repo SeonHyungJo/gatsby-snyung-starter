@@ -39,6 +39,7 @@
     "gatsby-transformer-remark": "^2.6.21",
     "layout": "^2.2.0",
     "node-sass": "^4.11.0",
+    "prismjs": "^1.17.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-error-overlay": "^6.0.1",
@@ -47,10 +48,13 @@
     "style": "0.0.3"
   },
   "devDependencies": {
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "eslint": "^6.3.0",
+    "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-react": "^7.14.3",
     "husky": "^3.0.5",
-    "lint-staged": "^9.2.5"
+    "lint-staged": "^9.2.5",
+    "prettier": "^1.18.2"
   },
   "keywords": [
     "gatsby",

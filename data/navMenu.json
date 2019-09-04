@@ -1,0 +1,20 @@
+{
+  "navMenu": [
+    {
+      "to": "/posts",
+      "menuName": "All Post"
+    },
+    {
+      "to": "/category",
+      "menuName": "Category"
+    },
+    {
+      "to": "/articles",
+      "menuName": "Article"
+    },
+    {
+      "to": "/aboutme",
+      "menuName": "About Me"
+    }
+  ]
+}

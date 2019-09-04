@@ -20,7 +20,7 @@ module.exports = {
         background_color: '#fff',
         theme_color: '#663399',
         display: 'standalone',
-        icon: 'assets/logo.jpg'
+        icon: 'assets/logo.png'
       }
     },
     {
@@ -35,7 +35,7 @@ module.exports = {
                 siteUrl
               }
             }
-    
+
             allSitePage {
               edges {
                 node {
@@ -62,7 +62,9 @@ module.exports = {
         layout: path.join(__dirname, 'src/layout'),
         style: path.join(__dirname, 'src/style'),
         util: path.join(__dirname, 'src/util'),
-        post: path.join(__dirname, 'post')
+        post: path.join(__dirname, 'post'),
+        assets: path.join(__dirname, 'assets'),
+        data: path.join(__dirname, 'data'),
       }
     },
     {

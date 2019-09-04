@@ -84,9 +84,7 @@ const TagsTemplate = props => {
   const { pageContext } = props
 
   return (
-    <Layout {...props}>
-      <Tags {...pageContext} />
-    </Layout>
+    <Tags {...pageContext} />
   )
 }
 
