@@ -1,26 +1,71 @@
 import React from 'react'
 import Helmet from 'react-helmet'
+import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
-import Header from 'component/Header'
+import Header from 'component/header'
 
 import 'style/prism-tomorrow.scss'
 import 'style/baseLayout.scss'
 
-const navList = [
-  {
-    path: '/posts',
-    name: 'post',
-  },
-  {
-    path: '/articles',
-    name: 'article',
-  },
-  {
-    path: '/category',
-    name: 'category',
-  },
-]
+export class Layout extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      navList: [
+        {
+          path: '/posts',
+          name: 'post',
+        },
+        {
+          path: '/articles',
+          name: 'article',
+        },
+        {
+          path: '/category',
+          name: 'category',
+        },
+      ],
+    }
+  }
+
+  render() {
+    const { location, children } = this.props
+    const { navList } = this.state
+
+    return (
+      <>
+        {/* head custom 진행 */}
+        <Helmet
+          title="Gatsby for SSEON"
+          meta={[
+            { name: 'description', content: 'sseon theme' },
+            { name: 'keywords', content: 'sseon, blog, theme' },
+            {
+              name: 'viewport',
+              content: 'width=device-width, initial-scale=1',
+            },
+          ]}
+        >
+          {/* 한국어 설정 진행 */}
+          <html lang="ko" />
+        </Helmet>
+
+        {location.pathname !== '/' && (
+          <Header location={location} navList={navList} />
+        )}
+
+        <div className="blog-posts-container">{children}</div>
+      </>
+    )
+  }
+}
+
+Layout.propTypes = {
+  children: PropTypes.any.isRequired,
+  location: PropTypes.object.isRequired,
+}
 
 export const pageQuery = graphql`
   query NavQuery {
@@ -30,7 +75,7 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
-          excerpt
+          excerpt(pruneLength: 100)
           id
           frontmatter {
             title
@@ -42,31 +87,3 @@ export const pageQuery = graphql`
     }
   }
 `
-
-const CommonHelmet = () =>
-  <Helmet
-    title="Gatsby for SSEON"
-    meta={
-      [
-        { name: 'description', content: 'sseon theme' },
-        { name: 'keywords', content: 'sseon, blog, theme' },
-        {
-          name: 'viewport',
-          content: 'width=device-width, initial-scale=1',
-        },
-      ]}
-  >
-    {/* 한국어 설정 */}
-    <html lang="ko" />
-  </Helmet>
-
-
-export const Layout = ({ location, children }) =>
-  <>
-    <CommonHelmet />
-    <Header location={location} navList={navList} />
-
-    <div className="blog-posts-container">
-      {children}
-    </div>
-  </>
