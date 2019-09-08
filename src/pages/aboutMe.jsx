@@ -4,7 +4,7 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import { DefaultButton, TagButton } from 'component/Button'
-import { Layout } from 'layout'
+import Layout from 'layout'
 
 import 'style/post.scss'
 
