@@ -5,7 +5,7 @@ import GatsbyLink from 'gatsby-link'
 import 'style/posts.scss'
 import 'style/post.scss'
 
-const PostList = ({ posts = [] }) => (
+const ArticleList = ({ posts = [] }) => (
   <div className="blog-posts">
     {posts
       .filter(post => post.node.frontmatter.title.length > 0)
@@ -43,8 +43,8 @@ const PostList = ({ posts = [] }) => (
   </div>
 )
 
-PostList.propTypes = {
+ArticleList.propTypes = {
   posts: PropTypes.array.isRequired,
 }
 
-export default PostList
+export default ArticleList

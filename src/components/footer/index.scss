@@ -1,0 +1,14 @@
+@import "../../style/valuables.scss";
+
+.footer {
+  padding: 32px 0px;
+  text-align: center;
+  font-size: 12px;
+
+  color: #aaa;
+
+  a {
+    color: black;
+    text-decoration: none !important;
+  }
+}
