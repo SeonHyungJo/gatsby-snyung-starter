@@ -24,7 +24,7 @@ exports.createPages = ({ actions, graphql }) => {
         edges {
           node {
             excerpt(pruneLength: 100)
-            html
+            rawMarkdownBody
             id
             timeToRead
             frontmatter {
@@ -45,7 +45,7 @@ exports.createPages = ({ actions, graphql }) => {
     const posts = result.data.allMarkdownRemark.edges
 
     // Create Tag Page
-    createTagPages(createPage, posts)
+    // createTagPages(createPage, posts)
 
     // Create Post Page
     createPostPages(createPage, graphql)
@@ -72,8 +72,7 @@ const createPostPages = (createPage, graphql) => {
       ) {
         edges {
           node {
-            excerpt(pruneLength: 100)
-            html
+            rawMarkdownBody
             id
             timeToRead
             frontmatter {

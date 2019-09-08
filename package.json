@@ -9,11 +9,12 @@
   },
   "license": "MIT",
   "dependencies": {
-    "core-js": "^3.0.1",
+    "core-js": "^2.6.9",
     "disqus-react": "^1.0.5",
     "gatsby": "^2.4.3",
     "gatsby-link": "^2.1.1",
     "gatsby-plugin-catch-links": "^2.0.13",
+    "gatsby-plugin-layout": "^1.1.6",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.0.21",
     "gatsby-plugin-react-helmet": "^3.0.12",
@@ -32,7 +33,8 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
-    "react-icons": "^3.7.0"
+    "react-transition-group": "^4.3.0",
+    "typeface-lato": "0.0.75"
   },
   "devDependencies": {
     "eslint": "^5.12.1",
@@ -50,7 +52,7 @@
     "dev": "gatsby develop",
     "preserve": "npm run build",
     "serve": "gatsby serve",
-    "start": "npm run develop",
+    "start": "npm run dev",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public ."
   },
   "husky": {
