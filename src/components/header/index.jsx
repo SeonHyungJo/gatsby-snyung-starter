@@ -9,19 +9,7 @@ const Title = ({ title }) =>
     {title}
   </Link>
 
-const TabList = ({ tabList }) =>
-  tabList.map(({ name, path }) =>
-    <Link
-      key={name}
-      to={path}
-      className={`tab-item`}
-      activeClassName={`active`}
-    >
-      {name.toUpperCase()}
-    </Link>
-  )
-
-const Header = ({ title = '', tabList = [] }) => (
+const Header = ({ title = '', tabList = [], children }) => (
   <div className='header-container'>
     <Title
       title={title}
@@ -29,7 +17,7 @@ const Header = ({ title = '', tabList = [] }) => (
     />
 
     <div>
-      <TabList tabList={tabList}></TabList>
+      {children}
     </div>
   </div >
 )

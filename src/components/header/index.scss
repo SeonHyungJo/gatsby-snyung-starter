@@ -24,38 +24,15 @@
       weight: 700;
     }
   }
-
-  .tab-item {
-    padding: 0.4rem;
-    margin-right: 0.5rem;
-
-    background-image: linear-gradient(120deg, #00ccff 4%, #6600cc 89%);
-    background-repeat: no-repeat;
-    background-position: 0 100%;
-    background-size: 0 0.2em;
-
-    transition: background-size 0.3s ease;
-
-    &:hover {
-      background-size: 100% 0.2em;
-    }
-
-    &.active {
-      background-size: 100% 0.2em;
-    }
-  }
 }
 
 @media only screen and (max-width: 640px) {
   .header-container {
-    flex-direction: column;
     border-bottom: 2px solid #aaaaaa;
-
-    height: $header-height + 2rem;
-
-    padding: 1rem;
-
     box-shadow: none;
+    flex-direction: column;
+    height: $header-height + 2rem;
+    padding: 1rem;
 
     font: {
       size: 13px;

@@ -4,7 +4,9 @@ import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 
 import Header from 'component/header'
+import TabContianer from 'component/tab-container'
 import Footer from 'component/footer'
+
 import { tabList } from "data/tabList"
 
 import 'style/prism-tomorrow.scss'
@@ -29,9 +31,10 @@ const Layout = ({ location = '/', children }) =>
   <>
     <CustomHelmet />
     <Header
-      location={location}
-      tabList={tabList}
-    />
+      title={'sNyung-starter'}
+    >
+      <TabContianer tabList={tabList} />
+    </Header>
     <div className="blog-posts-container">{children}</div>
     <Footer />
   </>
@@ -50,16 +53,16 @@ export const pageQuery = graphql`
       filter: {frontmatter: {category: {eq: "post" } } }
     ) {
       edges {
-      node {
-      excerpt(pruneLength: 100)
-    id
+        node {
+          excerpt(pruneLength: 100)
+          id
           frontmatter {
-      title
+            title
             date(formatString: "YYYY/MM/DD")
-    path
+            path
+          }
+        }
+      }
+    }
   }
-}
-}
-}
-}
 `
