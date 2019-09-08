@@ -9,7 +9,7 @@ const Title = ({ title }) =>
     {title}
   </Link>
 
-const Header = ({ title = '', tabList = [], children }) => (
+const Header = ({ title = '', children }) => (
   <div className='header-container'>
     <Title
       title={title}
@@ -22,9 +22,12 @@ const Header = ({ title = '', tabList = [], children }) => (
   </div >
 )
 
+Title.propTypes = {
+  title: PropTypes.string,
+}
+
 Header.propTypes = {
   title: PropTypes.string,
-  tabList: PropTypes.array.isRequired
 }
 
 export default Header
