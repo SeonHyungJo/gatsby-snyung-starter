@@ -2,8 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import TabItem from 'component/tab-item'
 
-import './index.scss'
-
 const TabContainer = ({ tabList = [] }) =>
   tabList.map((item) =>
     <TabItem
