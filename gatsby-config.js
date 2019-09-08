@@ -20,7 +20,7 @@ module.exports = {
         background_color: '#fff',
         theme_color: '#663399',
         display: 'standalone',
-        icon: 'assets/logo.png'
+        icon: 'assets/logo.jpg'
       }
     },
     {
@@ -35,7 +35,7 @@ module.exports = {
                 siteUrl
               }
             }
-
+    
             allSitePage {
               edges {
                 node {
@@ -62,9 +62,7 @@ module.exports = {
         layout: path.join(__dirname, 'src/layout'),
         style: path.join(__dirname, 'src/style'),
         util: path.join(__dirname, 'src/util'),
-        post: path.join(__dirname, 'post'),
-        assets: path.join(__dirname, 'assets'),
-        data: path.join(__dirname, 'data'),
+        post: path.join(__dirname, 'post')
       }
     },
     {
@@ -120,11 +118,5 @@ module.exports = {
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
     'gatsby-plugin-catch-links',
-    {
-      resolve: 'gatsby-plugin-layout',
-      options: {
-        component: require.resolve('./src/layout/index.jsx'),
-      },
-    },
   ]
 }

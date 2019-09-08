@@ -1,0 +1,61 @@
+@import "font.scss";
+@import "valuables.scss";
+
+.HeaderContainer {
+  display: flex;
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  z-index: 2147483647;
+
+  justify-content: space-between;
+  box-shadow: $shadow;
+
+  font: {
+    family: "SCDream";
+    size: 12px;
+    weight: 500;
+  }
+
+  padding: 1rem;
+
+  width: 100%;
+  height: $header-height;
+  background-color: white;
+
+  .HeaderTitle {
+    font: {
+      family: "SCDream";
+      size: 40px;
+      weight: 800;
+    }
+
+    text-decoration: "none";
+  }
+
+  .HeaderNav {
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .HeaderContainer {
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: none;
+    border-bottom: 1px solid #aaaaaa;
+
+    padding: 0.7rem;
+
+    height: $header-height + 1rem;
+
+    font: {
+      size: 15px;
+    }
+
+    .HeaderTitle {
+      font: {
+        size: 29px;
+      }
+    }
+  }
+}

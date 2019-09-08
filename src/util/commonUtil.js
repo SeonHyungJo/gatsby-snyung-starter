@@ -1,5 +1,8 @@
-/**
- * @description Multi Class Support
- * @param {*} classList : class list
- */
-export const classNames = (classList = []) => classList.split(', ').join(' ')
+export function classNames (classList) {
+  if (classList === null || classList === undefined) {
+    return ''
+  }
+
+  const textList = classList.split(', ')
+  return textList.join(' ')
+}
