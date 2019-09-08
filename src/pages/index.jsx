@@ -3,11 +3,10 @@ import { FaGithub, FaFacebook, FaYoutube } from "react-icons/fa"
 import { IoIosMail } from "react-icons/io"
 
 import { LinkButton } from "component/Button"
-import { navMenu } from "data/navMenu"
+import { tabList } from "data/tabList"
 
 import "style/index.scss"
 
-/* Main Image */
 const MainImg = ({ src = "https://avatars2.githubusercontent.com/u/24274424?s=460&v=4", alt = "MainImge" }) =>
   <LinkButton to="/" customClass="img">
     <img
@@ -53,7 +52,7 @@ const IndexPage = () =>
       <NickName />
       <SNS />
       <Title />
-      <Menu menuList={navMenu} />
+      <Menu menuList={tabList} />
     </div>
   </div >
 

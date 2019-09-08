@@ -8,34 +8,37 @@ import { Layout } from 'layout'
 
 import 'style/post.scss'
 
-const AboutMe = props => {
-  const { data } = props
+const CustomHelmet = ({ title }) => {
+  <Helmet title={`Blog - ${title}`} />
+}
+
+const AboutMe = (props) => {
+  const data = this.props;
   const { html, id, frontmatter } = data.markdownRemark
   const { title, date, tags } = frontmatter
 
   return (
-    <div key={id}>
-      {/* AboutMe Head */}
-      <Helmet title={`Blog - ${title}`} />
+    <Layout {...props}>
+      <CustomHelmet title={title} />
 
-      <article className="blog-post">
-        {/* Title */}
-        <h1 className="title">{title}</h1>
-        {/* Date */}
-        <h2 className="date">{date}</h2>
-        {/* Back Button */}
-        <div className="backBtn">
-          <DefaultButton to={'/posts'}>{'Back'}</DefaultButton>
-        </div>
-        {/* Contents */}
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: html }}
-        />
-        {/* Post Tags */}
-        <TagButton list={tags || []} />
-      </article>
-    </div>
+      <div key={id}>
+        <article className="blog-post">
+          <h1 className="title">{title}</h1>
+          <h2 className="date">{date}</h2>
+
+          <div className="backBtn">
+            <DefaultButton to={'/posts'}>{'Back'}</DefaultButton>
+          </div>
+
+          <div
+            className="blog-post-content"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+
+          <TagButton list={tags || []} />
+        </article>
+      </div>
+    </Layout>
   )
 }
 
