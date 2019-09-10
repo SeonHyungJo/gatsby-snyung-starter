@@ -3,7 +3,7 @@ import GatsbyLink from 'gatsby-link'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import Layout from 'layout'
+import NameCard from "component/name-card"
 import { LinkButton } from 'component/Button'
 import { classNames } from 'util/commonUtil'
 
@@ -50,6 +50,8 @@ const Post = (props) => {
 
   return (
     <div className="blog-posts">
+      <NameCard />
+
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node }) => {
