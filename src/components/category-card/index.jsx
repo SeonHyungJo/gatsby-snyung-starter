@@ -5,7 +5,6 @@ import PropTypes from 'prop-types'
 import './index.scss'
 
 export const CategoryCard = ({ tagName = '', count = 0 }) => (
-  // 나중에 HOC로 빼기
   <GatsbyLink to={`/category/${tagName}`}>
     <div key={tagName} className="category-container">
       <div className="category-title">
