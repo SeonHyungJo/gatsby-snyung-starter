@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 import { avataImg, nickName, text } from 'data/nameCard'
+import ScrollIcon from 'component/scroll-icon'
 import {
   EmailIcon,
   FacebookIcon,
@@ -65,7 +66,9 @@ const NameCard = ({ cardMode = true }) => {
 
       <div className={'card-content-container'}>
         <NickName nickName={nickName} />
-        <Presentation text={text} /><SocialBox />
+        <Presentation text={text} />
+        <SocialBox />
+        {!cardMode && <ScrollIcon />}
       </div>
     </div >
   )

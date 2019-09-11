@@ -6,8 +6,8 @@ body::-webkit-scrollbar {
 
 .card-container {
   width: 500px;
-  margin: calc((70vh - 400px) / 2) auto;
-  transition: all 1s ease;
+  margin: calc((77vh - 320px) / 2) auto;
+  transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
 
   &.simple-card {
     margin: 15px auto;
@@ -20,7 +20,10 @@ body::-webkit-scrollbar {
     width: 100%;
     margin: 0;
 
+    transition: none;
+
     &.simple-card {
+      height: 100%;
       margin: 0px auto;
     }
   }
@@ -29,5 +32,10 @@ body::-webkit-scrollbar {
 @media only screen and (min-width: 320px) and (max-width: 568px) and (orientation: portrait) {
   .card-container {
     font-size: 16px;
+
+    &.simple-card {
+      height: 100%;
+      margin: 0px auto;
+    }
   }
 }

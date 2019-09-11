@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import { TransitionGroup, Transition } from 'react-transition-group'
 
 import Header from 'component/header'
 import TabContianer from 'component/tab-container'
+import NameCardFull from 'component/name-card-full'
 import Footer from 'component/footer'
 
 import { tabList } from 'data/tabList'
@@ -31,29 +32,61 @@ const CustomHelmet = () => (
   </Helmet>
 )
 
-const Layout = ({ location = '/', children }) => (
-  <>
-    <CustomHelmet />
+const Layout = ({ location = '/', children }) => {
+  const [scrolling, setScrolling] = useState(false)
+  const [cardMode, setCardMode] = useState(location.pathname !== '/')
 
-    <Header title={'sNyung-starter'}>
-      <TabContianer tabList={tabList} />
-    </Header>
+  const changeCardMode = () => {
+    setCardMode(prevMode => !prevMode)
+    navigate('/posts')
+  }
 
-    <TransitionGroup component={null}>
-      <Transition
-        key={location.pathname}
-        timeout={{ enter: 500, exit: 500 }}
-        onExit={() => console.log('onExit')}
-      >
-        {status => (
-          <div className={`blog-posts-container ${status}`}>{children}</div>
-        )}
-      </Transition>
-    </TransitionGroup>
+  const handleScroll = () => {
+    setScrolling(true)
 
-    <Footer />
-  </>
-)
+    if (!scrolling) {
+      setTimeout(() => {
+        changeCardMode()
+      }, 0)
+    }
+  }
+
+  useEffect(() => {
+    const indexPathCheck = location.pathname !== '/'
+
+    setCardMode(indexPathCheck)
+    setScrolling(indexPathCheck)
+  }, [location.pathname])
+
+  return (
+    <div className={'scroll-box'} onScroll={handleScroll}>
+      <CustomHelmet />
+
+      <Header title={'sNyung-starter'}>
+        <TabContianer tabList={tabList} />
+      </Header>
+
+      <NameCardFull cardMode={cardMode} />
+
+      <TransitionGroup component={null}>
+        <Transition
+          key={location.pathname}
+          timeout={{ enter: 300, exit: 500 }}
+        >
+          {status => (
+            <div className={`blog-posts-container ${status}`}>
+              {children}
+              <Footer />
+            </div>
+          )}
+        </Transition>
+      </TransitionGroup>
+
+
+    </div >
+  )
+}
+
 
 Layout.propTypes = {
   children: PropTypes.any.isRequired,

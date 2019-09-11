@@ -3,7 +3,6 @@ import GatsbyLink from 'gatsby-link'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import NameCard from 'component/name-card'
 import { LinkButton } from 'component/Button'
 import { classNames } from 'util/commonUtil'
 
@@ -48,8 +47,6 @@ const Post = props => {
 
   return (
     <div className="blog-posts">
-      <NameCard />
-
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node }) => {
@@ -59,19 +56,19 @@ const Post = props => {
         {prev === 0 ? (
           <div />
         ) : (
-          <LinkButton to={`/posts/${prev}`} customClass={'moveLink'}>
-            {' '}
-            ← Prev
+            <LinkButton to={`/posts/${prev}`} customClass={'moveLink'}>
+              {' '}
+              ← Prev
           </LinkButton>
-        )}
+          )}
         {next - 1 === numPages ? (
           <div />
         ) : (
-          <LinkButton to={`/posts/${next}`} customClass={'moveLink'}>
-            {' '}
-            Next →
+            <LinkButton to={`/posts/${next}`} customClass={'moveLink'}>
+              {' '}
+              Next →
           </LinkButton>
-        )}
+          )}
       </div>
     </div>
   )
