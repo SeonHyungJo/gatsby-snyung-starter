@@ -3,7 +3,7 @@ import GatsbyLink from 'gatsby-link'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import NameCard from "component/name-card"
+import NameCard from 'component/name-card'
 import { LinkButton } from 'component/Button'
 import { classNames } from 'util/commonUtil'
 
@@ -11,16 +11,13 @@ import 'style/posts.scss'
 import 'style/post.scss'
 
 const Tags = ({ tags }) =>
-  tags.map(tag =>
-    <GatsbyLink
-      key={`postList_${tag}`}
-      to={`/category/${tag}`}
-    >
+  tags.map(tag => (
+    <GatsbyLink key={`postList_${tag}`} to={`/category/${tag}`}>
       <span className="tag">{tag}</span>
     </GatsbyLink>
-  )
+  ))
 
-const PostItem = ({ post }) =>
+const PostItem = ({ post }) => (
   <div className="blog-post-preview" key={post.id}>
     <div className="blog-container">
       <p className="title">
@@ -42,8 +39,9 @@ const PostItem = ({ post }) =>
       </div>
     </div>
   </div>
+)
 
-const Post = (props) => {
+const Post = props => {
   const { data, pageContext } = props
   const { edges: posts } = data.allMarkdownRemark
   const { next, prev, numPages } = pageContext
@@ -55,27 +53,25 @@ const Post = (props) => {
       {posts
         .filter(post => post.node.frontmatter.title.length > 0)
         .map(({ node }) => {
-          return (
-            <PostItem post={node}></PostItem>
-          )
+          return <PostItem key={node.id} post={node} />
         })}
       <div className="posts-bottom">
         {prev === 0 ? (
           <div />
         ) : (
-            <LinkButton to={`/posts/${prev}`} customClass={'moveLink'}>
-              {' '}
-              ← Prev
-            </LinkButton>
-          )}
+          <LinkButton to={`/posts/${prev}`} customClass={'moveLink'}>
+            {' '}
+            ← Prev
+          </LinkButton>
+        )}
         {next - 1 === numPages ? (
           <div />
         ) : (
-            <LinkButton to={`/posts/${next}`} customClass={'moveLink'}>
-              {' '}
-              Next →
-            </LinkButton>
-          )}
+          <LinkButton to={`/posts/${next}`} customClass={'moveLink'}>
+            {' '}
+            Next →
+          </LinkButton>
+        )}
       </div>
     </div>
   )
@@ -86,29 +82,29 @@ Post.propTypes = {
   pageContext: PropTypes.object,
 }
 
-export default Post;
+export default Post
 
 export const blogListQuery = graphql`
   query blogListQuery($skip: Int, $limit: Int) {
-      allMarkdownRemark(
-        sort: {fields: [frontmatter___date], order: DESC }
-    limit: $limit
-    skip: $skip
-      filter: {frontmatter: {category: {eq: "post" } } }
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+      filter: { frontmatter: { category: { eq: "post" } } }
     ) {
       edges {
-      node {
-      excerpt
+        node {
+          excerpt
           id
           frontmatter {
-      title
+            title
             date(formatString: "YYYY/MM/DD")
-    path
-    tags
-    author
+            path
+            tags
+            author
+          }
+        }
+      }
+    }
   }
-}
-}
-}
-}
 `
