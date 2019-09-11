@@ -2,14 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import './index.scss'
+import TagList from 'component/tag-list'
 
-const Tags = ({ tags }) =>
-  tags.map(tag => (
-    <Link key={`postList_${tag}`} to={`/category/${tag}`}>
-      <span className="tag">{`#${tag}`}</span>
-    </Link>
-  ))
+import './index.scss'
 
 const PostListItem = ({ post }) =>
   <div className="blog-post-preview" key={post.id}>
@@ -22,9 +17,7 @@ const PostListItem = ({ post }) =>
       <p className="summary">{post.excerpt}</p>
     </Link >
 
-    <div className="tag-container">
-      <Tags tags={post.frontmatter.tags} />
-    </div>
+    <TagList tags={post.frontmatter.tags} />
   </div >
 
 PostListItem.propTypes = {

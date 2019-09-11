@@ -1,0 +1,59 @@
+@import "../../style/valuables";
+
+.post-container {
+  background: white;
+  box-shadow: 0px 5px 10px 1px #aaaaaa;
+
+  padding: 1rem 2rem;
+  margin: 0rem auto;
+  max-width: 700px;
+
+  .post-header {
+    text-align: center;
+
+    .title {
+      font-size: 30px;
+    }
+
+    .date {
+      font-size: 0.8rem;
+    }
+
+    .back-btn {
+      font-size: 0.8rem;
+      text-decoration: none;
+
+      &:hover {
+        font-weight: 700;
+        border-bottom: 1px solid blue;
+      }
+    }
+  }
+
+  .post-content {
+  }
+
+  .post-footer {
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .post-container {
+    padding: 0.7rem;
+    box-shadow: none;
+
+    .post-header {
+      .title {
+        font-size: 25px;
+      }
+
+      .date {
+        font-size: 0.8rem;
+      }
+
+      .back-btn {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

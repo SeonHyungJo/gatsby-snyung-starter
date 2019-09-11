@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 import PostItem from 'component/post-item'
 import PageBtnContainer from 'component/page-btn'
 
-import 'style/posts.scss'
+import './posts.scss'
 
 const Post = ({ data, pageContext }) => {
   const { edges: posts } = data.allMarkdownRemark

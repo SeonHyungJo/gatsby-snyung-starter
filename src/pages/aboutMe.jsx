@@ -3,10 +3,7 @@ import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
-import { DefaultButton, TagButton } from 'component/Button'
 import Layout from 'layout'
-
-import 'style/post.scss'
 
 const CustomHelmet = ({ title }) => {
   <Helmet title={`Blog - ${title}`} />
@@ -27,7 +24,7 @@ const AboutMe = (props) => {
           <h2 className="date">{date}</h2>
 
           <div className="backBtn">
-            <DefaultButton to={'/posts'}>{'Back'}</DefaultButton>
+            {/* <DefaultButton to={'/posts'}>{'Back'}</DefaultButton> */}
           </div>
 
           <div
@@ -35,7 +32,7 @@ const AboutMe = (props) => {
             dangerouslySetInnerHTML={{ __html: html }}
           />
 
-          <TagButton list={tags || []} />
+          {/* <TagButton list={tags || []} /> */}
         </article>
       </div>
     </Layout>

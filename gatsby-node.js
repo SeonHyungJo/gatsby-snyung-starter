@@ -1,6 +1,6 @@
 const path = require('path')
 
-const PostTemplate = path.resolve(`src/components/Post.jsx`)
+const PostTemplate = path.resolve(`src/template/post/index.jsx`)
 const TagTemplate = path.resolve(`src/pages/category.jsx`)
 
 // Setting Post per page
