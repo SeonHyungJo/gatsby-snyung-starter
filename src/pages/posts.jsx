@@ -6,7 +6,6 @@ import PostItem from 'component/post-item'
 import PageBtnContainer from 'component/page-btn'
 
 import 'style/posts.scss'
-import 'style/post.scss'
 
 const Post = ({ data, pageContext }) => {
   const { edges: posts } = data.allMarkdownRemark
@@ -50,7 +49,5 @@ export const blogListQuery = graphql`
       author
     }
   }
-}
-}
-}
+}}}
 `

@@ -3,8 +3,11 @@
     "src": "https://avatars2.githubusercontent.com/u/24274424?s=460&v=4",
     "alt": "mainImg"
   },
-  "nickName": "sNyung",
-  "text": "Welcome",
+  "nickName": {
+    "name": "sNyung",
+    "to": "https://github.com/SeonHyungJo"
+  },
+  "text": "Welcome My First Gasby Template",
   "sns": {
     "email": "",
     "facebook": "",

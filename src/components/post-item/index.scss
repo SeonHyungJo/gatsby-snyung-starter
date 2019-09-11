@@ -7,6 +7,8 @@
   padding: 0.2rem 1.6rem;
   margin: 0.6rem 0rem;
 
+  transition: transform 0.3s ease;
+
   & .title {
     font-size: 1.3rem;
     margin: 0rem;
@@ -35,6 +37,10 @@
         border: none;
       }
     }
+  }
+
+  &:hover {
+    transform: scale(1.02, 1.02);
   }
 }
 

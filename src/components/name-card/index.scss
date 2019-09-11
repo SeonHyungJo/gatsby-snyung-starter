@@ -31,9 +31,12 @@ body::-webkit-scrollbar {
     align-items: center;
     justify-content: center;
 
-    .nick-name {
-      color: black;
-      margin: 0.8rem;
+    & .nick-name {
+      color: white;
+      background-color: purple;
+      border-radius: 10px;
+      padding: 0.5rem;
+      margin: 0.3rem;
 
       font: {
         size: 33px;
@@ -84,8 +87,8 @@ body::-webkit-scrollbar {
       align-items: flex-start;
 
       .nick-name {
-        color: black;
-        margin: 0.5rem;
+        padding: 0.3rem;
+        margin: 0.3rem;
 
         font: {
           size: 20px;
@@ -99,7 +102,7 @@ body::-webkit-scrollbar {
         border: 0px;
         padding: 0rem;
         margin: 0.5rem;
-        font-size: 16px;
+        font-size: 0.8rem;
       }
 
       .sns-list {

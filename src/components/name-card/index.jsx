@@ -24,8 +24,10 @@ const AvataImg = ({ src = '', alt = '' }) =>
     />
   </Link>
 
-const NickName = ({ nickName = '' }) =>
-  <div className='nick-name'>{nickName}</div>
+const NickName = ({ name = '', to = '/' }) =>
+  <a href={to} >
+    <div className='nick-name'>{`@${name}`}</div>
+  </a>
 
 const SocialBox = ({ snsList = [] }) =>
   <div className='sns-list'>
@@ -65,7 +67,7 @@ const NameCard = ({ cardMode = true }) => {
       </div>
 
       <div className={'card-content-container'}>
-        <NickName nickName={nickName} />
+        <NickName {...nickName} />
         <Presentation text={text} />
         <SocialBox />
         {!cardMode && <ScrollIcon />}
