@@ -11,7 +11,7 @@ const Tags = ({ tags }) =>
     </Link>
   ))
 
-const PostItem = ({ post }) =>
+const PostListItem = ({ post }) =>
   <div className="blog-post-preview" key={post.id}>
     <Link to={post.frontmatter.path}>
       <div className="blog-container">
@@ -27,8 +27,8 @@ const PostItem = ({ post }) =>
     </div>
   </div >
 
-PostItem.propTypes = {
+PostListItem.propTypes = {
   post: PropTypes.object.isRequired,
 }
 
-export default PostItem;
+export default PostListItem;

@@ -1,0 +1,19 @@
+@import "../../style/valuables.scss";
+
+.page-btn-container {
+  display: flex;
+  justify-content: space-between;
+
+  .page-btn {
+    padding: 0.3rem 1.2rem;
+    background: white;
+    box-shadow: $shadow;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      color: white;
+      font-weight: 700;
+      background-color: #77af9c;
+    }
+  }
+}
