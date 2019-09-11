@@ -1,44 +1,12 @@
 import React from 'react'
-import GatsbyLink from 'gatsby-link'
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import { LinkButton } from 'component/Button'
-import { classNames } from 'util/commonUtil'
+import PostItem from 'component/post-list-item'
 
 import 'style/posts.scss'
 import 'style/post.scss'
-
-const Tags = ({ tags }) =>
-  tags.map(tag => (
-    <GatsbyLink key={`postList_${tag}`} to={`/category/${tag}`}>
-      <span className="tag">{tag}</span>
-    </GatsbyLink>
-  ))
-
-const PostItem = ({ post }) => (
-  <div className="blog-post-preview" key={post.id}>
-    <div className="blog-container">
-      <p className="title">
-        <GatsbyLink to={post.frontmatter.path}>
-          {post.frontmatter.title}
-        </GatsbyLink>
-      </p>
-    </div>
-    <div className="blog-container">
-      <div className="blog-sub-container">
-        <p className="summary">{post.excerpt}</p>
-        <div className="tagContainer">
-          <Tags tags={post.frontmatter.tags} />
-        </div>
-      </div>
-      <div className={classNames('blog-sub-container, right')}>
-        <p className="date">{post.frontmatter.date}</p>
-        <p className="author">{`By ${post.frontmatter.author}`}</p>
-      </div>
-    </div>
-  </div>
-)
 
 const Post = props => {
   const { data, pageContext } = props
