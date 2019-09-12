@@ -9,21 +9,20 @@
   },
   "license": "MIT",
   "dependencies": {
-    "core-js": "^2.6.9",
+    "core-js": "^3.2.1",
     "disqus-react": "^1.0.5",
     "gatsby": "^2.4.3",
     "gatsby-link": "^2.1.1",
     "gatsby-plugin-catch-links": "^2.0.13",
     "gatsby-plugin-layout": "^1.1.6",
     "gatsby-plugin-manifest": "^2.1.1",
-    "gatsby-plugin-offline": "^2.0.21",
+    "gatsby-plugin-offline": "^3.0.6",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-robots-txt": "^1.4.0",
     "gatsby-plugin-root-import": "^2.0.5",
     "gatsby-plugin-sass": "^2.0.10",
     "gatsby-plugin-sharp": "^2.0.37",
     "gatsby-plugin-sitemap": "^2.0.6",
-    "gatsby-remark-emojis": "^0.3.1",
     "gatsby-remark-images": "^3.0.11",
     "gatsby-remark-prismjs": "^3.2.4",
     "gatsby-source-filesystem": "^2.0.33",
@@ -34,13 +33,18 @@
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
     "react-transition-group": "^4.3.0",
-    "typeface-lato": "0.0.75"
+    "typeface-fira-sans": "0.0.75",
+    "typeface-lato": "0.0.75",
+    "typeface-nanum-gothic-coding": "0.0.63",
+    "typeface-poor-story": "0.0.63"
   },
   "devDependencies": {
-    "eslint": "^5.12.1",
+    "babel-eslint": "^10.0.3",
+    "eslint": "^6.3.0",
     "eslint-plugin-react": "^7.12.4",
-    "husky": "^2.2.0",
-    "lint-staged": "^8.1.5",
+    "gatsby-remark-emoji": "0.0.3",
+    "husky": "^3.0.5",
+    "lint-staged": "^9.2.5",
     "prettier": "^1.17.0"
   },
   "keywords": [
@@ -62,7 +66,7 @@
   },
   "lint-staged": {
     "*.{js,jsx}": [
-      "yarn lint",
+      "npm run lint",
       "git add"
     ]
   }

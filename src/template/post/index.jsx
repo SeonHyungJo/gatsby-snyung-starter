@@ -16,25 +16,19 @@ const PostHelmet = ({ title, excerpt, tags }) =>
     ]}
   />
 
-const BackBtn = ({ prevTo = '/posts' }) =>
-  <div className="back-btn">
-    <Link to={prevTo} className={'defaultClass, buttonContainer'}>{'Back'}</Link>
-  </div>
-
 const PostTemplate = ({ data }) => {
-  const { rawMarkdownBody: html, excerpt, frontmatter } = data.markdownRemark
+  const { html, excerpt, frontmatter } = data.markdownRemark
   const { title, date, tags } = frontmatter
 
   return (
     <>
       <PostHelmet title={title} excerpt={excerpt} tags={tags} />
-      <article className="post-container">
+      <div className="post-container">
         <div className={'post-header'}>
           <h1 className="title">{title}</h1>
           <p className="date">{date}</p>
-          <BackBtn />
         </div>
-        <div
+        <article
           className="post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
@@ -43,7 +37,7 @@ const PostTemplate = ({ data }) => {
         >
           <TagList tags={tags} />
         </div>
-      </article>
+      </div>
 
       {/* 댓글 기능 */}
     </>
@@ -59,11 +53,11 @@ export default PostTemplate
 export const pageQuery = graphql`
   query BlogPostByPath($path: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
-      rawMarkdownBody
+      html
       id
       excerpt
       frontmatter {
-        date(formatString: "YYYY/MM/DD")
+        date(formatString: "MMMM Do, YYYY")
         path
         tags
         title

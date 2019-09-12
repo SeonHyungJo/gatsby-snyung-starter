@@ -1,5 +1,4 @@
 html {
-  font-family: "NanumSquareRound" sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -212,7 +211,8 @@ html {
 }
 body {
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: "SCDream", serif;
+  // font-family: "SCDream", serif;
+  font-family: "Fira Sans", sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
