@@ -9,28 +9,27 @@
   max-width: 700px;
 
   .post-header {
-    text-align: center;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 0.01rem solid #aaaaaa;
 
     .title {
-      font-size: 30px;
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 0rem;
     }
 
     .date {
       font-size: 0.8rem;
-    }
-
-    .back-btn {
-      font-size: 0.8rem;
-      text-decoration: none;
-
-      &:hover {
-        font-weight: 700;
-        border-bottom: 1px solid blue;
-      }
+      text-align: right;
+      margin-bottom: 0rem;
     }
   }
 
   .post-content {
+    // font-family: "Poor Story", cursive;
+    font-family: "Lato", sans-serif;
+    font-size: 0.8rem;
   }
 
   .post-footer {

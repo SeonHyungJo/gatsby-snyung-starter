@@ -26,7 +26,7 @@ const AvataImg = ({ src = '', alt = '' }) =>
 
 const NickName = ({ name = '', to = '/' }) =>
   <a href={to} >
-    <div className='nick-name'>{`@${name}`}</div>
+    <div className='nick-name'>{`@ ${name}`}</div>
   </a>
 
 const SocialBox = ({ snsList = [] }) =>
