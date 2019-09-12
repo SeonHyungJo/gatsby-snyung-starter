@@ -1,10 +1,12 @@
 import React from 'react'
 import Helmet from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import TagList from 'component/tag-list'
+import Utterences from 'component/utterences'
 
+import { utterences } from 'data/nameCard'
 import './index.scss'
 
 const PostHelmet = ({ title, excerpt, tags }) =>
@@ -38,8 +40,7 @@ const PostTemplate = ({ data }) => {
           <TagList tags={tags} />
         </div>
       </div>
-
-      {/* 댓글 기능 */}
+      <Utterences {...utterences} />
     </>
   )
 }
