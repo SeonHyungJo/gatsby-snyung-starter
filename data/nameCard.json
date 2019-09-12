@@ -14,5 +14,9 @@
     "youtube": "",
     "instagram": "",
     "github": ""
+  },
+  "utterences": {
+    "repo": "SeonHyungJo/gatsby-sseon-starter",
+    "theme": "github-light"
   }
 }
