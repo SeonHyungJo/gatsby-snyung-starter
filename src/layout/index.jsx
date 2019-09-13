@@ -32,13 +32,16 @@ const CustomHelmet = () => (
   </Helmet>
 )
 
-const Layout = ({ location = '/', children }) => {
+const Layout = (props) => {
+  const { location = '/', children } = props
   const [scrolling, setScrolling] = useState(false)
   const [cardMode, setCardMode] = useState(location.pathname !== '/')
 
+  console.log('props', props)
+
   const changeCardMode = () => {
     setCardMode(prevMode => !prevMode)
-    navigate('/posts')
+    navigate(tabList[0].path)
   }
 
   const handleScroll = () => {
@@ -81,8 +84,6 @@ const Layout = ({ location = '/', children }) => {
           )}
         </Transition>
       </TransitionGroup>
-
-
     </div >
   )
 }

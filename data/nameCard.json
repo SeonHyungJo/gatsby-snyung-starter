@@ -9,11 +9,13 @@
   },
   "text": "Welcome My First Gasby Template",
   "sns": {
-    "email": "",
-    "facebook": "",
-    "youtube": "",
+    "email": "seonhyung.jo@gmail.com",
+    "facebook": "https://www.facebook.com/ImDev-361775957711957/",
+    "youtube": "https://www.youtube.com/channel/UCCs6KHf_Zo_iI2jfg_eqeDg",
     "instagram": "",
-    "github": ""
+    "github": "https://github.com/SeonHyungJo",
+    "linkedin": "",
+    "twitter": ""
   },
   "utterences": {
     "repo": "SeonHyungJo/gatsby-sseon-starter",

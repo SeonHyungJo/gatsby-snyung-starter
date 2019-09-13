@@ -1,4 +1,4 @@
-@import "../../style/valuables.scss";
+@import '../../style/valuables.scss';
 
 body::-webkit-scrollbar {
   display: none;
@@ -73,7 +73,7 @@ body::-webkit-scrollbar {
     flex-direction: row;
     justify-content: space-around;
 
-    padding: 1rem;
+    padding: 0.6rem;
 
     transition: all 1s ease;
 
@@ -85,13 +85,13 @@ body::-webkit-scrollbar {
 
     .card-content-container {
       align-items: flex-start;
+      padding: 0 0.3rem;
 
       .nick-name {
         padding: 0.3rem;
-        margin: 0.3rem;
 
         font: {
-          size: 20px;
+          size: 18px;
           weight: 700;
         }
       }
@@ -108,7 +108,7 @@ body::-webkit-scrollbar {
       .sns-list {
         .sns-item {
           width: 30px;
-          margin: 0.4rem;
+          margin: 0.3rem;
         }
       }
     }

@@ -1,7 +1,20 @@
-export { default as FacebookIcon } from './facebook-icon'
-export { default as EmailIcon } from './email-icon'
-export { default as GithubIcon } from './github-icon'
-export { default as InstagramIcon } from './instagram-icon'
-export { default as LinkedinIcon } from './linkedin-icon'
-export { default as TwitterIcon } from './twitter-icon'
-export { default as YoutubeIcon } from './youtube-icon'
+import React from 'react'
+
+import { sns } from 'data/nameCard'
+import EmailIconItem from './email-icon'
+import FacebookIconItem from './facebook-icon'
+import GithubIconItem from './github-icon'
+import InstagramIconItem from './instagram-icon'
+import LinkedinIconItem from './linkedin-icon'
+import TwitterIconItem from './twitter-icon'
+import YoutubeIconItem from './youtube-icon'
+
+
+
+export const EmailIcon = () => <EmailIconItem href={`mailto:${sns.email}`}/>
+export const FacebookIcon = () => <FacebookIconItem href={`${sns.facebook}`}/>
+export const GithubIcon = () => <GithubIconItem href={`${sns.github}`}/>
+export const InstagramIcon = () => <InstagramIconItem href={`${sns.instagram}`}/>
+export const LinkedinIcon = () => <LinkedinIconItem href={`${sns.linkedin}`}/>
+export const TwitterIcon = () => <TwitterIconItem href={`${sns.twitter}`}/>
+export const YoutubeIcon = () => <YoutubeIconItem href={`${sns.youtube}`}/>

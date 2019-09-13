@@ -9,10 +9,10 @@ const PageBtn = ({ to, text }) =>
     {text}
   </Link>
 
-const PageBtnContainer = ({ pageContext: { prev, next, numPages } }) =>
+const PageBtnContainer = ({ pageContext: { prev, next, categoryName } }) =>
   <div className="page-btn-container">
-    {prev === 0 ? <div /> : <PageBtn to={`/posts/${prev}`} text={'← Prev'} />}
-    {next - 1 === numPages ? <div /> : <PageBtn to={`/posts/${next}`} text={'Next →'} />}
+    {prev === '' ? <div /> : <PageBtn to={`/${categoryName}/${prev === 0 ? '' : prev}`} text={'← Prev'} />}
+    {next === '' ? <div /> : <PageBtn to={`/${categoryName}/${next}`} text={'Next →'} />}
   </div>
 
 PageBtnContainer.propTypes = {

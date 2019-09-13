@@ -10,7 +10,7 @@ const Tag = ({ tagName }) =>
   </Link>
 
 Tag.propTypes = {
-  tags: PropTypes.array.isRequired,
+  tags: PropTypes.string,
 }
 
 export default Tag;
