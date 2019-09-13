@@ -38,7 +38,7 @@ const Layout = ({ location = '/', children }) => {
 
   const changeCardMode = () => {
     setCardMode(prevMode => !prevMode)
-    navigate('/posts')
+    navigate(tabList[0].path)
   }
 
   const handleScroll = () => {

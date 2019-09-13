@@ -1,15 +1,15 @@
 {
   "tabList": [
     {
-      "path": "/posts",
+      "path": "/post",
       "name": "All Post"
     },
     {
-      "path": "/articles",
+      "path": "/article",
       "name": "Article"
     },
     {
-      "path": "/aboutme",
+      "path": "/resume",
       "name": "About Me"
     }
   ]

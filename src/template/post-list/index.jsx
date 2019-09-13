@@ -5,10 +5,12 @@ import PropTypes from 'prop-types'
 import PostItem from 'component/post-item'
 import PageBtnContainer from 'component/page-btn'
 
-import './posts.scss'
+import './index.scss'
 
 const Post = ({ data, pageContext }) => {
   const { edges: posts } = data.allMarkdownRemark
+
+  console.log("pageContext", pageContext, posts)
 
   return (
     <div className="blog-posts">
@@ -29,25 +31,27 @@ Post.propTypes = {
 
 export default Post
 
-export const blogListQuery = graphql`
-  query blogListQuery($skip: Int, $limit: Int) {
-        allMarkdownRemark(
-          sort: {fields: [frontmatter___date], order: DESC }
+export const Posts = graphql`
+  query Posts($skip: Int, $limit: Int, $categoryName: String) {
+    allMarkdownRemark(
+      sort: {fields: [frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip
-      filter: {frontmatter: {category: {eq: "post" } } }
+      filter: {frontmatter: {category: {eq: $categoryName } } }
     ) {
-        edges {
+      edges {
         node {
-        excerpt
+          excerpt
           id
           frontmatter {
-        title
+            title
             date(formatString: "YYYY/MM/DD")
-      path
-      tags
-      author
+            path
+            tags
+            author
+          }
+        }
+      }
     }
   }
-}}}
 `

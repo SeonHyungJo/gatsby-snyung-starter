@@ -1,22 +1,18 @@
 import React from 'react'
 import Helmet from 'react-helmet'
 import { graphql } from 'gatsby'
-import PropTypes from 'prop-types'
-
-import Layout from 'layout'
 
 const CustomHelmet = ({ title }) => {
   <Helmet title={`Blog - ${title}`} />
 }
 
-const AboutMe = (props) => {
-  const data = this.props;
+const AboutMe = ({ data }) => {
   const { html, id, frontmatter } = data.markdownRemark
-  const { title, date, tags } = frontmatter
+  const { title, date } = frontmatter
 
   return (
-    <Layout {...props}>
-      <CustomHelmet title={title} />
+    <>
+      {/* <CustomHelmet title={title} /> */}
 
       <div key={id}>
         <article className="blog-post">
@@ -32,15 +28,10 @@ const AboutMe = (props) => {
             dangerouslySetInnerHTML={{ __html: html }}
           />
 
-          {/* <TagButton list={tags || []} /> */}
         </article>
       </div>
-    </Layout>
+    </>
   )
-}
-
-AboutMe.propTypes = {
-  data: PropTypes.object,
 }
 
 export const pageQuery = graphql`
