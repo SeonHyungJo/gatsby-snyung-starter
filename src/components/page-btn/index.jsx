@@ -9,7 +9,7 @@ const PageBtn = ({ to, text }) =>
     {text}
   </Link>
 
-const PageBtnContainer = ({ pageContext: { prev, next, maxPageNum, categoryName } }) =>
+const PageBtnContainer = ({ pageContext: { prev, next, categoryName } }) =>
   <div className="page-btn-container">
     {prev === '' ? <div /> : <PageBtn to={`/${categoryName}/${prev === 0 ? '' : prev}`} text={'← Prev'} />}
     {next === '' ? <div /> : <PageBtn to={`/${categoryName}/${next}`} text={'Next →'} />}

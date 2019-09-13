@@ -1,0 +1,22 @@
+@import '../../style/valuables.scss';
+
+.post-move-btn-container {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.6rem;
+
+  .post-move-btn {
+    padding: 3px 8px;
+    border-radius: 13px;
+    background: #dcede7;
+
+    color: #1a6046;
+    letter-spacing: 2px;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .post-move-btn-container {
+    margin: 1rem 0;
+  }
+}

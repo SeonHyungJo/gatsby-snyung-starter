@@ -10,8 +10,6 @@ import './index.scss'
 const Post = ({ data, pageContext }) => {
   const { edges: posts } = data.allMarkdownRemark
 
-  console.log("pageContext", pageContext, posts)
-
   return (
     <div className="blog-posts">
       {

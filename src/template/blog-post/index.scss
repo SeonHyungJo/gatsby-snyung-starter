@@ -1,4 +1,4 @@
-@import "../../style/valuables";
+@import '../../style/valuables';
 
 .post-container {
   background: white;
@@ -28,11 +28,24 @@
 
   .post-content {
     // font-family: "Poor Story", cursive;
-    font-family: "Lato", sans-serif;
+    font-family: 'Lato', sans-serif;
     font-size: 0.8rem;
   }
 
   .post-footer {
+    border-top: 0.05rem solid #aaaaaa;
+
+    .post-footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      margin-top: 1.5rem;
+    }
+
+    .post-footer-movebtn {
+      margin-top: 1.5rem;
+    }
   }
 }
 
@@ -52,6 +65,12 @@
 
       .back-btn {
         margin-bottom: 2rem;
+      }
+    }
+
+    .post-footer {
+      .post-footer-content {
+        flex-direction: column;
       }
     }
   }

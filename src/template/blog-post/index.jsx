@@ -5,6 +5,9 @@ import PropTypes from 'prop-types'
 
 import TagList from 'component/tag-list'
 import Utterences from 'component/utterences'
+import NameCardFull from 'component/name-card'
+import SponsorButton from 'component/sponsor-btn'
+import PageBtnContainer from 'component/post-move-btn'
 
 import { utterences } from 'data/nameCard'
 import './index.scss'
@@ -18,9 +21,12 @@ const PostHelmet = ({ title, excerpt, tags }) =>
     ]}
   />
 
-const PostTemplate = ({ data }) => {
+const PostTemplate = (props) => {
+  const { data, pageContext } = props
   const { html, excerpt, frontmatter } = data.markdownRemark
   const { title, date, tags } = frontmatter
+
+  console.log(props)
 
   return (
     <>
@@ -34,10 +40,15 @@ const PostTemplate = ({ data }) => {
           className="post-content"
           dangerouslySetInnerHTML={{ __html: html }}
         />
-        <div
-          className="post-footer"
-        >
-          <TagList tags={tags} />
+        <TagList tags={tags} />
+        <div className="post-footer">
+          <div className="post-footer-content">
+            <NameCardFull cardMode={true} />
+            <SponsorButton />
+          </div>
+          <div className="post-footer-movebtn">
+            <PageBtnContainer pageContext={pageContext} />
+          </div>
         </div>
       </div>
       <Utterences {...utterences} />
