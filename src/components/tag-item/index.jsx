@@ -5,9 +5,9 @@ import { Link } from 'gatsby'
 import './index.scss'
 
 const Tag = ({ tagName }) =>
-  <Link to={`/category/${tagName}`}>
-    <span className="tag">{`# ${tagName}`}</span>
-  </Link>
+  // <Link to={`/category/${tagName}`}>
+  <span className="tag">{`# ${tagName}`}</span>
+// </Link>
 
 Tag.propTypes = {
   tags: PropTypes.string,
