@@ -44,7 +44,7 @@ const PostTemplate = (props) => {
         <div className="post-footer">
           <div className="post-footer-content">
             <NameCardFull cardMode={true} />
-            <SponsorButton />
+            <SponsorButton sponsorId={'snyung'} />
           </div>
           <div className="post-footer-movebtn">
             <PageBtnContainer pageContext={pageContext} />
