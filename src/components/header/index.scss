@@ -12,6 +12,13 @@
 
   box-shadow: $shadow;
 
+  border-width: 2px;
+  border-style: solid;
+
+  // border-image: linear-gradient(to right, #01c9ca 0%, #3886ff 100%);
+  border-image: linear-gradient(to right, #8cd790, #285943) 0 0 100%;
+  // background-position: 0 100%;
+
   font: {
     family: "Lato";
     size: 13px;

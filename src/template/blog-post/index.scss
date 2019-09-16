@@ -1,4 +1,4 @@
-@import '../../style/valuables';
+@import "../../style/valuables";
 
 .post-container {
   background: white;
@@ -28,8 +28,12 @@
 
   .post-content {
     // font-family: "Poor Story", cursive;
-    font-family: 'Lato', sans-serif;
-    font-size: 0.8rem;
+    // font-family: "Lato", sans-serif;
+    font-family: "Nanum Gothic", sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    padding: 0.5rem;
   }
 
   .post-footer {

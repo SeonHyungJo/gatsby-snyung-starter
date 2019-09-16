@@ -36,8 +36,7 @@ const Layout = (props) => {
   const { location = '/', children } = props
   const [scrolling, setScrolling] = useState(false)
   const [cardMode, setCardMode] = useState(location.pathname !== '/')
-
-  console.log('props', props)
+  const checkContent = location.pathname.split('/')[1] === 'content'
 
   const changeCardMode = () => {
     setCardMode(prevMode => !prevMode)
@@ -69,7 +68,7 @@ const Layout = (props) => {
         <TabContianer tabList={tabList} />
       </Header>
 
-      <NameCardFull cardMode={cardMode} />
+      {checkContent || <NameCardFull cardMode={cardMode} />}
 
       <TransitionGroup component={null}>
         <Transition

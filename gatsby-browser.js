@@ -6,3 +6,7 @@ require('typeface-poor-story')
 require('typeface-nanum-gothic-coding')
 // Load Fira Sans typeface
 require('typeface-fira-sans')
+// Load Nanum Myeongjo typeface
+require('typeface-nanum-myeongjo')
+// Load Nanum Gothic typeface
+require('typeface-nanum-gothic')
