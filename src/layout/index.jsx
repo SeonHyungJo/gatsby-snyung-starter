@@ -1,71 +1,99 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
-import { graphql } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
+import { TransitionGroup, Transition } from 'react-transition-group'
 
-import Header from 'component/Header'
+import Header from 'component/header'
+import TabContianer from 'component/tab-container'
+import NameCardFull from 'component/name-card-full'
+import Footer from 'component/footer'
+
+import { tabList } from 'data/tabList'
 
 import 'style/prism-tomorrow.scss'
 import 'style/baseLayout.scss'
 
-export class Layout extends React.Component {
-  constructor(props) {
-    super(props)
+import './index.scss'
 
-    this.state = {
-      navList: [
-        {
-          path: '/posts',
-          name: 'post',
-        },
-        {
-          path: '/articles',
-          name: 'article',
-        },
-        {
-          path: '/category',
-          name: 'category',
-        },
-      ],
+const CustomHelmet = () => (
+  <Helmet
+    title="Gatsby for SSEON"
+    meta={[
+      { name: 'description', content: 'sseon theme' },
+      { name: 'keywords', content: 'sseon, blog, theme' },
+      {
+        name: 'viewport',
+        content: 'width=device-width, initial-scale=1',
+      },
+    ]}
+  >
+    <html lang="ko" />
+  </Helmet>
+)
+
+const Layout = (props) => {
+  const { location = '/', children } = props
+  const [scrolling, setScrolling] = useState(false)
+  const [cardMode, setCardMode] = useState(location.pathname !== '/')
+  const checkContent = location.pathname.split('/')[1] === 'content'
+
+  const changeCardMode = () => {
+    setCardMode(prevMode => !prevMode)
+    navigate(tabList[0].path)
+  }
+
+  const handleScroll = () => {
+    setScrolling(true)
+
+    if (!scrolling) {
+      setTimeout(() => {
+        changeCardMode()
+      }, 0)
     }
   }
 
-  render() {
-    const { location, children } = this.props
-    const { navList } = this.state
+  useEffect(() => {
+    const indexPathCheck = location.pathname !== '/'
 
-    return (
-      <>
-        {/* head custom 진행 */}
-        <Helmet
-          title="Gatsby for SSEON"
-          meta={[
-            { name: 'description', content: 'sseon theme' },
-            { name: 'keywords', content: 'sseon, blog, theme' },
-            {
-              name: 'viewport',
-              content: 'width=device-width, initial-scale=1',
-            },
-          ]}
+    setCardMode(indexPathCheck)
+    setScrolling(indexPathCheck)
+  }, [location.pathname])
+
+  return (
+    <div className={'scroll-box'} onScroll={handleScroll}>
+      <CustomHelmet />
+
+      <Header title={'sNyung-starter'}>
+        <TabContianer tabList={tabList} />
+      </Header>
+
+      {checkContent || <NameCardFull cardMode={cardMode} />}
+
+      <TransitionGroup component={null}>
+        <Transition
+          key={location.pathname}
+          timeout={{ enter: 300, exit: 500 }}
         >
-          {/* 한국어 설정 진행 */}
-          <html lang="ko" />
-        </Helmet>
-
-        {location.pathname !== '/' && (
-          <Header location={location} navList={navList} />
-        )}
-
-        <div className="blog-posts-container">{children}</div>
-      </>
-    )
-  }
+          {status => (
+            <div className={`blog-posts-container ${status}`}>
+              {children}
+              <Footer />
+            </div>
+          )}
+        </Transition>
+      </TransitionGroup>
+    </div >
+  )
 }
+
 
 Layout.propTypes = {
   children: PropTypes.any.isRequired,
   location: PropTypes.object.isRequired,
 }
+
+export default Layout
 
 export const pageQuery = graphql`
   query NavQuery {

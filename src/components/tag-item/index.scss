@@ -1,0 +1,18 @@
+.tag-container {
+  margin-bottom: 0.7rem;
+
+  & .tag {
+    margin: 0rem 0.2rem;
+    padding: 0.3rem;
+    border: 1.2px solid #555;
+    border-radius: 10px;
+    font-size: 12px;
+
+    &:hover {
+      color: white;
+      font-weight: 700;
+      background-color: #77af9c;
+      border: none;
+    }
+  }
+}

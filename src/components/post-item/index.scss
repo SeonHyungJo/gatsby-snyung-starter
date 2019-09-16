@@ -1,0 +1,33 @@
+@import "../../style/valuables.scss";
+
+.blog-post-preview {
+  background: white;
+  box-shadow: $shadow;
+
+  padding: 0.2rem 1.6rem;
+  margin: 0.6rem 0rem;
+
+  transition: transform 0.3s ease;
+
+  & .title {
+    font-size: 1.3rem;
+    margin: 0rem;
+  }
+
+  & .summary {
+    font-size: 0.8rem;
+    color: #7d7d7d;
+    margin-bottom: 0.7rem;
+  }
+
+  &:hover {
+    transform: scale(1.02, 1.02);
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .blog-post-preview {
+    margin: 0.1rem 0rem;
+    box-shadow: none;
+  }
+}

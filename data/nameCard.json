@@ -1,0 +1,24 @@
+{
+  "avataImg": {
+    "src": "https://avatars2.githubusercontent.com/u/24274424?s=460&v=4",
+    "alt": "mainImg"
+  },
+  "nickName": {
+    "name": "sNyung",
+    "to": "https://github.com/SeonHyungJo"
+  },
+  "text": "Welcome My First Gasby Template",
+  "sns": {
+    "email": "seonhyung.jo@gmail.com",
+    "facebook": "https://www.facebook.com/ImDev-361775957711957/",
+    "youtube": "https://www.youtube.com/channel/UCCs6KHf_Zo_iI2jfg_eqeDg",
+    "instagram": "",
+    "github": "https://github.com/SeonHyungJo",
+    "linkedin": "",
+    "twitter": ""
+  },
+  "utterences": {
+    "repo": "SeonHyungJo/gatsby-sseon-starter",
+    "theme": "github-light"
+  }
+}

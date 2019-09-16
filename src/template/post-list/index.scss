@@ -1,0 +1,14 @@
+@import "../../style/valuables";
+
+.blog-posts {
+  margin: 1rem auto;
+  margin-top: 1rem;
+
+  max-width: 700px;
+}
+
+@media only screen and (max-width: 640px) {
+  .blog-posts {
+    margin: 0px;
+  }
+}

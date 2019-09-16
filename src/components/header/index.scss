@@ -1,0 +1,54 @@
+@import "../../style/valuables.scss";
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+
+  width: 100vw;
+  height: $header-height;
+  padding: 2.5rem 2rem;
+
+  box-shadow: $shadow;
+
+  border-width: 2px;
+  border-style: solid;
+
+  // border-image: linear-gradient(to right, #01c9ca 0%, #3886ff 100%);
+  border-image: linear-gradient(to right, #8cd790, #285943) 0 0 100%;
+  // background-position: 0 100%;
+
+  font: {
+    family: "Lato";
+    size: 13px;
+    weight: 500;
+  }
+
+  .header-title {
+    font: {
+      size: 40px;
+      weight: 700;
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .header-container {
+    border-bottom: 2px solid #aaaaaa;
+    box-shadow: none;
+    flex-direction: column;
+    height: $header-height + 2rem;
+    padding: 1rem;
+
+    font: {
+      size: 13px;
+    }
+
+    .header-title {
+      font: {
+        size: 25px;
+      }
+    }
+  }
+}
