@@ -27,7 +27,7 @@ module.exports = {
       resolve: 'gatsby-plugin-sitemap',
       options: {
         output: '/some-other-sitemap.xml',
-        exclude: ['/posts/*', '/acticle/*', '/aboutme', '/category/*'],
+        exclude: ['/content/*', '/posts/*', '/acticle/*', '/aboutme', '*'],
         query: `
           {
             site {
@@ -49,7 +49,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/post`,
+        path: `${__dirname}/contents`,
         name: 'post'
       }
     },

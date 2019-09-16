@@ -1,5 +1,5 @@
 ---
-path: "/post/mvc-mvp-mvvm"
+path: "/content/mvc-mvp-mvvm"
 title: "MVC, MVP, MVVM"
 date: "2017-07-18"
 tags: ["javascript", "sample"]

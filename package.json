@@ -36,7 +36,9 @@
     "react-transition-group": "^4.3.0",
     "typeface-fira-sans": "0.0.75",
     "typeface-lato": "0.0.75",
+    "typeface-nanum-gothic": "0.0.63",
     "typeface-nanum-gothic-coding": "0.0.63",
+    "typeface-nanum-myeongjo": "0.0.63",
     "typeface-poor-story": "0.0.63"
   },
   "devDependencies": {

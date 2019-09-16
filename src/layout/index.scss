@@ -1,4 +1,4 @@
-@import '../style/valuables.scss';
+@import "../style/valuables.scss";
 
 .scroll-box {
   max-height: 100vh;
@@ -10,7 +10,7 @@
   max-width: 960;
   padding: 0px 2.5875rem;
 
-  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
 
   // Attach content side
   &.entering {

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const LinkedinIcon = (href) =>
-  <a href={href}>
+  <a href={href} target="_blank" rel="noopener noreferrer">
     <svg viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
       <path d="m437 0h-362c-41.398438 0-75 34.601562-75 76v361c0 41.398438 33.601562 75 75 75h362c41.398438 0 75-33.601562 75-75v-361c0-41.398438-33.601562-76-75-76zm0 0" fill="#25d9f8" />
       <path d="m512 76v361c0 41.398438-33.601562 75-75 75h-181v-512h181c41.398438 0 75 34.601562 75 76zm0 0" fill="#00c0f1" />
