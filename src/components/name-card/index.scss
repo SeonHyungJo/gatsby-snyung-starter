@@ -140,6 +140,8 @@ body::-webkit-scrollbar {
     &.simple-card {
       height: 20%;
 
+      transition: none;
+
       .card-img-container {
         display: none;
       }
