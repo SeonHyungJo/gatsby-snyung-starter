@@ -78,10 +78,11 @@ const Layout = (props) => {
           {status => (
             <div className={`blog-posts-container ${status}`}>
               {children}
-              <Footer />
+              {cardMode && <Footer />}
             </div>
           )}
         </Transition>
+        
       </TransitionGroup>
     </div >
   )

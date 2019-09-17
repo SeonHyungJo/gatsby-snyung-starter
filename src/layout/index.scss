@@ -1,8 +1,14 @@
-@import "../style/valuables.scss";
+@import '../style/valuables.scss';
 
 .scroll-box {
   max-height: 100vh;
-  overflow: scroll;
+  overflow-x: auto;
+
+  &::-webkit-scrollbar {
+    width: 0 !important;
+  }
+  overflow: -moz-scrollbars-none;
+  -ms-overflow-style: none;
 }
 
 .blog-posts-container {
@@ -10,7 +16,7 @@
   max-width: 960;
   padding: 0px 2.5875rem;
 
-  transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
 
   // Attach content side
   &.entering {
@@ -25,7 +31,7 @@
 
   // Detach content side
   &.exiting {
-    margin-top: -2rem;
+    margin-top: 100px;
     opacity: 0;
 
     .footer {
