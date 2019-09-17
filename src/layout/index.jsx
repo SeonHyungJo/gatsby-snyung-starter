@@ -34,9 +34,10 @@ const CustomHelmet = () => (
 
 const Layout = (props) => {
   const { location = '/', children } = props
+  const pathSplit = location.pathname.split('/')
   const [scrolling, setScrolling] = useState(false)
-  const [cardMode, setCardMode] = useState(location.pathname !== '/')
-  const checkContent = location.pathname.split('/')[1] === 'content'
+  const [cardMode, setCardMode] = useState(pathSplit[1] !== '')
+  const checkContent = pathSplit[1] === 'content'
 
   const changeCardMode = () => {
     setCardMode(prevMode => !prevMode)
