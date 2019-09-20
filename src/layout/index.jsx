@@ -37,7 +37,7 @@ const Layout = (props) => {
   const pathSplit = location.pathname.split('/')
   const [scrolling, setScrolling] = useState(false)
   const [cardMode, setCardMode] = useState(pathSplit[1] !== '')
-  const checkContent = pathSplit[1] === 'content'
+  const checkContent = pathSplit[1] === 'content' || pathSplit[1] === 'aboutme'
 
   const changeCardMode = () => {
     setCardMode(prevMode => !prevMode)
@@ -46,6 +46,8 @@ const Layout = (props) => {
 
   const handleScroll = () => {
     setScrolling(true)
+
+    console.log('scrolling', scrolling)
 
     if (!scrolling) {
       setTimeout(() => {
@@ -56,6 +58,7 @@ const Layout = (props) => {
 
   useEffect(() => {
     const indexPathCheck = location.pathname !== '/'
+    console.log('useEffect', location.pathname, indexPathCheck)
 
     setCardMode(indexPathCheck)
     setScrolling(indexPathCheck)
@@ -69,7 +72,7 @@ const Layout = (props) => {
         <TabContianer tabList={tabList} />
       </Header>
 
-      {checkContent || <NameCardFull cardMode={cardMode} />}
+      {checkContent || <NameCardFull key={pathSplit[1]} cardMode={cardMode} />}
 
       <TransitionGroup component={null}>
         <Transition

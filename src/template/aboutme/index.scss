@@ -1,0 +1,56 @@
+@import "../../style/valuables";
+
+.aboutme-container {
+  background: white;
+  box-shadow: $shadow;
+
+  padding: 1rem 2rem;
+  margin: 3rem auto 0rem;
+
+  max-width: 900px;
+
+  .aboutme-content{
+    font: {
+      family: 'Nanum Gothic', sans-serif;
+      size: 0.9rem;
+      weight: 400;
+    }
+
+    line-height: 160%;
+    letter-spacing: normal;
+
+    padding: 0.5rem;
+  }
+
+  .aboutme-footer {
+    border-top: 0.05rem solid #aaaaaa;
+
+    .aboutme-footer-content {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+
+      margin-top: 0.5rem;
+      padding: 1rem;
+    }
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .aboutme-footer {
+    .aboutme-footer-content {
+      flex-direction: column;
+
+      .sponsor-button{
+        margin: 1rem;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .aboutme-container {
+    margin: 0rem;
+    box-shadow: none;
+  }
+}

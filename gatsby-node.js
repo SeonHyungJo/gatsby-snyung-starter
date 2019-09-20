@@ -1,14 +1,10 @@
 const path = require('path')
 
-exports.createPages = async ({ actions, graphql }) => {
-  const { createPage } = actions
+const AboutMeTemplate = path.resolve(`src/template/aboutme/index.jsx`)
+const PostTemplate = path.resolve(`src/template/blog-post/index.jsx`)
+const pagesComponent = path.resolve(`src/template/post-list/index.jsx`)
 
-  await createPostPages(createPage, graphql, 'post')
-  await createPostPages(createPage, graphql, 'article')
-}
-
-const createPostPages = (createPage, graphql, categoryName) => {
-  return graphql(`
+const getPostsQuery = (graphql, categoryName) => graphql(`
     {
       allMarkdownRemark(
         sort: { order: DESC, fields: [frontmatter___date] }
@@ -30,26 +26,23 @@ const createPostPages = (createPage, graphql, categoryName) => {
         }
       }
     }
-  `).then(result => {
+  `)
+
+const createPostPages = (createPage, graphql, categoryName) =>
+  getPostsQuery(graphql, categoryName).then(result => {
     if (result.errors) Promise.reject(result.errors)
 
-    const posts = result.data.allMarkdownRemark.edges
-
-    CreateCommonPage(createPage, posts, categoryName)
+    CreateCommonPage(createPage, result.data.allMarkdownRemark.edges, categoryName)
   })
-}
 
-const CreateCommonPage = (createPage, posts, pageName) => {
-  const postsPerPage = 5
-  const maxPageNum = Math.ceil(posts.length / postsPerPage)
 
-  const PostTemplate = path.resolve(`src/template/blog-post/index.jsx`)
-  const pagesComponent = path.resolve(`src/template/post-list/index.jsx`)
+const CreateCommonPage = (createPage, posts, categoryName) => {
+  const limit = 5
+  const maxPageNum = Math.ceil(posts.length / limit)
 
   Array.from({ length: maxPageNum }).forEach((_, i) => {
     const pagePath = i === 0 ? '' : i
-    const path = `/${pageName}/${pagePath}`
-
+    const path = `/${categoryName}/${pagePath}`
     const next = i === maxPageNum - 1 ? '' : i + 1
     const prev = i === 0 ? '' : i === 1 ? 0 : i - 1
 
@@ -57,12 +50,12 @@ const CreateCommonPage = (createPage, posts, pageName) => {
       path: path,
       component: pagesComponent,
       context: {
-        limit: postsPerPage,
-        skip: i * postsPerPage,
+        limit,
+        skip: i * limit,
         prev,
         next,
         maxPageNum,
-        categoryName: pageName
+        categoryName
       }
     })
   })
@@ -77,11 +70,33 @@ const CreateCommonPage = (createPage, posts, pageName) => {
         path: node.frontmatter.path,
         component: PostTemplate,
         context: {
+          limit,
           prev,
-          next,
-          limit: postsPerPage
+          next
         }
       })
     })
   }
+}
+
+const createAboutme = (createPage, graphql, categoryName) =>
+  getPostsQuery(graphql, categoryName).then(result => {
+    if (result.errors) Promise.reject(result.errors)
+    const post = result.data.allMarkdownRemark.edges
+
+    // Aboutme Page
+    if (post.length === 1) {
+      createPage({
+        path: post[0].node.frontmatter.path,
+        component: AboutMeTemplate,
+        context: {
+        }
+      })
+    }
+  })
+
+exports.createPages = async ({ actions: { createPage }, graphql }) => {
+  await createPostPages(createPage, graphql, 'post')
+  await createPostPages(createPage, graphql, 'article')
+  await createAboutme(createPage, graphql, 'aboutme')
 }

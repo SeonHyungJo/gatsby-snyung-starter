@@ -53,7 +53,8 @@
   },
   "keywords": [
     "gatsby",
-    "sseon"
+    "snyung",
+    "blog"
   ],
   "scripts": {
     "dev": "gatsby develop",
