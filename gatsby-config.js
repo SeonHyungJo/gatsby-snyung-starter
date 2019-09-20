@@ -98,7 +98,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        configFile: '/static/robots-txt.config.js'
+        configFile: '/robots-txt.config.js'
       }
     },
     'gatsby-plugin-offline',
