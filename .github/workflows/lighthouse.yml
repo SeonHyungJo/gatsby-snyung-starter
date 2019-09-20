@@ -1,5 +1,5 @@
 name: Lighthouse Audit & Deploy Netlify
-on: [push, pull_request]
+on: [pull_request]
 
 jobs:
   audit:
@@ -8,7 +8,6 @@ jobs:
       - name: Lighthouse Audit
         uses: jakejarvis/lighthouse-action@master
         with:
-          url: 'gatsby-sseon-starter.netlify.com'
           netlify_site: 'gatsby-sseon-starter.netlify.com'
       - uses: actions/upload-artifact@master
         with:
