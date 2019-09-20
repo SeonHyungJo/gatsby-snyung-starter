@@ -68,7 +68,7 @@ module.exports = {
         util: path.join(__dirname, 'src/util'),
         post: path.join(__dirname, 'post'),
         assets: path.join(__dirname, 'assets'),
-        data: path.join(__dirname, 'data')
+        data: path.join(__dirname, 'meta-data')
       }
     },
     {

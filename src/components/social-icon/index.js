@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { sns } from 'meta-data/nameCard'
+import { sns } from 'data/nameCard'
 import EmailIconItem from './email-icon'
 import FacebookIconItem from './facebook-icon'
 import GithubIconItem from './github-icon'
