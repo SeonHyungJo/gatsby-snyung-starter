@@ -83,7 +83,7 @@ const Layout = (props) => {
             </div>
           )}
         </Transition>
-        
+
       </TransitionGroup>
     </div >
   )

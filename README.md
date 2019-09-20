@@ -1,44 +1,31 @@
 # gatsby-theme
 
-지킬에서 캐츠비로 블로그 이전을 위한 테마 만들기 프로젝트
+## 메인사진
+
+### 메인 설명
+
+## 대문사진 및 post list 사진
 
 ## 화면 미리 보기
 
-### Desktop
+[![GitHub Author](https://img.shields.io/badge/Author-sNyung-blue?style=flat-square)](https://github.com/SeonHyungJo)
+[![GitHub license](https://img.shields.io/github/license/SeonHyungJo/gatsby-sseon-starter?style=flat-square)](https://github.com/SeonHyungJo/gatsby-sseon-starter/blob/master/LICENSE)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/57006f2a-8e43-462d-9b39-915f6eb87066/deploy-status)](https://app.netlify.com/sites/gatsby-sseon-starter/deploys) [![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100)](https://github.com/ebidel/lighthouse-badge) [![HitCount](http://hits.dwyl.io/SeonHyungJo/gatsby-sseon-starter.svg)](http://hits.dwyl.io/SeonHyungJo/gatsby-sseon-starter)
 
-<img src="./assets/preview/desktop/gatsby-sseon-starter-index.png" alt="index-page" />
+### 간단한 블로그 설명
 
-<img src="./assets/preview/desktop/gatsby-sseon-starter-aboutMe.png" alt="aboutMe" />
+## Demo page
 
-<img src="./assets/preview/desktop/gatsby-sseon-starter-aboutMe.png" alt="aboutMe" />
+## 사용법
 
-<img src="./assets/preview/desktop/gatsby-sseon-starter-post-1.png" alt="post" />
+### theme 설치법
 
-<img src="./assets/preview/desktop/gatsby-sseon-starter-post-2.png" alt="post" />
+### post 추가 방법
 
-<img src="./assets/preview/desktop/gatsby-sseon-starter-post-list-1.png" alt="post-list" />
+### config data 사용법
 
-<img src="./assets/preview/desktop/gatsby-sseon-starter-post-list-2.png" alt="post-list" />
+## 파일 구조
 
-<img src="./assets/preview/desktop/gatsby-sseon-starter-tags-1.png" alt="tags" />
+## 버그
 
-<img src="./assets/preview/desktop/gatsby-sseon-starter-tags-2.png" alt="tags" />
-
-### Mobile
-
-<div>
-    <img src="./assets/preview/mobile/gatsby-sseon-starter-m-index.png" alt="index-page" width="200px" display=""/>
-    <img src="./assets/preview/mobile/gatsby-sseon-starter-m-aboutMe.png" alt="aboutMe" width="200px"/>
-    <img src="./assets/preview/mobile/gatsby-sseon-starter-m-aboutMe.png" alt="aboutMe" width="200px"/>
-</div>
-
-<div>
-    <img src="./assets/preview/mobile/gatsby-sseon-starter-m-post-list-1.png" alt="post-list" width="200px"/>
-    <img src="./assets/preview/mobile/gatsby-sseon-starter-m-post-list-2.png" alt="post-list" width="200px"/>
-    <img src="./assets/preview/mobile/gatsby-sseon-starter-m-tags-1.png" alt="tags" width="200px"/>
-</div>
-
-<div>
-    <img src="./assets/preview/mobile/gatsby-sseon-starter-m-tags-2.png" alt="tags" width="200px"/>
-    <img src="./assets/preview/mobile/gatsby-sseon-starter-m-post-1.png" alt="post" width="200px"/>
-</div>
+## 라이센스

@@ -5,5 +5,5 @@ jobs:
   audit:
     runs-on: ubuntu-latest
     steps:
-    - name: ESLint checks
-      uses: gimenete/eslint-action@master
+      - name: ESLint checks
+        uses: 'stefanoeb/eslint-action@master'

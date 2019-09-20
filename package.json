@@ -1,8 +1,8 @@
 {
   "name": "gatsby-sseon-starter",
-  "description": "Gatsby Sseon starter example",
-  "version": "0.8.0",
-  "author": "SeonHyung Jo <seonhyung.jo@gmail.com>",
+  "description": "Very simple Blog Template",
+  "version": "0.9.0",
+  "author": "sNyung <seonhyung.jo@gmail.com>",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SeonHyungJo/gatsby-sseon-starter.git"
@@ -56,11 +56,11 @@
     "sseon"
   ],
   "scripts": {
-    "build": "gatsby build",
     "dev": "gatsby develop",
+    "start": "npm run dev",
+    "build": "gatsby build",
     "preserve": "npm run build",
     "serve": "gatsby serve",
-    "start": "npm run dev",
     "lint": "eslint --ext .js,.jsx --ignore-pattern public ."
   },
   "husky": {

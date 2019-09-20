@@ -11,10 +11,10 @@ import YoutubeIconItem from './youtube-icon'
 
 
 
-export const EmailIcon = () => <EmailIconItem href={`mailto:${sns.email}`}/>
-export const FacebookIcon = () => <FacebookIconItem href={`${sns.facebook}`}/>
-export const GithubIcon = () => <GithubIconItem href={`${sns.github}`}/>
-export const InstagramIcon = () => <InstagramIconItem href={`${sns.instagram}`}/>
-export const LinkedinIcon = () => <LinkedinIconItem href={`${sns.linkedin}`}/>
-export const TwitterIcon = () => <TwitterIconItem href={`${sns.twitter}`}/>
-export const YoutubeIcon = () => <YoutubeIconItem href={`${sns.youtube}`}/>
+export const EmailIcon = () => <EmailIconItem href={`mailto:${sns.email}`} />
+export const FacebookIcon = () => <FacebookIconItem href={`${sns.facebook}`} />
+export const GithubIcon = () => <GithubIconItem href={`${sns.github}`} />
+export const InstagramIcon = () => <InstagramIconItem href={`${sns.instagram}`} />
+export const LinkedinIcon = () => <LinkedinIconItem href={`${sns.linkedin}`} />
+export const TwitterIcon = () => <TwitterIconItem href={`${sns.twitter}`} />
+export const YoutubeIcon = () => <YoutubeIconItem href={`${sns.youtube}`} />
