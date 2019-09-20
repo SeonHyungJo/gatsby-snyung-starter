@@ -1,12 +1,22 @@
 const { name } = require('./package.json')
 const path = require('path')
 
+// env setting for netlify preview
+const {
+  NODE_ENV,
+  URL: NETLIFY_SITE_URL = 'hhttps://gatsby-sseon-starter.netlify.com',
+  DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
+  CONTEXT: NETLIFY_ENV = NODE_ENV
+} = process.env;
+const isNetlifyProduction = NETLIFY_ENV === 'production';
+const siteUrl = isNetlifyProduction ? NETLIFY_SITE_URL : NETLIFY_DEPLOY_URL;
+
 module.exports = {
   pathPrefix: process.env.CI ? `/${name}` : '/',
   siteMetadata: {
     author: 'SeonHyungJo',
     title: 'Renewal Blog',
-    siteUrl: 'https://gatsby-sseon-starter.netlify.com'
+    siteUrl
   },
   plugins: [
     {
@@ -98,7 +108,24 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        configFile: '/robots-txt.config.js'
+        host: 'https://gatsby-sseon-starter.netlify.com',
+        sitemap: 'https://gatsby-sseon-starter.netlify.com/sitemap.xml',
+        resolveEnv: () => NETLIFY_ENV,
+        env: {
+          production: {
+            policy: [{ userAgent: '*' }]
+          },
+          'branch-deploy': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            host: 'https://gatsby-sseon-starter.netlify.com',
+            sitemap: 'https://gatsby-sseon-starter.netlify.com/sitemap.xml',
+          },
+          'deploy-preview': {
+            policy: [{ userAgent: '*', disallow: ['/'] }],
+            sitemap: null,
+            host: null
+          }
+        }
       }
     },
     'gatsby-plugin-offline',
