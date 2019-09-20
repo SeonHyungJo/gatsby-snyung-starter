@@ -9,7 +9,12 @@ module.exports = {
     siteUrl: 'https://gatsby-sseon-starter.netlify.com'
   },
   plugins: [
-    'gatsby-plugin-offline',
+    {
+      resolve: 'gatsby-plugin-layout',
+      options: {
+        component: require.resolve('./src/layout/index.jsx')
+      }
+    },
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -20,7 +25,14 @@ module.exports = {
         background_color: '#fff',
         theme_color: '#663399',
         display: 'standalone',
-        icon: 'assets/logo.png'
+        icon: 'contents/assets/cardAvatar.png'
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/contents`,
+        name: 'post'
       }
     },
     {
@@ -47,13 +59,6 @@ module.exports = {
       }
     },
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/contents`,
-        name: 'post'
-      }
-    },
-    {
       resolve: 'gatsby-plugin-root-import',
       options: {
         src: path.join(__dirname, 'src'),
@@ -64,7 +69,7 @@ module.exports = {
         util: path.join(__dirname, 'src/util'),
         post: path.join(__dirname, 'post'),
         assets: path.join(__dirname, 'assets'),
-        data: path.join(__dirname, 'data'),
+        data: path.join(__dirname, 'data')
       }
     },
     {
@@ -97,15 +102,11 @@ module.exports = {
         configFile: 'robots-txt.config.js'
       }
     },
+    'gatsby-plugin-offline',
     'gatsby-plugin-react-helmet',
+    'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-plugin-sass',
-    'gatsby-plugin-catch-links',
-    {
-      resolve: 'gatsby-plugin-layout',
-      options: {
-        component: require.resolve('./src/layout/index.jsx'),
-      },
-    },
+    'gatsby-plugin-catch-links'
   ]
 }
