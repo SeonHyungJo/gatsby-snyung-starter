@@ -1,5 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
+import { StaticQuery, graphql, Link } from 'gatsby'
+import Image from 'gatsby-image'
 
 import { avataImg, nickName, text } from 'data/nameCard'
 import ScrollIcon from 'component/scroll-icon'
@@ -15,12 +16,11 @@ import {
 
 import './index.scss'
 
-const AvataImg = ({ src = '', alt = '' }) =>
+const AvataImg = (fixed) =>
   <Link to={'/'}>
-    <img
+    <Image
       className='img-circle'
-      src={src}
-      alt={alt}
+      fixed={fixed}
     />
   </Link>
 
@@ -57,24 +57,43 @@ const SocialBox = ({ snsList = [] }) =>
 const Presentation = ({ text = 'Hello My Blog Template' }) =>
   <div className='presentation'>{text}</div>
 
-const NameCard = ({ cardMode = true }) => {
-  const cardModeClass = cardMode ? 'simple-card' : ''
+const NameCard = ({cardMode = false}) => (
+  <StaticQuery
+      query={cardQuery}
+      render={(data) => {
+        const cardModeClass = cardMode ? 'simple-card' : ''
 
-  return (
-    < div className={`card-item ${cardModeClass}`} >
-      <div className={'card-img-container'}>
-        <AvataImg src={avataImg.src} alt={avataImg.alt} />
-      </div>
+        return (
+          <div className={`card-item  ${cardModeClass}`} >
+          <div className={'card-img-container'}>
+            <AvataImg {...data.avatar.childImageSharp.fixed} />
+          </div>
 
-      <div className={'card-content-container'}>
-        <NickName {...nickName} />
-        <Presentation text={text} />
-        <SocialBox />
-        {!cardMode && <ScrollIcon />}
-      </div>
-    </div >
-  )
-}
+          <div className={`card-content-container`}>
+            <NickName {...nickName} />
+            <Presentation text={text} />
+            <SocialBox />
+            {!cardMode && <ScrollIcon />}
+          </div>
+        </div >
+        )
+      }}
+  />
+)
 
+const cardQuery = graphql`
+  query cardQuery {
+    avatar: file(absolutePath: { regex: "/assets/cardAvatar.png/" }) {
+      childImageSharp {
+        fixed(width: 100, height: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
 
 export default NameCard
+
+
+

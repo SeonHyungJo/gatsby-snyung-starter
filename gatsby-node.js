@@ -1,10 +1,10 @@
 const path = require('path')
 
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
   const { createPage } = actions
 
-  createPostPages(createPage, graphql, 'post')
-  createPostPages(createPage, graphql, 'article')
+  await createPostPages(createPage, graphql, 'post')
+  await createPostPages(createPage, graphql, 'article')
 }
 
 const createPostPages = (createPage, graphql, categoryName) => {
@@ -17,7 +17,7 @@ const createPostPages = (createPage, graphql, categoryName) => {
       ) {
         edges {
           node {
-            rawMarkdownBody
+            html
             id
             timeToRead
             frontmatter {
@@ -50,11 +50,11 @@ const CreateCommonPage = (createPage, posts, pageName) => {
     const pagePath = i === 0 ? '' : i
     const path = `/${pageName}/${pagePath}`
 
-    const next = i === maxPageNum - 1 ? '' : i + 1;
+    const next = i === maxPageNum - 1 ? '' : i + 1
     const prev = i === 0 ? '' : i === 1 ? 0 : i - 1
 
     createPage({
-      path,
+      path: path,
       component: pagesComponent,
       context: {
         limit: postsPerPage,
@@ -79,7 +79,7 @@ const CreateCommonPage = (createPage, posts, pageName) => {
         context: {
           prev,
           next,
-          limit: postsPerPage,
+          limit: postsPerPage
         }
       })
     })
