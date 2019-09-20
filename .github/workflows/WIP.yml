@@ -1,0 +1,9 @@
+name: "Check WIP"
+on: [pull_request]
+
+jobs:
+  wip:
+  name: "Check WIP
+  runs-on: ubuntu-latest
+  steps:
+    - uses: wip/action@master
