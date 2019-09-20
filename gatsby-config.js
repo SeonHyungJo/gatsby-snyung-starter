@@ -47,7 +47,6 @@ module.exports = {
                 siteUrl
               }
             }
-
             allSitePage {
               edges {
                 node {
@@ -99,7 +98,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        configFile: 'robots-txt.config.js'
+        configFile: '/static/robots-txt.config.js'
       }
     },
     'gatsby-plugin-offline',

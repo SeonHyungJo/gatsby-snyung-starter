@@ -2,7 +2,7 @@ import React from 'react'
 import { StaticQuery, graphql, Link } from 'gatsby'
 import Image from 'gatsby-image'
 
-import { avataImg, nickName, text } from 'data/nameCard'
+import { avataImg, nickName, text } from 'meta-data/nameCard'
 import ScrollIcon from 'component/scroll-icon'
 import {
   EmailIcon,
@@ -57,14 +57,14 @@ const SocialBox = ({ snsList = [] }) =>
 const Presentation = ({ text = 'Hello My Blog Template' }) =>
   <div className='presentation'>{text}</div>
 
-const NameCard = ({cardMode = false}) => (
+const NameCard = ({ cardMode = false }) => (
   <StaticQuery
-      query={cardQuery}
-      render={(data) => {
-        const cardModeClass = cardMode ? 'simple-card' : ''
+    query={cardQuery}
+    render={(data) => {
+      const cardModeClass = cardMode ? 'simple-card' : ''
 
-        return (
-          <div className={`card-item  ${cardModeClass}`} >
+      return (
+        <div className={`card-item  ${cardModeClass}`} >
           <div className={'card-img-container'}>
             <AvataImg {...data.avatar.childImageSharp.fixed} />
           </div>
@@ -76,8 +76,8 @@ const NameCard = ({cardMode = false}) => (
             {!cardMode && <ScrollIcon />}
           </div>
         </div >
-        )
-      }}
+      )
+    }}
   />
 )
 

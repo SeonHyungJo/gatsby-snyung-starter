@@ -1,7 +1,7 @@
 ---
 path: "/content/sample-post"
 author: "sseon"
-date: "2017-07-18T13:35:13.234Z"
+date: "2019-09-18T13:35:13.234Z"
 title: "Sample Post"
 tags: ["latin", "article"]
 category: "article"

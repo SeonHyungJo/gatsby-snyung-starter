@@ -9,7 +9,7 @@ import NameCardFull from 'component/name-card'
 import SponsorButton from 'component/sponsor-btn'
 import PageBtnContainer from 'component/post-move-btn'
 
-import { utterences } from 'data/nameCard'
+import { utterences } from 'meta-data/nameCard'
 import './index.scss'
 
 const PostHelmet = ({ title, excerpt, tags }) =>

@@ -9,7 +9,7 @@ import TabContianer from 'component/tab-container'
 import NameCardFull from 'component/name-card-full'
 import Footer from 'component/footer'
 
-import { tabList } from 'data/tabList'
+import { tabList } from 'meta-data/tabList'
 
 import 'style/prism-tomorrow.scss'
 import 'style/baseLayout.scss'
@@ -83,7 +83,7 @@ const Layout = (props) => {
             </div>
           )}
         </Transition>
-        
+
       </TransitionGroup>
     </div >
   )
