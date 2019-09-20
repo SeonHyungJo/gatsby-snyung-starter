@@ -15,10 +15,6 @@ import './index.scss'
 const PostHelmet = ({ title, excerpt, tags }) =>
   <Helmet
     title={`${title}`}
-    meta={[
-      { name: 'description', content: `${excerpt}` },
-      { name: 'keywords', content: `${tags}` },
-    ]}
   />
 
 const PostTemplate = (props) => {

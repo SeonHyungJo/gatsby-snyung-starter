@@ -46,7 +46,6 @@ export const Posts = graphql`
             date(formatString: "YYYY/MM/DD")
             path
             tags
-            author
           }
         }
       }

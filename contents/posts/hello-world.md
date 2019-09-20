@@ -1,15 +1,12 @@
 ---
 path: "/content/hello-world"
-author: "sseon"
 date: "2017-07-14T03:49:16.408Z"
 title: "Hello World"
 tags: ["first"]
 category: "post"
 ---
 
-
 ![hipster guy](https://source.unsplash.com/random)
-![hipster guy](/assets/logo.png)
 
 :star: 8-bit ugh shoreditch kogi craft beer, readymade post-ironic master cleanse hella banh mi forage edison bulb la croix intelligentsia salvia. +1 photo booth food truck viral woke. Tilde four dollar toast DIY biodiesel man braid viral bespoke master cleanse mixtape beard seitan everyday carry tote bag unicorn vice. Kitsch hexagon cornhole four loko, pop-up food truck kickstarter plaid. Subway tile cloud bread pour-over polaroid. Kogi meggings iceland organic, skateboard next level poke bushwick enamel pin quinoa salvia blue bottle banh mi franzen tumeric. Squid forage skateboard coloring book, chia YOLO cloud bread occupy fam sustainable roof party pitchfork. Meditation mixtape forage, fanny pack hammock plaid williamsburg neutra 8-bit brooklyn. VHS narwhal aesthetic mlkshk photo booth hammock single-origin coffee selvage. Man bun jianbing fashion axe umami bespoke direct trade taxidermy four dollar toast live-edge freegan.
 
