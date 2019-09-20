@@ -1,0 +1,9 @@
+name: ESLint checks
+on: pull_request
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+    - name: ESLint checks
+      uses: gimenete/eslint-action@master
