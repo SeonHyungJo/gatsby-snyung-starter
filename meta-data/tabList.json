@@ -7,10 +7,6 @@
     {
       "path": "/article",
       "name": "Article"
-    },
-    {
-      "path": "/aboutme",
-      "name": "About Me"
     }
   ]
 }
