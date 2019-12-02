@@ -2,12 +2,13 @@
 
 .scroll-box {
   max-height: 100vh;
-  overflow-x: auto;
 
   &::-webkit-scrollbar {
     width: 0 !important;
   }
+
   overflow: -moz-scrollbars-none;
+  overflow-x: auto;
   -ms-overflow-style: none;
 }
 
@@ -23,6 +24,10 @@
     position: absolute;
     margin-top: 100px;
     opacity: 0;
+
+    .footer {
+      display: none;
+    }
   }
 
   &.entered {
