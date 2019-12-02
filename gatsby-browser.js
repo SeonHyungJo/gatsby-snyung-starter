@@ -10,3 +10,5 @@ require('typeface-fira-sans')
 require('typeface-nanum-myeongjo')
 // Load Nanum Gothic typeface
 require('typeface-nanum-gothic')
+// Load Noto Sans KR typeface
+require('typeface-noto-sans-kr')
