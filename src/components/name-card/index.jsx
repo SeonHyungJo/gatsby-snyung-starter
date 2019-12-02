@@ -24,7 +24,7 @@ const AvataImg = (fixed) =>
     />
   </Link>
 
-const NickName = ({ name = '', to = '/' }) =>
+const NickName = ({ name = '', to = '/aboutme' }) =>
   <a href={to} >
     <div className='nick-name'>{`@ ${name}`}</div>
   </a>
