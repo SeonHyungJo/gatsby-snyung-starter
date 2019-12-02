@@ -4,31 +4,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
 
-  // width: 100vw;
+  background: #5f2c82;
+  background: -webkit-linear-gradient(to left, #49a09d, #5f2c82);
+  background: linear-gradient(to left, #49a09d, #5f2c82);
+
+
   height: $header-height;
-  padding: 2.5rem 2rem;
+  padding: 1rem;
 
   box-shadow: $shadow;
 
-  border-width: 1.5px;
-  border-style: solid;
 
-  // border-image: linear-gradient(to right, #01c9ca 0%, #3886ff 100%);
+  border-width: 0px 0px 1px;
+  border-style: solid;
   border-image: linear-gradient(to right, #8cd790, #285943) 0 0 100%;
-  // background-position: 0 100%;
 
   font: {
-    family: 'Lato', sans-serif;
     size: 13px;
     weight: 500;
   }
 
   .header-title {
+    color: white;
+
     font: {
-      size: 40px;
-      weight: 700;
+      size: 36px;
+      weight: 500;
     }
   }
 }
