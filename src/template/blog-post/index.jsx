@@ -39,7 +39,7 @@ const PostTemplate = (props) => {
         <TagList tags={tags} />
         <div className="post-footer">
           <div className="post-footer-content">
-            <NameCardFull cardMode={true} />
+            <NameCardFull cardMode={"simple-card"} />
             <SponsorButton sponsorId={'snyung'} />
           </div>
           <div className="post-footer-movebtn">
