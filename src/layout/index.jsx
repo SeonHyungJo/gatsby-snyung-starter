@@ -40,11 +40,11 @@ const Layout = (props) => {
   const checkContent = CONTENT_LIST.includes(pathSplit[1])
 
   const [scrolling, setScrolling] = useState(false)
-  const [cardMode, setCardMode] = useState(pathSplit[1] !== '')
+  const [cardMode, setCardMode] = useState(pathSplit[1])
 
   const handleScroll = () => {
     setScrolling(true)
-    setCardMode(true)
+    setCardMode('simple-card')
 
     if (!scrolling) {
       setTimeout(() => {
@@ -56,8 +56,8 @@ const Layout = (props) => {
   useEffect(() => {
     const indexPathCheck = location.pathname !== '/'
 
-    setCardMode(indexPathCheck)
     setScrolling(indexPathCheck)
+    setCardMode(indexPathCheck ? 'simple-card' : '')
   }, [location.pathname])
 
   return (
@@ -71,7 +71,7 @@ const Layout = (props) => {
       </Header>
 
       {/* Name Card */}
-      {checkContent || <NameCardFull key={pathSplit[1]} cardMode={cardMode ? 'simple-card' : ''} />}
+      {checkContent || <NameCardFull key={pathSplit[1]} cardMode={cardMode} />}
 
       <TransitionGroup>
         <Transition
