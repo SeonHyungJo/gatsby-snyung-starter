@@ -4,9 +4,8 @@ import { Link } from 'gatsby'
 
 import './index.scss'
 
-const TabItem = ({ name = '', path = '/' }) =>
+const TabItem = ({ name, path}) =>
   <Link
-    key={`${name}_${path}`}
     to={path}
     className={`tab-item`}
     activeClassName={`active`}

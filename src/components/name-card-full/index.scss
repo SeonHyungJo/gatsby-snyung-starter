@@ -6,7 +6,7 @@ body::-webkit-scrollbar {
 
 .card-container {
   width: 500px;
-  margin: calc((77vh - 320px) / 2) auto;
+  margin: calc((77vh - 320px) / 2) auto calc((77vh - 220px) / 2);
   transition: all 0.8s cubic-bezier(0.77, 0, 0.175, 1);
 
   &.simple-card {

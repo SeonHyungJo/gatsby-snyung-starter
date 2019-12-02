@@ -1,8 +1,8 @@
+import { graphql, navigate } from 'gatsby'
 import React, { useState, useEffect } from 'react'
+import { TransitionGroup, Transition } from 'react-transition-group'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
-import { graphql, navigate } from 'gatsby'
-import { TransitionGroup, Transition } from 'react-transition-group'
 
 import Header from 'component/header'
 import TabContianer from 'component/tab-container'
@@ -16,6 +16,7 @@ import 'style/baseLayout.scss'
 
 import './index.scss'
 
+const CONTENT_LIST = ['content', 'aboutme']
 const CustomHelmet = () => (
   <Helmet
     title="Gatsby for SSEON"
@@ -32,33 +33,28 @@ const CustomHelmet = () => (
   </Helmet>
 )
 
+// 전체 레이아웃
 const Layout = (props) => {
   const { location = '/', children } = props
   const pathSplit = location.pathname.split('/')
+  const checkContent = CONTENT_LIST.includes(pathSplit[1])
+
   const [scrolling, setScrolling] = useState(false)
   const [cardMode, setCardMode] = useState(pathSplit[1] !== '')
-  const checkContent = pathSplit[1] === 'content' || pathSplit[1] === 'aboutme'
-
-  const changeCardMode = () => {
-    setCardMode(prevMode => !prevMode)
-    navigate(tabList[0].path)
-  }
 
   const handleScroll = () => {
     setScrolling(true)
-
-    console.log('scrolling', scrolling)
+    setCardMode(true)
 
     if (!scrolling) {
       setTimeout(() => {
-        changeCardMode()
-      }, 0)
+        navigate(tabList[0].path)
+      }, 450)
     }
   }
 
   useEffect(() => {
     const indexPathCheck = location.pathname !== '/'
-    console.log('useEffect', location.pathname, indexPathCheck)
 
     setCardMode(indexPathCheck)
     setScrolling(indexPathCheck)
@@ -66,15 +62,18 @@ const Layout = (props) => {
 
   return (
     <div className={'scroll-box'} onScroll={handleScroll}>
+      {/* Common Helmet*/}
       <CustomHelmet />
 
-      <Header title={'sNyung-starter'}>
+      {/* Common Header */}
+      <Header title={'sNyung.com'}>
         <TabContianer tabList={tabList} />
       </Header>
 
+      {/* Name Card */}
       {checkContent || <NameCardFull key={pathSplit[1]} cardMode={cardMode} />}
 
-      <TransitionGroup component={null}>
+      <TransitionGroup>
         <Transition
           key={location.pathname}
           timeout={{ enter: 300, exit: 500 }}
@@ -82,19 +81,17 @@ const Layout = (props) => {
           {status => (
             <div className={`blog-posts-container ${status}`}>
               {children}
-              {cardMode && <Footer />}
+              {<Footer />}
             </div>
           )}
         </Transition>
-
       </TransitionGroup>
     </div >
   )
 }
 
-
 Layout.propTypes = {
-  children: PropTypes.any.isRequired,
+  children: PropTypes.element.isRequired,
   location: PropTypes.object.isRequired,
 }
 
