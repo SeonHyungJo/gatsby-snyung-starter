@@ -4,13 +4,13 @@ import NameCard from 'component/name-card'
 
 import './index.scss'
 
-const NameCardFull = ({ cardMode = false }) =>
-  <div className={`card-container ${cardMode ? 'simple-card' : ''}`}>
+const NameCardFull = ({ cardMode }) =>
+  <div className={`card-container ${cardMode}`}>
     <NameCard cardMode={cardMode} />
   </div>
 
 NameCardFull.propTypes = {
-  cardMode : PropTypes.bool.isRequired
+  cardMode : PropTypes.string.isRequired
 }
 
 export default NameCardFull

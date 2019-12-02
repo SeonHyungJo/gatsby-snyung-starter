@@ -71,7 +71,7 @@ const Layout = (props) => {
       </Header>
 
       {/* Name Card */}
-      {checkContent || <NameCardFull key={pathSplit[1]} cardMode={cardMode} />}
+      {checkContent || <NameCardFull key={pathSplit[1]} cardMode={cardMode ? 'simple-card' : ''} />}
 
       <TransitionGroup>
         <Transition

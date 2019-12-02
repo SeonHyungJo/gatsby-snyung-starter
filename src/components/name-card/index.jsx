@@ -57,14 +57,12 @@ const SocialBox = ({ snsList = [] }) =>
 const Presentation = ({ text = 'Hello My Blog Template' }) =>
   <div className='presentation'>{text}</div>
 
-const NameCard = ({ cardMode = false }) => (
+const NameCard = ({ cardMode }) => (
   <StaticQuery
     query={cardQuery}
     render={(data) => {
-      const cardModeClass = cardMode ? 'simple-card' : ''
-
       return (
-        <div className={`card-item  ${cardModeClass}`} >
+        <div className={`card-item ${cardMode}`} >
           <div className={'card-img-container'}>
             <AvataImg {...data.avatar.childImageSharp.fixed} />
           </div>
@@ -80,6 +78,7 @@ const NameCard = ({ cardMode = false }) => (
     }}
   />
 )
+
 
 const cardQuery = graphql`
   query cardQuery {
