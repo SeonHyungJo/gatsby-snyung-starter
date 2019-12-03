@@ -79,7 +79,6 @@ const NameCard = ({ cardMode }) => (
   />
 )
 
-
 const cardQuery = graphql`
   query cardQuery {
     avatar: file(absolutePath: { regex: "/assets/cardAvatar.png/" }) {

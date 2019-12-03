@@ -4,13 +4,11 @@
   background: white;
   box-shadow: $shadow;
 
-  padding: 1rem 2rem;
+  padding: 0.2rem 1.5rem;
   margin: 0rem auto;
-  max-width: 700px;
+  max-width: $content-width;
 
   .post-header {
-    margin-bottom: 1rem;
-    padding-bottom: 1rem;
     border-bottom: 0.01rem solid #aaaaaa;
 
     .title {
@@ -18,12 +16,15 @@
       font-family: 'Lato', sans-serif;
       font-weight: 800;
       text-align: center;
-      margin-bottom: 0rem;
+      margin: 1rem 0rem 0rem;
     }
 
     .date {
+      color: rgba($color: #000000, $alpha: 0.6);
+      
       font-size: 0.8rem;
       text-align: right;
+      font-weight: 500;
       margin-bottom: 0rem;
     }
   }
@@ -31,16 +32,15 @@
   .post-content {
     // font-family: "Poor Story", cursive;
     // font-family: "Lato", sans-serif;
+    // family: 'Nanum Gothic', sans-serif;
     font: {
-      family: 'Nanum Gothic', sans-serif;
       size: 0.9rem;
       weight: 400;
     }
 
-    line-height: 160%;
+    line-height: 130%;
     letter-spacing: normal;
-
-    padding: 0.5rem;
+    padding: 0.5rem 0rem;
   }
 
   .post-footer {
@@ -48,14 +48,14 @@
 
     .post-footer-content {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       align-items: center;
 
-      margin-top: 1.5rem;
+      margin-top: 0.5rem;
     }
 
     .post-footer-movebtn {
-      margin-top: 1.5rem;
+      margin-top: 0.5rem;
     }
   }
 }

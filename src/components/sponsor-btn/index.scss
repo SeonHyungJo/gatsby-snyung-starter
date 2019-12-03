@@ -11,6 +11,7 @@
   border-radius: 20px;
   font-size: 12px;
   line-height: 40px;
+  margin: 0.3rem;
 
   transition: background-color 0.3s ease;
 
@@ -33,6 +34,6 @@
 
 @media only screen and (max-width: 640px) {
   .sponsor-button {
-    margin: 1rem 0;
+    margin: 0.3rem;
   }
 }

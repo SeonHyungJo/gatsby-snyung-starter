@@ -21,7 +21,7 @@ const AboutMe = ({ data }) => {
         <article className={'aboutme-content'} dangerouslySetInnerHTML={{ __html: html }} />
         <div className="aboutme-footer">
           <div className="aboutme-footer-content">
-            <NameCardFull cardMode={true} />
+            <NameCardFull cardMode={"simple-card"} />
             <SponsorButton sponsorId={'snyung'} />
           </div>
         </div>

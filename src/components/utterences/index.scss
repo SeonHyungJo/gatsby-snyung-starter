@@ -1,6 +1,6 @@
-.utterences {
-  max-width: 700px;
+@import '../../style/valuables';
 
-  padding: 1rem 0.7rem;
+.utterences {
+  max-width: $content-width;
   margin: 0rem auto;
 }

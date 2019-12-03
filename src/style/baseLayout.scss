@@ -6,7 +6,6 @@ html {
 body {
   margin: 0;
   background: rgba(244, 244, 244, 0.8);
-  font-family: Noto Sans KR,sans-serif;
 }
 
 article,
@@ -213,7 +212,8 @@ html {
 body {
   color: hsla(0, 0%, 0%, 0.8);
   // font-family: "SCDream", serif;
-  font-family: 'Fira Sans', sans-serif;
+  // font-family: 'Fira Sans', sans-serif;
+  font-family: 'Noto Sans KR', 'Nanum Gothic',sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;

@@ -81,7 +81,7 @@ const Layout = (props) => {
           {status => (
             <div className={`blog-posts-container ${status}`}>
               {children}
-              {<Footer />}
+              {location.pathname !== '/' && <Footer />}
             </div>
           )}
         </Transition>

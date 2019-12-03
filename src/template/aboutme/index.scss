@@ -4,10 +4,10 @@
   background: white;
   box-shadow: $shadow;
 
-  padding: 1rem 2rem;
-  margin: 3rem auto 0rem;
+  padding: 0.2rem 1rem;
+  margin: 0rem auto;
 
-  max-width: 900px;
+  max-width: 800px;
 
   .aboutme-content{
     font: {
@@ -30,8 +30,7 @@
       justify-content: space-around;
       align-items: center;
 
-      margin-top: 0.5rem;
-      padding: 1rem;
+      padding: 0.2rem;
     }
   }
 }
@@ -41,9 +40,7 @@
     .aboutme-footer-content {
       flex-direction: column;
 
-      .sponsor-button{
-        margin: 1rem;
-      }
+      padding: 0.5rem;
     }
   }
 }

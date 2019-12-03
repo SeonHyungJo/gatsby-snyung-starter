@@ -38,10 +38,6 @@
   &.exiting {
     margin-top: 100px;
     opacity: 0;
-
-    .footer {
-      display: none;
-    }
   }
 
   &.exited {
