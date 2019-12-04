@@ -22,8 +22,6 @@ const PostTemplate = (props) => {
   const { html, excerpt, frontmatter } = data.markdownRemark
   const { title, date, tags } = frontmatter
 
-  console.log(props)
-
   return (
     <>
       <PostHelmet title={title} excerpt={excerpt} tags={tags} />
