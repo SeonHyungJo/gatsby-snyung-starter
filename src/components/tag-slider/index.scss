@@ -1,0 +1,25 @@
+.category-container{
+    $caPadding : 0.2rem 0.4rem;
+    $caBorder : 1px solid black;
+    display: inline-block;
+    background: white;
+
+    border: $caBorder;
+    border-radius: 7px;
+    cursor: pointer;
+
+    margin: 0.3rem 0.4rem;
+
+    & .category-title{
+        display: inline-block;
+        color: black;
+        padding: $caPadding;
+        border-right: $caBorder;
+    }
+    & .category-count{
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.3);
+
+        padding:$caPadding;
+    }
+}

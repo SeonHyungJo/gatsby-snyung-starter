@@ -1,5 +1,5 @@
-import React from 'react'
-import { graphql } from 'gatsby'
+import React, { useState } from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
 import PropTypes from 'prop-types'
 
 import PostItem from 'component/post-item'
@@ -7,48 +7,73 @@ import PageBtnContainer from 'component/page-btn'
 
 import './index.scss'
 
-const Post = ({ data, pageContext }) => {
-  const { edges: posts } = data.allMarkdownRemark
+const usePosts = () => {
+  const { allMarkdownRemark } = useStaticQuery(
+    graphql`
+      query Posts($category: String) {
+        allMarkdownRemark(
+          sort: {fields: [frontmatter___date], order: DESC }
+          filter: {frontmatter: {category: {eq: $category } } }
+        ) {
+          edges {
+            node {
+              excerpt
+              id
+              frontmatter {
+                title
+                date(formatString: "YYYY/MM/DD")
+                path
+                tags
+                category
+              }
+            }
+          }
+        }
+      }
+    `
+  )
+
+  return allMarkdownRemark.edges
+}
+
+const visiblePosts = (posts, filterList, { skip, limit, categoryName }) =>
+  posts
+    .filter(({ node }) => node.frontmatter.category === categoryName)
+    .filter(({ node }) => {
+      if (filterList.length == 0) {
+        return true
+      } else {
+        for (const key of filterList) {
+          if (node.frontmatter.tags && node.frontmatter.tags.includes(key)) {
+            return true
+          }
+        }
+      }
+      return false
+    })
+    .filter(post => {
+      return post.node.frontmatter.title.length > 0
+    })
+
+const Post = ({ pageContext, filterList }) => {
+  const posts = usePosts()
+  const { skip, limit } = pageContext
+  const postList = visiblePosts(posts, filterList, pageContext)
 
   return (
     <div className="blog-posts">
       {
-        posts
-          .filter(post => post.node.frontmatter.title.length > 0)
+        postList
+          .slice(skip, skip + limit)
           .map(({ node }) => <PostItem key={node.id} post={node} />)
       }
-      <PageBtnContainer pageContext={pageContext} />
+      <PageBtnContainer nextWhether={skip < postList.length && postList.length <= skip + limit} pageContext={pageContext} />
     </div>
   )
 }
 
 Post.propTypes = {
-  data: PropTypes.object,
   pageContext: PropTypes.object,
 }
 
 export default Post
-
-export const Posts = graphql`
-  query Posts($skip: Int, $limit: Int, $categoryName: String) {
-    allMarkdownRemark(
-      sort: {fields: [frontmatter___date], order: DESC }
-      limit: $limit
-      skip: $skip
-      filter: {frontmatter: {category: {eq: $categoryName } } }
-    ) {
-      edges {
-        node {
-          excerpt
-          id
-          frontmatter {
-            title
-            date(formatString: "YYYY/MM/DD")
-            path
-            tags
-          }
-        }
-      }
-    }
-  }
-`

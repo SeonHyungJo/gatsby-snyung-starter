@@ -1,8 +1,8 @@
 ---
-path: "/content/hello-world"
+path: "/content/post_test_3"
 date: "2017-07-14T03:49:16.408Z"
 title: "Hello World"
-tags: ["first", "hello", "world", "forth", "fifthc"]
+tags: ["first", "third"]
 category: "post"
 ---
 

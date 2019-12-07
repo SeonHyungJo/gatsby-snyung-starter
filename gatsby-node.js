@@ -21,6 +21,7 @@ const getPostsQuery = (graphql, categoryName) => graphql(`
               path
               tags
               title
+              category
             }
           }
         }
@@ -55,7 +56,7 @@ const CreateCommonPage = (createPage, posts, categoryName) => {
         prev,
         next,
         maxPageNum,
-        categoryName
+        category : categoryName
       }
     })
   })
@@ -72,7 +73,8 @@ const CreateCommonPage = (createPage, posts, categoryName) => {
         context: {
           limit,
           prev,
-          next
+          next,
+          category : categoryName
         }
       })
     })

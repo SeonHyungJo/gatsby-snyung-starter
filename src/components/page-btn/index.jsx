@@ -9,10 +9,10 @@ const PageBtn = ({ to, text }) =>
     {text}
   </Link>
 
-const PageBtnContainer = ({ pageContext: { prev, next, categoryName } }) =>
+const PageBtnContainer = ({ nextWhether, pageContext: { skip, prev, limit, next, categoryName } }) =>
   <div className="page-btn-container">
     {prev === '' ? <div /> : <PageBtn to={`/${categoryName}/${prev === 0 ? '' : prev}`} text={'← Prev'} />}
-    {next === '' ? <div /> : <PageBtn to={`/${categoryName}/${next}`} text={'Next →'} />}
+    {next === '' || nextWhether ? <div /> : <PageBtn to={`/${categoryName}/${next}`} text={'Next →'} />}
   </div>
 
 PageBtnContainer.propTypes = {

@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 
 import Header from 'component/header'
 import TabContianer from 'component/tab-container'
+import TagSlider from 'component/tag-slider'
 import NameCardFull from 'component/name-card-full'
 import Footer from 'component/footer'
 
@@ -41,6 +42,7 @@ const Layout = (props) => {
 
   const [scrolling, setScrolling] = useState(false)
   const [cardMode, setCardMode] = useState(pathSplit[1])
+  const [filterList, setFilter] = useState([])
 
   const handleScroll = () => {
     setScrolling(true)
@@ -71,7 +73,14 @@ const Layout = (props) => {
       </Header>
 
       {/* Name Card */}
-      {checkContent || <NameCardFull key={pathSplit[1]} cardMode={cardMode} />}
+      {checkContent ||
+        <>
+          <NameCardFull key={pathSplit[1]} cardMode={cardMode} />
+          <div className="blog-posts">
+            <TagSlider setFilter={setFilter} />
+          </div>
+        </>
+      }
 
       <TransitionGroup>
         <Transition
@@ -80,7 +89,7 @@ const Layout = (props) => {
         >
           {status => (
             <div className={`blog-posts-container ${status}`}>
-              {children}
+              {React.cloneElement(children, { filterList })}
               {location.pathname !== '/' && <Footer />}
             </div>
           )}
