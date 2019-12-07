@@ -9,7 +9,7 @@ const PageBtn = ({ to, text }) =>
     {text}
   </Link>
 
-const PageBtnContainer = ({ pageContext: { prev = '', next = '', categoryName } }) =>
+const PageBtnContainer = ({ pageContext: { prev = '', next = '' } }) =>
   <div className="post-move-btn-container">
     {!prev ? <div /> : <PageBtn to={`${prev.frontmatter.path}`} text={`← ${prev.frontmatter.title}`} />}
     {!next ? <div /> : <PageBtn to={`${next.frontmatter.path}`} text={`${next.frontmatter.title} →`} />}

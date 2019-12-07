@@ -36,9 +36,9 @@ const usePosts = () => {
   return allMarkdownRemark.edges
 }
 
-const visiblePosts = (posts, filterList, { skip, limit, categoryName }) =>
+const visiblePosts = (posts, filterList, { category }) =>
   posts
-    .filter(({ node }) => node.frontmatter.category === categoryName)
+    .filter(({ node }) => node.frontmatter.category === category)
     .filter(({ node }) => {
       if (filterList.length == 0) {
         return true

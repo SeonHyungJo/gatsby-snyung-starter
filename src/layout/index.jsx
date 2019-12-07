@@ -18,6 +18,7 @@ import 'style/baseLayout.scss'
 import './index.scss'
 
 const CONTENT_LIST = ['content', 'aboutme']
+const SLIDER_PAGE_LIST = ['content', 'aboutme', 'article']
 const CustomHelmet = () => (
   <Helmet
     title="Gatsby for SSEON"
@@ -39,6 +40,7 @@ const Layout = (props) => {
   const { location = '/', children } = props
   const pathSplit = location.pathname.split('/')
   const checkContent = CONTENT_LIST.includes(pathSplit[1])
+  const checkSlider = SLIDER_PAGE_LIST.includes(pathSplit[1])
 
   const [scrolling, setScrolling] = useState(false)
   const [cardMode, setCardMode] = useState(pathSplit[1])
@@ -73,13 +75,11 @@ const Layout = (props) => {
       </Header>
 
       {/* Name Card */}
-      {checkContent ||
-        <>
-          <NameCardFull key={pathSplit[1]} cardMode={cardMode} />
-          <div className="blog-posts">
-            <TagSlider setFilter={setFilter} />
-          </div>
-        </>
+      {checkContent || <NameCardFull key={pathSplit[1]} cardMode={cardMode} />}
+      {checkSlider ||
+        <div className="blog-posts">
+          <TagSlider setFilter={setFilter} />
+        </div>
       }
 
       <TransitionGroup>
