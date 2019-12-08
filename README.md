@@ -1,31 +1,66 @@
-# gatsby-theme
+# [gatsby-snyung-starter](https://gatsby-snyung-starter.netlify.com/)
 
-## 메인사진
-
-### 메인 설명
-
-## 대문사진 및 post list 사진
-
-## 화면 미리 보기
+<div>
+  <img src="https://user-images.githubusercontent.com/24274424/70386884-a54f6000-19e1-11ea-8a36-36ca8a93b1e0.png" width="70%">
+  <img src="https://user-images.githubusercontent.com/24274424/70386864-66b9a580-19e1-11ea-9a47-f99da8f33825.png" width="20%">
+</div>
 
 [![GitHub Author](https://img.shields.io/badge/Author-sNyung-blue?style=flat-square)](https://github.com/SeonHyungJo)
 [![GitHub license](https://img.shields.io/github/license/SeonHyungJo/gatsby-sseon-starter?style=flat-square)](https://github.com/SeonHyungJo/gatsby-sseon-starter/blob/master/LICENSE)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/57006f2a-8e43-462d-9b39-915f6eb87066/deploy-status)](https://app.netlify.com/sites/gatsby-sseon-starter/deploys) [![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100)](https://github.com/ebidel/lighthouse-badge) [![HitCount](http://hits.dwyl.io/SeonHyungJo/gatsby-sseon-starter.svg)](http://hits.dwyl.io/SeonHyungJo/gatsby-sseon-starter)
 
-### 간단한 블로그 설명
+> Blog Starter Pack based on [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog)
+
+### Info
+
+- :lipstick: SASS/SCSS	   
+- :crystal_ball: Add Utterances
+- :page_with_curl: Nice Pagination
+- :construction_worker: Comes with React Helmet
+- :credit_card: Create Yout Name Card(Writing meta data)
+  
+> [Gatsby Starters Docs](https://www.gatsbyjs.org/starters/seonhyungjo/gatsby-snyung-starter/)
 
 ## Demo page
 
-## 사용법
+[Show Demo Page](https://gatsby-snyung-starter.netlify.com/)
 
-### theme 설치법
+## Use case
 
-### post 추가 방법
+[snyung.com](https://snyung.com)
 
-### config data 사용법
+## Quick Start
 
-## 파일 구조
+**1. Create a Gatsby site.**
 
-## 버그
+```bash
+# create a new Gatsby site using the blog starter
+$ npx gatsby new my-blog-starter https://github.com/seonhyungjo/gatsby-snyung-starter
+```
 
-## 라이센스
+```bash 
+$ npm install -g gatsby-cli
+$ gatsby new my-blog-starter https://github.com/seonhyungjo/gatsby-snyung-starter
+```
+
+**2. Add your content**
+
+You can write...
+
+- contents to blog in contents/posts directory.
+- article contents/articles directory.
+- resume contents/aboutme directory.
+
+**3. Modify Meta-Data**
+
+Check `meta-data` directory
+
+Modify `nameCard.json` and `tabList.json` Data
+
+## Bug reporting
+
+[Issue](https://github.com/SeonHyungJo/gatsby-snyung-starter/issues)
+
+## License
+
+[MIT](https://github.com/SeonHyungJo/gatsby-snyung-starter/blob/master/LICENSE)
