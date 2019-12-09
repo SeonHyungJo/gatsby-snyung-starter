@@ -1,5 +1,5 @@
 import { graphql, navigate } from 'gatsby'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import { TransitionGroup, Transition } from 'react-transition-group'
 import Helmet from 'react-helmet'
 import PropTypes from 'prop-types'
@@ -41,6 +41,7 @@ const Layout = (props) => {
   const pathSplit = location.pathname.split('/')
   const checkContent = CONTENT_LIST.includes(pathSplit[1])
   const checkSlider = SLIDER_PAGE_LIST.includes(pathSplit[1])
+  const bodyElm = useRef()
 
   const [scrolling, setScrolling] = useState(false)
   const [cardMode, setCardMode] = useState(pathSplit[1])
@@ -62,10 +63,12 @@ const Layout = (props) => {
 
     setScrolling(indexPathCheck)
     setCardMode(indexPathCheck ? 'simple-card' : '')
+    
+    bodyElm.current.scrollTo(0,0)
   }, [location.pathname])
 
   return (
-    <div className={'scroll-box'} onScroll={handleScroll}>
+    <div className={'scroll-box'} onScroll={handleScroll} ref={bodyElm}>
       {/* Common Helmet*/}
       <CustomHelmet />
 

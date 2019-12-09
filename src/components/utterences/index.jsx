@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 
 import './index.scss'
 
 const src = 'https://utteranc.es/client.js'
 
 const Utterences = ({ repo, theme }) => {
-  const rootElm = React.createRef()
+  const rootElm = useRef()
 
   useEffect(() => {
     const utterances = document.createElement('script')
