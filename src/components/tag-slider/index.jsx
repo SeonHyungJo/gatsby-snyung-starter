@@ -68,6 +68,9 @@ const Slider = ({ setFilter }) => {
         })
       }else{
         prevState[ALL].selected = false
+        const list = Object.values(prevState).filter((values) => values.selected == true)
+
+        list.length == 1 && list[0].id === id && (prevState[ALL].selected = true)
       }
 
       return {

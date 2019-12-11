@@ -18,13 +18,13 @@ import 'style/baseLayout.scss'
 import './index.scss'
 
 const CONTENT_LIST = ['content', 'aboutme']
-const SLIDER_PAGE_LIST = ['content', 'aboutme', 'article']
+const SLIDER_PAGE_LIST = ['', 'content', 'aboutme', 'article']
 const CustomHelmet = () => (
   <Helmet
-    title="Gatsby for SSEON"
+    title="Gatsby for sNyung"
     meta={[
-      { name: 'description', content: 'sseon theme' },
-      { name: 'keywords', content: 'sseon, blog, theme' },
+      { name: 'description', content: 'snyung theme' },
+      { name: 'keywords', content: 'snyung, blog, theme' },
       {
         name: 'viewport',
         content: 'width=device-width, initial-scale=1',
@@ -63,7 +63,7 @@ const Layout = (props) => {
 
     setScrolling(indexPathCheck)
     setCardMode(indexPathCheck ? 'simple-card' : '')
-    
+
     bodyElm.current.scrollTo(0,0)
   }, [location.pathname])
 
