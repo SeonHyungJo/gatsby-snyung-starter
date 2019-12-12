@@ -7,7 +7,7 @@
 
 [![GitHub Author](https://img.shields.io/badge/Author-sNyung-blue?style=flat-square)](https://github.com/SeonHyungJo)
 [![GitHub license](https://img.shields.io/github/license/SeonHyungJo/gatsby-sseon-starter?style=flat-square)](https://github.com/SeonHyungJo/gatsby-sseon-starter/blob/master/LICENSE)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/57006f2a-8e43-462d-9b39-915f6eb87066/deploy-status)](https://app.netlify.com/sites/gatsby-sseon-starter/deploys) [![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100)](https://github.com/ebidel/lighthouse-badge) [![HitCount](http://hits.dwyl.io/SeonHyungJo/gatsby-sseon-starter.svg)](http://hits.dwyl.io/SeonHyungJo/gatsby-sseon-starter)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/57006f2a-8e43-462d-9b39-915f6eb87066/deploy-status)](https://app.netlify.com/sites/gatsby-sseon-starter/deploys) [![Lighthouse score: 100/100](https://lighthouse-badge.appspot.com/?score=100)](https://github.com/ebidel/lighthouse-badge) [![HitCount](http://hits.dwyl.io/SeonHyungJo/gatsby-sseon-starter.svg)](http://hits.dwyl.io/SeonHyungJo/gatsby-sseon-starter) [![Greenkeeper badge](https://badges.greenkeeper.io/SeonHyungJo/gatsby-sseon-starter.svg)](https://greenkeeper.io/)
 
 > Blog Starter Pack based on [gatsby-starter-blog](https://github.com/gatsbyjs/gatsby-starter-blog)
 
