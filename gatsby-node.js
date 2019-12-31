@@ -1,4 +1,5 @@
 const path = require('path')
+const { createFilePath } = require(`gatsby-source-filesystem`)
 
 const AboutMeTemplate = path.resolve(`src/template/aboutme/index.jsx`)
 const PostTemplate = path.resolve(`src/template/blog-post/index.jsx`)
@@ -101,4 +102,16 @@ exports.createPages = async ({ actions: { createPage }, graphql }) => {
   await createPostPages(createPage, graphql, 'post')
   await createPostPages(createPage, graphql, 'article')
   await createAboutme(createPage, graphql, 'aboutme')
+}
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === `MarkdownRemark`) {
+    const value = createFilePath({ node, getNode })
+    createNodeField({
+      name: `slug`,
+      node,
+      value,
+    })
+  }
 }

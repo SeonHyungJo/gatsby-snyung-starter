@@ -4,7 +4,7 @@ const path = require('path')
 // env setting for netlify preview
 const {
   NODE_ENV,
-  URL: NETLIFY_SITE_URL = 'hhttps://gatsby-sseon-starter.netlify.com',
+  URL: NETLIFY_SITE_URL = 'https://gatsby-snyung-starter.netlify.com',
   DEPLOY_PRIME_URL: NETLIFY_DEPLOY_URL = NETLIFY_SITE_URL,
   CONTEXT: NETLIFY_ENV = NODE_ENV
 } = process.env;
@@ -17,6 +17,7 @@ module.exports = {
   siteMetadata: {
     author: 'snyung',
     title: 'Simple Blog',
+    description: '',
     siteUrl
   },
   plugins: [
@@ -130,6 +131,7 @@ module.exports = {
       }
     },
     // 'gatsby-plugin-offline',
+    `gatsby-plugin-feed`,
     'gatsby-plugin-remove-serviceworker',
     'gatsby-plugin-react-helmet',
     'gatsby-transformer-sharp',
