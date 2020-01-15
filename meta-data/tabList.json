@@ -1,10 +1,12 @@
 {
   "tabList": [
     {
+      "type": "post",
       "path": "/post",
       "name": "All Post"
     },
     {
+      "type": "article",
       "path": "/article",
       "name": "Article"
     }

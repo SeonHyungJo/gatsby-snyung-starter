@@ -1,0 +1,13 @@
+---
+path: "{{path}}"
+date: "{{createdDate}}"
+title: {{title}}{{tags}}
+category: "{{postType}}"
+---
+
+My awesome article
+
+#### Reference
+
+- [ ]()
+
