@@ -45,11 +45,22 @@ $ gatsby new my-blog-starter https://github.com/seonhyungjo/gatsby-snyung-starte
 
 **2. Add your content**
 
-You can write...
+:new: **You can create Post/Arcle automatically**
 
-- contents to blog in contents/posts directory.
-- article contents/articles directory.
-- resume contents/aboutme directory.
+{{gif}}
+
+```bash
+npm run generate
+
+---------------------------------------------
+? Blog post title? {{title}}
+? The type of blog post? (Use arrow keys)
+> post
+  article
+? tags? (separate with coma) tag, js, ts, jest
+```
+
+- resume *contents/aboutme* directory.
 
 **3. Modify Meta-Data**
 
