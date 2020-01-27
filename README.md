@@ -45,9 +45,9 @@ $ gatsby new my-blog-starter https://github.com/seonhyungjo/gatsby-snyung-starte
 
 **2. Add your content**
 
-:new: **You can create Post/Arcle automatically**
+:new: **You can create Post/Article automatically**
 
-{{gif}}
+[![generate_test](https://asciinema.org/a/AEyKd47cayTdEy6Vwy6bE0df3.svg)](https://asciinema.org/a/AEyKd47cayTdEy6Vwy6bE0df3)
 
 ```bash
 npm run generate
@@ -60,7 +60,7 @@ npm run generate
 ? tags? (separate with coma) tag, js, ts, jest
 ```
 
-- resume *contents/aboutme* directory.
+- resume directory is *contents/aboutme* path .
 
 **3. Modify Meta-Data**
 
