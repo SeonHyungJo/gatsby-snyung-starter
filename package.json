@@ -31,7 +31,7 @@
     "gatsby-tag-slider": "^1.2.1",
     "gatsby-transformer-remark": "^2.6.48",
     "gatsby-transformer-sharp": "^2.3.12",
-    "node-sass": "^4.13.0",
+    "node-sass": "^4.13.1",
     "prismjs": "^1.19.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
